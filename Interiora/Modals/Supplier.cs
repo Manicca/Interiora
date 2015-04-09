@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterioraClient
+namespace Models
 {
     class Supplier
     {
+        public string Name { get; set; }
+        public string Mail { get; set; }
+        public string DG { get; set; }
     }
 }

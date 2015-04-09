@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterioraClient", "InterioraClient\InterioraClient.csproj", "{3210B2DF-D63B-4CA7-87FE-188833040A4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Modals\Models.csproj", "{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3210B2DF-D63B-4CA7-87FE-188833040A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3210B2DF-D63B-4CA7-87FE-188833040A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3210B2DF-D63B-4CA7-87FE-188833040A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
