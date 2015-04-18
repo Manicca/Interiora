@@ -1,1 +1,9 @@
 C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\bin\Debug\InterioraClient.exe.config
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\bin\Debug\InterioraClient.exe
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\bin\Debug\InterioraClient.pdb
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\obj\Debug\InterioraClient.csprojResolveAssemblyReference.cache
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\obj\Debug\InterioraClient.Form1.resources
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\obj\Debug\InterioraClient.Properties.Resources.resources
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\obj\Debug\InterioraClient.csproj.GenerateResource.Cache
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\obj\Debug\InterioraClient.exe
+C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\InterioraClient\obj\Debug\InterioraClient.pdb
