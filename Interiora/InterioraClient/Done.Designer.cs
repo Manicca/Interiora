@@ -58,7 +58,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 67);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Do reports";
+            this.button2.Text = "Отчеты";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
