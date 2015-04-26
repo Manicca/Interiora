@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterioraClient
 {
-    public partial class Done : Form
+    public partial class DoneForm : Form
     {
-        public Done()
+        public DoneForm()
         {
             InitializeComponent();
         }

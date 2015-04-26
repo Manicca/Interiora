@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterioraClient
 {
-    public partial class Main : Form
+    public partial class MainFormWork : Form
     {
-        public Main()
+        public MainFormWork()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace InterioraClient
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var form = new InterioraClient.Edit();
+            var form = new InterioraClient.EditPicture();
             form.Show();
             this.Hide();
         }
