@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterioraClient
 {
-    public partial class Edit : Form
+    public partial class EditPicture : Form
     {
-        public Edit()
+        public EditPicture()
         {
             InitializeComponent();
         }

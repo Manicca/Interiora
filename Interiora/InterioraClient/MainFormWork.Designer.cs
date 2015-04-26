@@ -1,6 +1,6 @@
 ﻿namespace InterioraClient
 {
-    partial class Main
+    partial class MainFormWork
     {
         /// <summary>
         /// Требуется переменная конструктора.

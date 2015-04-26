@@ -1,6 +1,6 @@
 ﻿namespace InterioraClient
 {
-    partial class Edit
+    partial class EditPicture
     {
         /// <summary>
         /// Required designer variable.

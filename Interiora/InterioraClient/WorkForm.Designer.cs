@@ -1,6 +1,6 @@
 ﻿namespace InterioraClient
 {
-    partial class Work
+    partial class WorkForm
     {
         /// <summary>
         /// Required designer variable.
