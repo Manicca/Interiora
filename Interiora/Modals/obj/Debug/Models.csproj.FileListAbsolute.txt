@@ -1,1 +1,11 @@
 C:\Users\mariazdor\Documents\GitHub\InterioiraLite\Interiora\Modals\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\Modals.dll.config
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\Modals.dll
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\Modals.pdb
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.dll
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.xml
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\obj\Debug\Modals.dll
+C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\obj\Debug\Modals.pdb

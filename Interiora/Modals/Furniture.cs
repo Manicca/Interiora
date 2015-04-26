@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Furniture
+    public class Furniture
     {
+        public int FurnitureId { get; set; }
         public string Type { get; set; }
         public string Article { get; set; }
         public string Cost { get; set; }
         public string Params { get; set; }
-        public Supplier supplier;
+
+        public int SupplierId { get; set; }
+        public virtual Supplier Supplier { get; set; }
     }
 }
