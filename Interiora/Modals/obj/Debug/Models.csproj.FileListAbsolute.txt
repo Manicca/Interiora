@@ -9,3 +9,13 @@ C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFra
 C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\obj\Debug\Modals.dll
 C:\Users\Дмитрий\Documents\Interiora\Interiora\Modals\obj\Debug\Modals.pdb
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\Modals.dll.config
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\Modals.dll
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\Modals.pdb
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.dll
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.xml
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\obj\Debug\Modals.dll
+C:\Users\mariazdor\Documents\Interiora\Interiora\Modals\obj\Debug\Modals.pdb
