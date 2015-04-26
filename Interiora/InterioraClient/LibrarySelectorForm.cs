@@ -16,5 +16,10 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
-    }
+
+          private void LibrarySelectorForm_FormClosing(object sender, FormClosingEventArgs e)
+          {
+               FormsHelper.FormCloser(this, ref e);
+          }
+     }
 }

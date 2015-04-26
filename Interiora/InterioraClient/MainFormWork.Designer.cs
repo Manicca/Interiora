@@ -89,8 +89,12 @@
                this.Controls.Add(this.pictureBox1);
                this.Controls.Add(this.button2);
                this.Controls.Add(this.button1);
+               this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+               this.MaximizeBox = false;
+               this.MinimizeBox = false;
                this.Name = "MainFormWork";
                this.Text = "Form1";
+               this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormWork_FormClosing);
                this.Load += new System.EventHandler(this.MainFormWork_Load);
                ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
                this.ResumeLayout(false);
