@@ -16,5 +16,17 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form = new InterioraClient.Edit();
+            form.Show();
+            this.Hide();
+        }
     }
 }

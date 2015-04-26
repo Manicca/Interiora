@@ -56,6 +56,12 @@
     <Compile Include="Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibrarySelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrarySelectorForm.Designer.cs">
+      <DependentUpon>LibrarySelectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibrarySelectorForm.resx">
+      <DependentUpon>LibrarySelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

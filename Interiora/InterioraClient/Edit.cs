@@ -16,10 +16,20 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
-
+       private int  actioncounter=0;
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Edit_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Edit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

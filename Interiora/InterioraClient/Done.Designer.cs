@@ -49,7 +49,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 53);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Back";
+            this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
