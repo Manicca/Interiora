@@ -11,24 +11,25 @@ using FunctionalityLibrary;
 
 namespace InterioraClient
 {
-    public partial class DoneForm : Form
-    {
-        public DoneForm()
-        {
-            InitializeComponent();
-        }
-        MailSend sendmail = new MailSend();
+     public partial class DoneForm : Form
+     {
+          public DoneForm()
+          {
+               InitializeComponent();
+          }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            sendmail.SendMail("smtp.mail.ru","isebd@mail.ru","qwe123rty456",textBox1.Text,"expirience","hjhkhjk","filele.txt");
-            MessageBox.Show("Ваше сообщение отправлено!");    
-        }
-        
-        
-
+          private void button2_Click(object sender, EventArgs e)
+          {
+               EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk");
+              
+          }
 
           private void DoneForm_FormClosing(object sender, FormClosingEventArgs e)
+          {
+               FormsHelper.FormCloser(this, ref e);
+          }
+
+          private void DoneForm_FormClosing_1(object sender, FormClosingEventArgs e)
           {
                FormsHelper.FormCloser(this, ref e);
           }

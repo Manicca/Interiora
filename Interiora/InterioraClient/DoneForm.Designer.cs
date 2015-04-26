@@ -48,18 +48,18 @@
                // 
                // button1
                // 
-               this.button1.Location = new System.Drawing.Point(359, 31);
+               this.button1.Location = new System.Drawing.Point(370, 37);
                this.button1.Name = "button1";
-               this.button1.Size = new System.Drawing.Size(137, 53);
+               this.button1.Size = new System.Drawing.Size(167, 53);
                this.button1.TabIndex = 1;
                this.button1.Text = "Назад";
                this.button1.UseVisualStyleBackColor = true;
                // 
                // button2
                // 
-               this.button2.Location = new System.Drawing.Point(370, 276);
+               this.button2.Location = new System.Drawing.Point(370, 261);
                this.button2.Name = "button2";
-               this.button2.Size = new System.Drawing.Size(138, 50);
+               this.button2.Size = new System.Drawing.Size(167, 50);
                this.button2.TabIndex = 2;
                this.button2.Text = "Отправить отчет";
                this.button2.UseVisualStyleBackColor = true;
@@ -67,27 +67,27 @@
                // 
                // button3
                // 
-               this.button3.Location = new System.Drawing.Point(370, 356);
+               this.button3.Location = new System.Drawing.Point(370, 355);
                this.button3.Name = "button3";
-               this.button3.Size = new System.Drawing.Size(138, 47);
+               this.button3.Size = new System.Drawing.Size(167, 47);
                this.button3.TabIndex = 3;
                this.button3.Text = "Отправить бланки";
                this.button3.UseVisualStyleBackColor = true;
                // 
                // button4
                // 
-               this.button4.Location = new System.Drawing.Point(358, 109);
+               this.button4.Location = new System.Drawing.Point(370, 116);
                this.button4.Name = "button4";
-               this.button4.Size = new System.Drawing.Size(149, 50);
+               this.button4.Size = new System.Drawing.Size(167, 50);
                this.button4.TabIndex = 4;
                this.button4.Text = "Документация ( просмотр отчетов и бланков)";
                this.button4.UseVisualStyleBackColor = true;
                // 
                // textBox1
                // 
-               this.textBox1.Location = new System.Drawing.Point(369, 235);
+               this.textBox1.Location = new System.Drawing.Point(370, 235);
                this.textBox1.Name = "textBox1";
-               this.textBox1.Size = new System.Drawing.Size(144, 20);
+               this.textBox1.Size = new System.Drawing.Size(167, 20);
                this.textBox1.TabIndex = 5;
                // 
                // label1
@@ -103,7 +103,7 @@
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-               this.ClientSize = new System.Drawing.Size(520, 436);
+               this.ClientSize = new System.Drawing.Size(549, 436);
                this.Controls.Add(this.label1);
                this.Controls.Add(this.textBox1);
                this.Controls.Add(this.button4);
@@ -112,10 +112,14 @@
                this.Controls.Add(this.button1);
                this.Controls.Add(this.pictureBox1);
                this.Name = "DoneForm";
+               this.ShowIcon = false;
+               this.ShowInTaskbar = false;
                this.Text = "Done";
+               this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DoneForm_FormClosing_1);
                ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
                this.ResumeLayout(false);
                this.PerformLayout();
+
           }
 
           #endregion
