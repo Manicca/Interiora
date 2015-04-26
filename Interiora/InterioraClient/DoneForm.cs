@@ -17,7 +17,6 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
         MailSend sendmail = new MailSend();
 
         private void button2_Click(object sender, EventArgs e)
@@ -27,13 +26,11 @@ namespace InterioraClient
         }
         
         
-    }
-=======
+
 
           private void DoneForm_FormClosing(object sender, FormClosingEventArgs e)
           {
                FormsHelper.FormCloser(this, ref e);
           }
      }
->>>>>>> f7491d3bc4e6ae31f1a083ba1a920ad681d028fe
 }

@@ -30,8 +30,8 @@ namespace FunctionalityLibrary
                mail.To.Add(new MailAddress(mailto));
                mail.Subject = caption;
                mail.Body = message;
-               if (!string.IsNullOrEmpty(attachFile))
-                   mail.Attachments.Add(new Attachment(attachFile));
+         //      if (!string.IsNullOrEmpty(attachFile))
+           //        mail.Attachments.Add(new Attachment(attachFile));
                SmtpClient client = new SmtpClient();
                client.Host = smtpServer;
                client.Port = 587;
