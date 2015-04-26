@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modals
+namespace Models
 {
-    class TypeOfWebEquipment
+    public class TypeOfWebEquipment
     {
-        public string name {get; set;}
-
+          public int TypeOfWebEquipmentId { get; set; }
+          public string name {get; set;}
     }
 }
