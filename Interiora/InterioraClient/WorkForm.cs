@@ -17,6 +17,7 @@ namespace InterioraClient
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         private void button3_Click(object sender, EventArgs e)
         {
             var doneform = new InterioraClient.DoneForm();
@@ -24,4 +25,11 @@ namespace InterioraClient
             this.Hide();
         }
     }
+=======
+          private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
+          {
+               FormsHelper.FormCloser(this, ref e);
+          }
+     }
+>>>>>>> f7491d3bc4e6ae31f1a083ba1a920ad681d028fe
 }

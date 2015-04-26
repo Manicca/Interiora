@@ -35,5 +35,10 @@ namespace InterioraClient
           {
 
           }
+
+          private void MainFormWork_FormClosing(object sender, FormClosingEventArgs e)
+          {
+               FormsHelper.FormCloser(this, ref e);
+          }
      }
 }

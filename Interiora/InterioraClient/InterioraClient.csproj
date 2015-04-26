@@ -56,6 +56,7 @@
     <Compile Include="EditPicture.Designer.cs">
       <DependentUpon>EditPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsHelper.cs" />
     <Compile Include="LibrarySelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
