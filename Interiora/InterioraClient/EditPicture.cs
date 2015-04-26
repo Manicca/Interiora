@@ -16,7 +16,7 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
-       private int  actioncounter=0;
+       
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -31,5 +31,33 @@ namespace InterioraClient
         {
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var workform = new InterioraClient.WorkForm();
+            workform.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           button2.Enabled = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button4.Enabled = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button4.Enabled = true;
+        }
+
     }
 }
