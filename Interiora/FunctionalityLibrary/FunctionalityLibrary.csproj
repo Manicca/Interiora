@@ -47,7 +47,7 @@
     <Compile Include="DataBaseWork.cs" />
     <Compile Include="DrawFunctions.cs" />
     <Compile Include="FurnitureLocation.cs" />
-    <Compile Include="MailSend.cs" />
+    <Compile Include="EMailSender.cs" />
     <Compile Include="TranslatePicture.cs" />
     <Compile Include="MainForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
