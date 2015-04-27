@@ -100,9 +100,10 @@ namespace FunctionalityLibrary
      public class HistoryDrawing
      {
           List<Bitmap> history;
-          public HistoryDrawing()
+          public HistoryDrawing(Bitmap startItem)
           {
                history = new List<Bitmap>();
+               history.Add(startItem);
           }
 
           public void Add(Bitmap bp)
@@ -114,18 +115,30 @@ namespace FunctionalityLibrary
           {
                history.Remove(history.Last());
           }
+
           public Bitmap GetLast()
           {
                return history.Last();
           }
 
-          public void RemoveAfterByItem(Bitmap item)
+          public void RemoveAfterByIndex(int index)
           {
-               history.RemoveRange(history.IndexOf(item) + 1, history.Count - history.IndexOf(item));
+               if (history.Count - index != 0)
+                    history.RemoveRange(index , history.Count - index);
           }
+
           public Bitmap GetByIndex(int i)
           {
-              return history[i];
+               return history[i];
+          }
+
+          public int Count()
+          {
+               return history.Count;
+          }
+          public void Clear()
+          {
+               this.RemoveAfterByIndex(1);
           }
      }
 }

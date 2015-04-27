@@ -20,24 +20,27 @@ namespace InterioraClient
                InitializeComponent();
           }
           public Bitmap saveBMP;
+          Bitmap bmpBeforeDrawing;
+          HistoryDrawing history;
+          int historyIterator;
+          Point start = new Point();
+          Point end = new Point();
+          bool isDrawing = false;
+          Bitmap drawing;
 
-          private void textBox1_TextChanged(object sender, EventArgs e)
-          {
 
-          }
+
 
           private void Edit_Load(object sender, EventArgs e)
           {
                pictureBox1.Image = saveBMP;
                pictureBox1.Top = 0;
                pictureBox1.Left = 0;
+               history = new HistoryDrawing(saveBMP);
 
           }
 
-          private void Edit_FormClosed(object sender, FormClosedEventArgs e)
-          {
-
-          }
+ 
 
           private void button1_Click(object sender, EventArgs e)
           {
@@ -52,13 +55,6 @@ namespace InterioraClient
                FormsHelper.FormCloser(this, ref e);
           }
 
-
-
-          private void panel1_Scroll(object sender, ScrollEventArgs e)
-          {
-
-          }
-
           private void trackBar1_Scroll(object sender, EventArgs e)
           {
                float dScroll = trackBar1.Value;
@@ -70,39 +66,6 @@ namespace InterioraClient
                if (panel1.VerticalScroll.Enabled)
                     panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum / 2;
           }
-
-          private void button2_Click_1(object sender, EventArgs e)
-          {
-          }
-
-          private void label1_Click(object sender, EventArgs e)
-          {
-
-          }
-
-          private void button2_Click(object sender, EventArgs e)
-          {
-
-          }
-
-          private void panel1_MouseMove(object sender, MouseEventArgs e)
-          {
-
-          }
-
-          private void panel1_MouseHover(object sender, EventArgs e)
-          {
-
-
-          }
-
-          Bitmap bmpBeforeDrawing;
-          HistoryDrawing history = new HistoryDrawing();
-          int historyIterator;
-          Point start = new Point();
-          Point end = new Point();
-          bool isDrawing = false;
-          Bitmap drawing;
 
           private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
           {
@@ -122,31 +85,45 @@ namespace InterioraClient
                drawing = bmpBeforeDrawing;
                isDrawing=true;
                start = e.Location;
-               history.Add((Bitmap)pictureBox1.Image);
-               historyIterator++;
+               
           }
 
           private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
           {
+               history.RemoveAfterByIndex(++historyIterator);
                isDrawing = false;
-               
+               history.Add((Bitmap)pictureBox1.Image);
                drawing = null;
           }
 
           private void button3_Click(object sender, EventArgs e)
           {
-               var lastHistory = history.GetByIndex(--historyIterator);
+               if (--historyIterator < 0)
+                    historyIterator = 0;
+               var lastHistory = history.GetByIndex(historyIterator);
                pictureBox1.Image = lastHistory;
                drawing = lastHistory;
           }
 
-          private void pictureBox1_MouseHover(object sender, EventArgs e)
+          private void button4_Click(object sender, EventArgs e)
           {
-
+               historyIterator++;
+               if (historyIterator >= history.Count())
+                    historyIterator = history.Count() - 1;
+               var lastHistory = history.GetByIndex(historyIterator);
+               pictureBox1.Image = lastHistory;
+               drawing = lastHistory;
           }
-          private void pictureBox1_Click(object sender, EventArgs e)
-          {
 
+          private void button5_Click(object sender, EventArgs e)
+          {
+               var dialogRes = MessageBox.Show("Это удалит все ваши изменения!\nЭто действие необратимо!\nВы Уверены?", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+               if(dialogRes == DialogResult.OK)
+               {
+                    history.Clear();
+                    historyIterator = history.Count()-1;
+                    pictureBox1.Image = history.GetLast();
+               }
           }
      }
 }
