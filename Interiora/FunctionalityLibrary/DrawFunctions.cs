@@ -97,6 +97,18 @@ namespace FunctionalityLibrary
           }
      }
 
+     public class LineD
+     {
+          static Graphics gr;
+
+          public static void Draw(ref Bitmap bmp, Point start, Point end)
+          {
+               
+               gr = Graphics.FromImage(bmp);
+               gr.DrawLine(Pens.Red, start, end);
+               gr.Dispose();
+          }
+     }
      public class HistoryDrawing
      {
           List<Bitmap> history;
@@ -124,7 +136,7 @@ namespace FunctionalityLibrary
           public void RemoveAfterByIndex(int index)
           {
                if (history.Count - index != 0)
-                    history.RemoveRange(index , history.Count - index);
+                    history.RemoveRange(index, history.Count - index);
           }
 
           public Bitmap GetByIndex(int i)

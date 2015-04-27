@@ -70,6 +70,8 @@ namespace InterioraClient
                this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                this.panel1.Controls.Add(this.pictureBox1);
                this.panel1.Location = new System.Drawing.Point(12, 61);
+               this.panel1.MaximumSize = new System.Drawing.Size(714, 386);
+               this.panel1.MinimumSize = new System.Drawing.Size(514, 186);
                this.panel1.Name = "panel1";
                this.panel1.Size = new System.Drawing.Size(714, 386);
                this.panel1.TabIndex = 11;
@@ -77,9 +79,9 @@ namespace InterioraClient
                // trackBar1
                // 
                this.trackBar1.Location = new System.Drawing.Point(12, 453);
-               this.trackBar1.Maximum = 100;
+               this.trackBar1.Maximum = 3;
                this.trackBar1.Name = "trackBar1";
-               this.trackBar1.Size = new System.Drawing.Size(714, 45);
+               this.trackBar1.Size = new System.Drawing.Size(160, 45);
                this.trackBar1.TabIndex = 12;
                this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
                // 

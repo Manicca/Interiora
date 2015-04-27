@@ -19,6 +19,7 @@ namespace InterioraClient
           {
                InitializeComponent();
           }
+
           public Bitmap saveBMP;
           Bitmap bmpBeforeDrawing;
           HistoryDrawing history;
@@ -27,9 +28,6 @@ namespace InterioraClient
           Point end = new Point();
           bool isDrawing = false;
           Bitmap drawing;
-
-
-
 
           private void Edit_Load(object sender, EventArgs e)
           {
@@ -61,10 +59,10 @@ namespace InterioraClient
                Size newSize = new Size((int)(saveBMP.Width + (saveBMP.Width / 10.0 * dScroll)), (int)(saveBMP.Height + (saveBMP.Height / 10.0 * dScroll)));
                pictureBox1.Image = new Bitmap(saveBMP, newSize);
 
-               if (panel1.HorizontalScroll.Enabled)
+             /*  if (panel1.HorizontalScroll.Enabled)
                     panel1.HorizontalScroll.Value = panel1.HorizontalScroll.Maximum / 2;
                if (panel1.VerticalScroll.Enabled)
-                    panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum / 2;
+                    panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum / 2;*/
           }
 
           private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -72,7 +70,7 @@ namespace InterioraClient
                end = e.Location;
                if (isDrawing)
                {
-                    RectangleD.Draw(ref drawing, start, end);
+                    LineD.Draw(ref drawing, start, end);
                     pictureBox1.Image = drawing;
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
                }
