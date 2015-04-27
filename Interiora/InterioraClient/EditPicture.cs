@@ -28,6 +28,7 @@ namespace InterioraClient
           Point end = new Point();
           bool isDrawing = false;
           Bitmap drawing;
+          Figure f;
 
           private void Edit_Load(object sender, EventArgs e)
           {
@@ -70,7 +71,7 @@ namespace InterioraClient
                end = e.Location;
                if (isDrawing)
                {
-                    LineD.Draw(ref drawing, start, end);
+                    f.Draw(ref drawing, start, end);
                     pictureBox1.Image = drawing;
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
                }
@@ -122,6 +123,33 @@ namespace InterioraClient
                     historyIterator = history.Count()-1;
                     pictureBox1.Image = history.GetLast();
                }
+          }
+
+          private void button2_Click(object sender, EventArgs e)
+          {
+               panel1.Enabled = true;
+               f = new Door();
+               button7.Enabled = true;
+               button6.Enabled = true;
+               button2.Enabled = false;
+          }
+
+          private void button7_Click(object sender, EventArgs e)
+          {
+               panel1.Enabled = true;
+               f = new Room();
+               button7.Enabled = false;
+               button6.Enabled = true;
+               button2.Enabled = true;
+          }
+
+          private void button6_Click(object sender, EventArgs e)
+          {
+               panel1.Enabled = true;
+               f = new WindowFigure();
+               button7.Enabled = true;
+               button6.Enabled = false;
+               button2.Enabled = true;
           }
      }
 }

@@ -73,11 +73,15 @@ namespace FunctionalityLibrary
 
      }
 
-     public class RectangleD
+     public abstract class Figure
      {
-          static Graphics gr;
+          public Graphics gr;
+          public virtual void Draw(ref Bitmap bmp, Point start, Point end) { }
+     }
 
-          public static void Draw(ref Bitmap bmp, Point start, Point end)
+     public class Room : Figure
+     {
+          public override void Draw(ref Bitmap bmp, Point start, Point end)
           {
                if (start.X > end.X)
                {
@@ -97,15 +101,70 @@ namespace FunctionalityLibrary
           }
      }
 
-     public class LineD
+     public class Door : Figure
      {
-          static Graphics gr;
-
-          public static void Draw(ref Bitmap bmp, Point start, Point end)
+          public override void Draw(ref Bitmap bmp, Point start, Point end)
           {
-               
+
                gr = Graphics.FromImage(bmp);
                gr.DrawLine(Pens.Red, start, end);
+               var startD = start;
+               var endD = end;
+
+               int dy = (startD.Y - endD.Y) / 4;
+               int dx = (startD.X - endD.X) / 4;
+               startD = endD;
+               startD.Y += dx;
+               startD.X -= dy;
+               endD.Y -= dx;
+               endD.X += dy;
+
+               gr.DrawLine(Pens.Blue, startD, endD);//отрисовка на конце перпендикулярчика
+
+               endD = end;
+               startD = start;
+               endD = startD;
+
+               startD.Y -= dx;
+               startD.X += dy;
+               endD.Y += dx;
+               endD.X -= dy;
+
+               gr.DrawLine(Pens.Blue, startD, endD);//отрисовка на начале перпендикулярчика
+
+               gr.Dispose();
+          }
+     }
+
+     public class WindowFigure : Figure
+     {
+          public override void Draw(ref Bitmap bmp, Point start, Point end)
+          {
+
+               gr = Graphics.FromImage(bmp);
+               gr.DrawLine(Pens.Red, start, end);
+               var startD = start;
+               var endD = end;
+
+               int dy = (startD.Y - endD.Y) / 4;
+               int dx = (startD.X - endD.X) / 4;
+               startD = endD;
+               startD.Y += dx;
+               startD.X -= dy;
+               
+
+               gr.DrawLine(Pens.Blue, startD, endD);//отрисовка на конце перпендикулярчика
+
+               endD = end;
+               startD = start;
+               endD = startD;
+
+               
+               endD.Y += dx;
+               endD.X -= dy;
+
+               gr.DrawLine(Pens.Blue, startD, endD);//отрисовка на начале перпендикулярчика
+
                gr.Dispose();
           }
      }
