@@ -26,7 +26,7 @@ namespace FunctionalityLibrary
                Graphics gr = Graphics.FromImage(bmp);
 
                //gr.Clear(Color.Red);
-               Pen pn = new Pen(Color.Black, 3);
+               Pen pn = new Pen(Color.Black, 1);
                gr.DrawRectangle(pn, 10, 15, 10, 10);
 
                targetPictureBox.Image = (Bitmap)bmp.Clone();
@@ -42,7 +42,7 @@ namespace FunctionalityLibrary
                     bmp = (Bitmap)targetPictureBox.Image;
                Graphics gr = Graphics.FromImage(bmp);
 
-               Pen pn = new Pen(Color.Black, 3);
+               Pen pn = new Pen(Color.Black, 1);
                Graphics gra = Graphics.FromImage(bmp);
                gra.DrawEllipse(pn, 10, 0, 10, 10);
 
@@ -59,20 +59,36 @@ namespace FunctionalityLibrary
                Graphics gr = Graphics.FromImage(bmp);
 
 
-               Pen pn = new Pen(Color.Black, 6);
+               Pen pn = new Pen(Color.Black, 1);
                gr.DrawRectangle(pn, 40, 0, 10, 20);
 
                targetPictureBox.Image = (Bitmap)bmp.Clone();
           }
-          public void ForClothes()
+          public void ForClothes(ref PictureBox targetPictureBox)
           {
+               Bitmap bmp;
+               if (targetPictureBox.Image == null)
+                    bmp = new Bitmap(targetPictureBox.Width, targetPictureBox.Height);
+               else
+                    bmp = (Bitmap)targetPictureBox.Image;
+               Graphics gr = Graphics.FromImage(bmp);
+
+
+               Pen pn = new Pen(Color.Black, 1);
+               gr.DrawLine(pn, new Point(0, 0), new Point(5, 8));
+               gr.DrawLine(pn, new Point(0, 8), new Point(5, 0));
+
+
+
+               targetPictureBox.Image = (Bitmap)bmp.Clone();
 
           }
           public void ARM()
-          { }
+          {
+
+          }
 
      }
-
      public abstract class Figure
      {
           public Graphics gr;
@@ -212,4 +228,7 @@ namespace FunctionalityLibrary
                this.RemoveAfterByIndex(1);
           }
      }
+
+
+
 }

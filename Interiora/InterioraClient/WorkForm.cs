@@ -33,8 +33,9 @@ namespace InterioraClient
         {
             DrawFunctions drfun = new DrawFunctions();
             
-            drfun.Table(ref pictureBox1);
-            drfun.Chair(ref pictureBox1);
+            //drfun.Table(ref pictureBox1);
+            //drfun.Chair(ref pictureBox1);
+            drfun.ForClothes(ref pictureBox1);
         }
     }
 }
