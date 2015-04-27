@@ -79,7 +79,7 @@ namespace FunctionalityLibrary
           public virtual void Draw(ref Bitmap bmp, Point start, Point end) { }
      }
 
-     public class Room : Figure
+     public class RoomFigure : Figure
      {
           public override void Draw(ref Bitmap bmp, Point start, Point end)
           {
@@ -101,11 +101,11 @@ namespace FunctionalityLibrary
           }
      }
 
-     public class Door : Figure
+     public class DoorFigure : Figure
      {
           public override void Draw(ref Bitmap bmp, Point start, Point end)
           {
-
+               
                gr = Graphics.FromImage(bmp);
                gr.DrawLine(Pens.Red, start, end);
                var startD = start;

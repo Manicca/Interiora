@@ -59,9 +59,9 @@ namespace InterioraClient
                // 
                // button1
                // 
-               this.button1.Location = new System.Drawing.Point(732, 442);
+               this.button1.Location = new System.Drawing.Point(732, 453);
                this.button1.Name = "button1";
-               this.button1.Size = new System.Drawing.Size(147, 43);
+               this.button1.Size = new System.Drawing.Size(189, 32);
                this.button1.TabIndex = 5;
                this.button1.Text = "Далее";
                this.button1.UseVisualStyleBackColor = true;
@@ -70,9 +70,8 @@ namespace InterioraClient
                // panel1
                // 
                this.panel1.AutoScroll = true;
-               this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+               this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                this.panel1.Controls.Add(this.pictureBox1);
-               this.panel1.Enabled = false;
                this.panel1.Location = new System.Drawing.Point(12, 61);
                this.panel1.MaximumSize = new System.Drawing.Size(714, 386);
                this.panel1.MinimumSize = new System.Drawing.Size(514, 186);
@@ -113,7 +112,7 @@ namespace InterioraClient
                // 
                this.button5.Location = new System.Drawing.Point(160, 12);
                this.button5.Name = "button5";
-               this.button5.Size = new System.Drawing.Size(132, 43);
+               this.button5.Size = new System.Drawing.Size(162, 43);
                this.button5.TabIndex = 16;
                this.button5.Text = "Очистить Всё";
                this.button5.UseVisualStyleBackColor = true;
@@ -121,9 +120,9 @@ namespace InterioraClient
                // 
                // button2
                // 
-               this.button2.Location = new System.Drawing.Point(732, 61);
+               this.button2.Location = new System.Drawing.Point(732, 12);
                this.button2.Name = "button2";
-               this.button2.Size = new System.Drawing.Size(132, 43);
+               this.button2.Size = new System.Drawing.Size(189, 43);
                this.button2.TabIndex = 17;
                this.button2.Text = "Добавить дверь ";
                this.button2.UseVisualStyleBackColor = true;
@@ -131,9 +130,9 @@ namespace InterioraClient
                // 
                // button6
                // 
-               this.button6.Location = new System.Drawing.Point(732, 110);
+               this.button6.Location = new System.Drawing.Point(732, 61);
                this.button6.Name = "button6";
-               this.button6.Size = new System.Drawing.Size(132, 43);
+               this.button6.Size = new System.Drawing.Size(189, 43);
                this.button6.TabIndex = 18;
                this.button6.Text = "Добавить окно";
                this.button6.UseVisualStyleBackColor = true;
@@ -141,9 +140,9 @@ namespace InterioraClient
                // 
                // button7
                // 
-               this.button7.Location = new System.Drawing.Point(732, 159);
+               this.button7.Location = new System.Drawing.Point(732, 110);
                this.button7.Name = "button7";
-               this.button7.Size = new System.Drawing.Size(132, 43);
+               this.button7.Size = new System.Drawing.Size(189, 43);
                this.button7.TabIndex = 19;
                this.button7.Text = "Добавить комнату";
                this.button7.UseVisualStyleBackColor = true;

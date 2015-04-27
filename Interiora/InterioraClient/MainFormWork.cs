@@ -16,14 +16,12 @@ namespace InterioraClient
           public MainFormWork()
           {
                InitializeComponent();
-
           }
 
           private void button1_Click(object sender, EventArgs e)
           {
                openFileDialog1.ShowDialog();
-               pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
-               button3.Enabled = true;
+               
           }
 
           private void button3_Click(object sender, EventArgs e)
@@ -55,6 +53,22 @@ namespace InterioraClient
           private void MainFormWork_Click(object sender, EventArgs e)
           {
 
+          }
+
+          private void button4_Click(object sender, EventArgs e)
+          {
+               Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+               Graphics gr = Graphics.FromImage(bm);
+               gr.Clear(Color.White);
+               gr.Dispose();
+               pictureBox1.Image = bm;
+               button3.Enabled = true;
+          }
+
+          private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+          {
+               pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+               button3.Enabled = true;
           }
      }
 }
