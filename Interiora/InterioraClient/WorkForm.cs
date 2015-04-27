@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FunctionalityLibrary;
 
 namespace InterioraClient
 {
@@ -23,9 +24,17 @@ namespace InterioraClient
             doneform.Show();
             this.Hide();
         }
-          private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
-          {
-               FormsHelper.FormCloser(this, ref e);
-          }
-     }
+        private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormsHelper.FormCloser(this, ref e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DrawFunctions drfun = new DrawFunctions();
+            
+            drfun.Table(ref pictureBox1);
+            drfun.Chair(ref pictureBox1);
+        }
+    }
 }
