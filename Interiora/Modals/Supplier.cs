@@ -14,5 +14,12 @@ namespace Models
           public string DG { get; set; }
           public virtual List<Supplier> Suppliers { get; set; }
           public virtual List<WebEquipment> WebEquipment { get; set; }
+          public Supplier(string Name, string Mail, string DG)
+          {
+               this.Name = Name;
+               this.Mail = Mail;
+               this.DG = DG;
+          }
+          public Supplier() { }
      }
 }
