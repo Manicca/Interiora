@@ -13,6 +13,7 @@ namespace Models
         public string Article { get; set; }
         public string Cost { get; set; }
         public string Params { get; set; }
+         
 
         public int SupplierId { get; set; }
         public virtual Supplier Supplier { get; set; }
