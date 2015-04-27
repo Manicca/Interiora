@@ -37,5 +37,34 @@ namespace InterioraClient
             //drfun.Chair(ref pictureBox1);
             drfun.ForClothes(ref pictureBox1);
         }
+
+        //private void listBox1_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    MessageBox.Show("Тут должно быть всплывающее окно");
+            
+        //}
+        
+        private void listBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            int y = listBox1.SelectedIndex;
+            
+            
+        }
+        private void listBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                //int y = e.Y / listBox1.ItemHeight;
+                //if (y < listBox1.Items.Count)
+                //    listBox1.SelectedIndex = y;
+                int y = listBox1.SelectedIndex;
+                MessageBox.Show("Перейти к определению параметров");
+            }
+        }
+
+        private void listBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(listBox1, "Тут будут атрибуты");
+        }
     }
 }
