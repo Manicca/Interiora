@@ -18,7 +18,10 @@ namespace InterioraClient
                          if (dialogRes == DialogResult.Cancel)
                               e.Cancel = true; // отмена закрытия формы
                          else
+                         {
+                              f.Dispose();
                               Environment.Exit(0);
+                         }
                          break;
                     default:
                          f.Close();
