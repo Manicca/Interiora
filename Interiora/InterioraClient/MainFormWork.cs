@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models;
 
 namespace InterioraClient
 {
@@ -39,6 +40,13 @@ namespace InterioraClient
           private void MainFormWork_FormClosing(object sender, FormClosingEventArgs e)
           {
                FormsHelper.FormCloser(this, ref e);
+          }
+
+          private void button2_Click(object sender, EventArgs e)
+          {
+               AllModelsContext _db = new AllModelsContext();
+               _db.SaveChanges();
+               _db.Dispose();    
           }
      }
 }
