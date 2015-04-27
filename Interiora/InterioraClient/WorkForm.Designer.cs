@@ -137,6 +137,7 @@
             this.Controls.Add(this.label1);
             this.Name = "WorkForm";
             this.Text = "Work";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkForm_FormClosing_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

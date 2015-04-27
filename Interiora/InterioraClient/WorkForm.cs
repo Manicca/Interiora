@@ -38,11 +38,7 @@ namespace InterioraClient
             drfun.ForClothes(ref pictureBox1);
         }
 
-        //private void listBox1_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    MessageBox.Show("Тут должно быть всплывающее окно");
-            
-        //}
+        
         
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -65,6 +61,11 @@ namespace InterioraClient
         private void listBox1_MouseMove(object sender, MouseEventArgs e)
         {
             toolTip1.SetToolTip(listBox1, "Тут будут атрибуты");
+        }
+
+        private void WorkForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            FormsHelper.FormCloser(this, ref e);
         }
     }
 }
