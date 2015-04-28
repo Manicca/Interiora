@@ -32,43 +32,43 @@ namespace InterioraClient
         private void button1_Click(object sender, EventArgs e)
         {
             DrawFunctions drfun = new DrawFunctions();
-            
+
             //drfun.Table(ref pictureBox1);
             //drfun.Chair(ref pictureBox1);
             drfun.ForClothes(ref pictureBox1);
         }
 
-        
-        
+
+
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            int y = listBox1.SelectedIndex;
-            
-            
+
+            Point screenPosition = ListBox.MousePosition;
+            Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
+
+            listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
         }
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                int ye = e.Y / listBox1.ItemHeight;
-                if (ye < listBox1.Items.Count)
-                    listBox1.SelectedIndex = ye;
-                //int y = listBox1.SelectedIndex;
+                Point screenPosition = ListBox.MousePosition;
+                Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
+
+                listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
                 MessageBox.Show("Перейти к определению параметров");
             }
         }
 
-        private void listBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            int ye = e.Y / listBox1.ItemHeight;
-            if (ye < listBox1.Items.Count)
-                listBox1.SelectedIndex = ye;
-            toolTip1.SetToolTip(listBox1, "Тут будут атрибуты");
-        }
 
         private void WorkForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             FormsHelper.FormCloser(this, ref e);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(listBox1, "Тут происходит получение данных о конкретном объекте");
         }
     }
 }
