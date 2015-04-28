@@ -16,7 +16,7 @@ namespace Models
 
           public int SupplierId { get; set; }
           public virtual Supplier Supplier { get; set; }
-
+          public Furniture() { }
           public Furniture(string type, string Article, string Cost, string Params, int SupplierId)
           {
                this.Article = Article;
