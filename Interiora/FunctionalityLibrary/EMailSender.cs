@@ -40,7 +40,7 @@ namespace FunctionalityLibrary
                }
                catch (Exception e)
                {
-                    throw new Exception("Отправка Почты провалилась на начальном этапе: " + e.Message);
+                    MessageBox.Show("Отправка Почты провалилась на начальном этапе: " + e.Message);
                }
           }
 
