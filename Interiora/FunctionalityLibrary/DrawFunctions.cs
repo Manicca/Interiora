@@ -135,8 +135,8 @@ namespace FunctionalityLibrary
             var startD = start;
             var endD = end;
 
-            int dy = (startD.Y - endD.Y) / 4;
-            int dx = (startD.X - endD.X) / 4;
+            int dy = (startD.Y - endD.Y) / 6;
+            int dx = (startD.X - endD.X) / 6;
             startD = endD;
             startD.Y += dx;
             startD.X -= dy;
@@ -170,8 +170,8 @@ namespace FunctionalityLibrary
             var startD = start;
             var endD = end;
 
-            int dy = (startD.Y - endD.Y) / 4;
-            int dx = (startD.X - endD.X) / 4;
+            int dy = (startD.Y - endD.Y) / 6;
+            int dx = (startD.X - endD.X) / 6;
             startD = endD;
             startD.Y += dx;
             startD.X -= dy;
@@ -243,9 +243,10 @@ namespace FunctionalityLibrary
     {
         public void DrawPoint(ref Bitmap bmp, Point p)
         {
+            int distance = 5;
             gr = Graphics.FromImage(bmp);
-            gr.DrawLine(Pens.Red, p.X, p.Y - 10, p.X, p.Y + 10);
-            gr.DrawLine(Pens.Red, p.X - 10, p.Y, p.X + 10, p.Y);
+            gr.DrawLine(Pens.Red, p.X + distance, p.Y + distance, p.X - distance, p.Y - distance);
+            gr.DrawLine(Pens.Red, p.X - distance, p.Y + distance, p.X + distance, p.Y - distance);
         }
     }
 

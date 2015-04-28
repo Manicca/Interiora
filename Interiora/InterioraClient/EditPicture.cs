@@ -31,6 +31,7 @@ namespace InterioraClient
         Figure f;
         StartPoint stp = new StartPoint();
         List<Figure> AllFigures = new List<Figure>();
+        int buttonClicks = 0;
 
         private void Edit_Load(object sender, EventArgs e)
         {
@@ -40,15 +41,12 @@ namespace InterioraClient
             history = new HistoryDrawing(saveBMP);
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             var workform = new InterioraClient.WorkForm();
             workform.Show();
             this.Hide();
         }
-
 
         private void EditPicture_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -122,7 +120,7 @@ namespace InterioraClient
             button2.Enabled = true;
             isDrawing = true;
         }
-        int buttonClicks = 0;
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (isDrawing)
@@ -134,6 +132,7 @@ namespace InterioraClient
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
                     isDrawing = true;
                     start = pictureBox1.PointToClient(Cursor.Position);
+                    Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, AllFigures);
                     stp.DrawPoint(ref drawing, start);
                     pictureBox1.Image = drawing;
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
@@ -145,14 +144,7 @@ namespace InterioraClient
                     history.RemoveAfterByIndex(++historyIterator);
                     if (isDrawing)
                     {
-                        if (end.X > pictureBox1.Width)
-                            end.X = pictureBox1.Width - 2;
-                        if (end.Y > pictureBox1.Height)
-                            end.Y = pictureBox1.Height - 2;
-                        if (end.X < 2)
-                            end.X = 1;
-                        if (end.Y < 2)
-                            end.Y = 1;
+                        Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, AllFigures);
                         drawing = (Bitmap)bmpBeforeDrawing.Clone();
                         f.FirstLocationPoint = start;
                         f.SecondLocationPoint = end;
