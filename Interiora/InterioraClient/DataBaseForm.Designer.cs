@@ -60,6 +60,8 @@
             this.Controls.Add(this.button1);
             this.Name = "DataBaseForm";
             this.Text = "DataBaseForm";
+          
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

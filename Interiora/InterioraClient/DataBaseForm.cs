@@ -16,12 +16,12 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            var workform = new InterioraClient.WorkForm();
-            workform.Show();
-            this.Hide();
+            this.Close();
+           
         }
+
+        
     }
 }

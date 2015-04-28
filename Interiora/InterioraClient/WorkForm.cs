@@ -60,6 +60,7 @@ namespace InterioraClient
                 MessageBox.Show("Перейти к определению параметров");
                 var dbform = new InterioraClient.DataBaseForm();
                 dbform.Show();
+               // dbform.f = this;
                 var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();
                 AllModelsContext db= new AllModelsContext();
                 if (listBox1.SelectedIndex == 0)
@@ -95,7 +96,7 @@ namespace InterioraClient
                     dbView.DataSource = db.WebEquipmentsDb.ToList();
                 }
                 
-                this.Hide();
+                //this.Hide();
 
             }
         }
