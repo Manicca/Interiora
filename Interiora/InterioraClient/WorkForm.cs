@@ -60,6 +60,9 @@ namespace InterioraClient
 
         private void listBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            int ye = e.Y / listBox1.ItemHeight;
+            if (ye < listBox1.Items.Count)
+                listBox1.SelectedIndex = ye;
             toolTip1.SetToolTip(listBox1, "Тут будут атрибуты");
         }
 
