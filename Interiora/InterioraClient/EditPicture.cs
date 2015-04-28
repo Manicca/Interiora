@@ -152,9 +152,9 @@ namespace InterioraClient
                     FunctionalityLibrary.Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
 
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
-                    history.Add(drawing, (Figure)f.Clone());
                     f.FirstLocationPoint = start;
                     f.SecondLocationPoint = end;
+                    history.Add(drawing, (Figure)f.Clone());
                     f.Draw(ref drawing, start, end);
 
                     pictureBox1.Image = drawing;
