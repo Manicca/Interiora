@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FunctionalityLibrary;
+using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary.Drawing.History;
 
 namespace InterioraClient
 {
@@ -30,7 +25,6 @@ namespace InterioraClient
         Bitmap drawing;
         Figure f;
         StartPoint stp = new StartPoint();
-        List<Figure> AllFigures = new List<Figure>();
         int buttonClicks = 0;
 
         private void Edit_Load(object sender, EventArgs e)
@@ -66,8 +60,9 @@ namespace InterioraClient
             if (--historyIterator < 0)
                 historyIterator = 0;
             var lastHistory = history.GetByIndex(historyIterator);
-            pictureBox1.Image = lastHistory;
-            drawing = lastHistory;
+
+            pictureBox1.Image = lastHistory.Key;
+            drawing = lastHistory.Key;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -75,9 +70,13 @@ namespace InterioraClient
             historyIterator++;
             if (historyIterator >= history.Count())
                 historyIterator = history.Count() - 1;
-            var lastHistory = history.GetByIndex(historyIterator);
-            pictureBox1.Image = lastHistory;
-            drawing = lastHistory;
+
+            var historyLast = history.GetByIndex(historyIterator);
+            Bitmap bp = historyLast.Key;
+            historyLast.Value.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
+            pictureBox1.Image = historyLast.Key;
+
+            drawing = historyLast.Key;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -87,7 +86,13 @@ namespace InterioraClient
             {
                 history.Clear();
                 historyIterator = history.Count() - 1;
-                pictureBox1.Image = history.GetLast();
+                var historyLast = history.GetLast();
+
+                Bitmap bp = historyLast.Key;
+                if (historyLast.Value != null)
+                    historyLast.Value.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
+
+                pictureBox1.Image = bp;
             }
         }
 
@@ -132,7 +137,7 @@ namespace InterioraClient
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
                     isDrawing = true;
                     start = pictureBox1.PointToClient(Cursor.Position);
-                    Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, AllFigures);
+                    FunctionalityLibrary.Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
                     stp.DrawPoint(ref drawing, start);
                     pictureBox1.Image = drawing;
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
@@ -140,20 +145,21 @@ namespace InterioraClient
                 else
                 {
                     buttonClicks = 0;
+
                     end = pictureBox1.PointToClient(Cursor.Position);
                     history.RemoveAfterByIndex(++historyIterator);
-                    if (isDrawing)
-                    {
-                        Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, AllFigures);
-                        drawing = (Bitmap)bmpBeforeDrawing.Clone();
-                        f.FirstLocationPoint = start;
-                        f.SecondLocationPoint = end;
-                        f.Draw(ref drawing, start, end);
-                        AllFigures.Add((Figure)f.Clone());
-                        pictureBox1.Image = drawing;
-                        drawing = (Bitmap)bmpBeforeDrawing.Clone();
-                    }
-                    history.Add((Bitmap)pictureBox1.Image);
+
+                    FunctionalityLibrary.Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
+
+                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
+                    history.Add(drawing, (Figure)f.Clone());
+                    f.FirstLocationPoint = start;
+                    f.SecondLocationPoint = end;
+                    f.Draw(ref drawing, start, end);
+
+                    pictureBox1.Image = drawing;
+                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
+
                     drawing = null;
                 }
             }

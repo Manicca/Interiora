@@ -42,10 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation.cs" />
+    <Compile Include="Calulation\Calculation.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
-    <Compile Include="DrawFunctions.cs" />
+    <Compile Include="Drawing\DoorFigure.cs" />
+    <Compile Include="Drawing\DrawFunctions.cs" />
+    <Compile Include="Drawing\Figure.cs" />
+    <Compile Include="Drawing\History\HistoryDrawing.cs" />
+    <Compile Include="Drawing\RoomFigure.cs" />
+    <Compile Include="Drawing\StartPoint.cs" />
+    <Compile Include="Drawing\WindowFigure.cs" />
     <Compile Include="FurnitureLocation.cs" />
     <Compile Include="EMailSender.cs" />
     <Compile Include="TranslatePicture.cs" />
