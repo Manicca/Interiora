@@ -50,10 +50,10 @@ namespace InterioraClient
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                //int y = e.Y / listBox1.ItemHeight;
-                //if (y < listBox1.Items.Count)
-                //    listBox1.SelectedIndex = y;
-                int y = listBox1.SelectedIndex;
+                int ye = e.Y / listBox1.ItemHeight;
+                if (ye < listBox1.Items.Count)
+                    listBox1.SelectedIndex = ye;
+                //int y = listBox1.SelectedIndex;
                 MessageBox.Show("Перейти к определению параметров");
             }
         }
