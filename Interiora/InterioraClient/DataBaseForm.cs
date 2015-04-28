@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace InterioraClient
+{
+    public partial class DataBaseForm : Form
+    {
+        public DataBaseForm()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var workform = new InterioraClient.WorkForm();
+            workform.Show();
+            this.Hide();
+        }
+    }
+}

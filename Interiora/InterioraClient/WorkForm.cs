@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FunctionalityLibrary;
+using Models;
 
 namespace InterioraClient
 {
@@ -57,6 +58,45 @@ namespace InterioraClient
 
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
                 MessageBox.Show("Перейти к определению параметров");
+                var dbform = new InterioraClient.DataBaseForm();
+                dbform.Show();
+                var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();
+                AllModelsContext db= new AllModelsContext();
+                if (listBox1.SelectedIndex == 0)
+                {
+                    dbView.DataSource = db.FurnituresDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 1)
+                {
+                    dbView.DataSource = db.FurnituresDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 2)
+                {
+                    dbView.DataSource = db.FurnituresDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 3)
+                {
+                    dbView.DataSource = db.FurnituresDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 4)
+                {
+                    dbView.DataSource = db.FurnituresDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 5)
+                {
+                    dbView.DataSource = db.WebEquipmentsDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 6)
+                {
+                    dbView.DataSource = db.WebEquipmentsDb.ToList();
+                }
+                if (listBox1.SelectedIndex == 7)
+                {
+                    dbView.DataSource = db.WebEquipmentsDb.ToList();
+                }
+                
+                this.Hide();
+
             }
         }
 
@@ -68,7 +108,39 @@ namespace InterioraClient
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(listBox1, "Тут происходит получение данных о конкретном объекте");
+            if (listBox1.SelectedIndex == 0)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 1)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 2)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 3)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 4)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 5)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 6)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            if (listBox1.SelectedIndex == 7)
+            {
+                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
+            }
+            //toolTip1.SetToolTip(listBox1, "Тут происходит получение данных о конкретном объекте");
         }
     }
 }
