@@ -89,6 +89,7 @@ namespace FunctionalityLibrary
           }
 
      }
+
      public abstract class Figure
      {
           public Graphics gr;
@@ -184,6 +185,7 @@ namespace FunctionalityLibrary
                gr.Dispose();
           }
      }
+
      public class HistoryDrawing
      {
           List<Bitmap> history;
