@@ -36,13 +36,4 @@ INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Param
 INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (42, N'ARM', N'521358423', N'84500', N'150*95', 7)
 INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (43, N'Table', N'147931357', N'3600', N'150*130', 7)
 INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (44, N'ARM', N'325893113', N'30500', N'140*80', 7)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (45, N'Хаб', N'262269994', N'1000', N'10', 8)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (46, N'Комутатор', N'680021283', N'1200', N'20', 8)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (47, N'Витая пара', N'085820983', N'500', N'1', 8)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (48, N'Хаб', N'235093805', N'1300', N'1', 9)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (49, N'Комутатор', N'239857205', N'1300', N'1', 9)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (50, N'Витая пара', N'259008204', N'700', N'1', 9)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (51, N'Хаб ', N'148347820', N'650', N'1', 10)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (52, N'Комутатор', N'425980357', N'700', N'1', 10)
-INSERT INTO [dbo].[Furnitures] ([FurnitureId], [Type], [Article], [Cost], [Params], [SupplierId]) VALUES (53, N'Витая пара', N'049494940', N'800', N'1', 10)
 SET IDENTITY_INSERT [dbo].[Furnitures] OFF
