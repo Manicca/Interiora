@@ -27,6 +27,26 @@ namespace FunctionalityLibrary.Calculation
                 return true;
             return false;
         }
+        /// <summary>
+        /// Функция вычисляет находиться ли число между двумя положительными границами
+        /// </summary>
+        /// <param name="number">Число</param>
+        /// <param name="left">Левая граница</param>
+        /// <param name="right">Правая Граница</param>
+        /// <returns></returns>
+        public static bool IsBetween(int number, int left, int right)
+        {
+            if (left > right)
+            {
+                int lr = left;
+                left = right;
+                right = lr;
+            }
+
+            return ((number <= right+15) && (number >= left-15));
+
+        }
+
 
         /// <summary>
         /// Функция перераспределяет координаты start и end. Для Фигуры f
@@ -36,25 +56,36 @@ namespace FunctionalityLibrary.Calculation
         /// <param name="end">Конечная координата нового объекта</param>
         public static void CalculateAheadPoints(Figure r, ref Point start, ref Point end)
         {
-            if (Calculation.Distance.IsAheadX(r.FirstLocationPoint, end))
-                end.X = r.FirstLocationPoint.X;
-            if (Calculation.Distance.IsAheadY(r.FirstLocationPoint, end))
-                end.Y = r.FirstLocationPoint.Y;
+            if (IsBetween(end.Y, r.FirstLocationPoint.Y, r.SecondLocationPoint.Y))
+            {
+                if (Calculation.Distance.IsAheadX(r.FirstLocationPoint, end))
+                    end.X = r.FirstLocationPoint.X;
+                if (Calculation.Distance.IsAheadX(r.SecondLocationPoint, end))
+                    end.X = r.SecondLocationPoint.X;
+            }
 
-            if (Calculation.Distance.IsAheadX(r.SecondLocationPoint, end))
-                end.X = r.SecondLocationPoint.X;
-            if (Calculation.Distance.IsAheadY(r.SecondLocationPoint, end))
-                end.Y = r.SecondLocationPoint.Y;
+            if (IsBetween(end.X, r.FirstLocationPoint.X, r.SecondLocationPoint.X))
+            {
+                if (Calculation.Distance.IsAheadY(r.FirstLocationPoint, end))
+                    end.Y = r.FirstLocationPoint.Y;
+                if (Calculation.Distance.IsAheadY(r.SecondLocationPoint, end))
+                    end.Y = r.SecondLocationPoint.Y;
+            }
 
-            if (Calculation.Distance.IsAheadX(r.FirstLocationPoint, start))
-                start.X = r.FirstLocationPoint.X;
-            if (Calculation.Distance.IsAheadY(r.FirstLocationPoint, start))
-                start.Y = r.FirstLocationPoint.Y;
-
-            if (Calculation.Distance.IsAheadX(r.SecondLocationPoint, start))
-                start.X = r.SecondLocationPoint.X;
-            if (Calculation.Distance.IsAheadY(r.SecondLocationPoint, start))
-                start.Y = r.SecondLocationPoint.Y;
+            if (IsBetween(start.X, r.FirstLocationPoint.X, r.SecondLocationPoint.X))
+            {
+                if (Calculation.Distance.IsAheadY(r.FirstLocationPoint, start))
+                    start.Y = r.FirstLocationPoint.Y;
+                if (Calculation.Distance.IsAheadY(r.SecondLocationPoint, start))
+                    start.Y = r.SecondLocationPoint.Y;
+            }
+            if (IsBetween(start.Y, r.FirstLocationPoint.Y, r.SecondLocationPoint.Y))
+            {
+                if (Calculation.Distance.IsAheadX(r.FirstLocationPoint, start))
+                    start.X = r.FirstLocationPoint.X;
+                if (Calculation.Distance.IsAheadX(r.SecondLocationPoint, start))
+                    start.X = r.SecondLocationPoint.X;
+            }
         }
         public static void CalculateBonders(ref Point start, ref Point end, PictureBox pictureBox1, List<KeyValuePair<Bitmap, Figure>> history = null)
         {
