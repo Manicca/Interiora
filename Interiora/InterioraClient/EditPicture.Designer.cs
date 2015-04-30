@@ -1,4 +1,5 @@
-﻿using WeifenLuo.WinFormsUI.Docking;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace InterioraClient
 {
@@ -7,7 +8,7 @@ namespace InterioraClient
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -178,15 +179,15 @@ namespace InterioraClient
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-          private System.Windows.Forms.Panel panel1;
-          private System.Windows.Forms.TrackBar trackBar1;
-          private System.Windows.Forms.Button button3;
-          private System.Windows.Forms.Button button4;
-          private System.Windows.Forms.Button button5;
-          private System.Windows.Forms.Button button2;
-          private System.Windows.Forms.Button button6;
-          private System.Windows.Forms.Button button7;
+        private PictureBox pictureBox1;
+        private Button button1;
+          private Panel panel1;
+          private TrackBar trackBar1;
+          private Button button3;
+          private Button button4;
+          private Button button5;
+          private Button button2;
+          private Button button6;
+          private Button button7;
      }
 }

@@ -49,7 +49,7 @@ namespace FunctionalityLibrary.Drawing.History
         }
         public void Clear()
         {
-            this.RemoveAfterByIndex(1);
+            RemoveAfterByIndex(1);
         }
     }
 

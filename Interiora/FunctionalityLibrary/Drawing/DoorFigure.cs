@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 
-
 namespace FunctionalityLibrary.Drawing
 {
     public class DoorFigure : Figure

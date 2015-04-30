@@ -25,8 +25,8 @@
                this.Cost = Cost;
                this.FurnitureId = FurnitureId;
                this.Params = Params;
-               this.SupplierId = supplier.SupplierId;
-               this.Supplier = supplier;
+               SupplierId = supplier.SupplierId;
+               Supplier = supplier;
           }
      }
 }

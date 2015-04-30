@@ -20,13 +20,13 @@ namespace InterioraClient
         Bitmap bmpBeforeDrawing;
         HistoryDrawing history;
         int historyIterator;
-        Point start = new Point();
-        Point end = new Point();
-        bool isDrawing = false;
+        Point start;
+        Point end;
+        bool isDrawing;
         Bitmap drawing;
         Figure f;
         StartPoint stp = new StartPoint();
-        int buttonClicks = 0;
+        int buttonClicks;
 
         private void Edit_Load(object sender, EventArgs e)
         {
@@ -38,9 +38,9 @@ namespace InterioraClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var workform = new InterioraClient.WorkForm();
+            var workform = new WorkForm();
             workform.Show();
-            this.Hide();
+            Hide();
         }
 
         private void EditPicture_FormClosing(object sender, FormClosingEventArgs e)

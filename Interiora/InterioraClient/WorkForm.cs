@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FunctionalityLibrary;
 using FunctionalityLibrary.Drawing;
 using Modals;
 
@@ -22,9 +16,9 @@ namespace InterioraClient
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var doneform = new InterioraClient.DoneForm();
+            var doneform = new DoneForm();
             doneform.Show();
-            this.Hide();
+            Hide();
         }
         private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -45,21 +39,21 @@ namespace InterioraClient
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
 
-            Point screenPosition = ListBox.MousePosition;
+            Point screenPosition = MousePosition;
             Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
 
             listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
         }
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
-                Point screenPosition = ListBox.MousePosition;
+                Point screenPosition = MousePosition;
                 Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
 
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
                 MessageBox.Show("Перейти к определению параметров");
-                var dbform = new InterioraClient.DataBaseForm();
+                var dbform = new DataBaseForm();
                 dbform.Show();
                // dbform.f = this;
                 var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();

@@ -11,19 +11,19 @@ namespace FunctionalityLibrary.Calulation
     {
         public static int GetFromPoints(Point p1, Point p2)
         {
-            return (int)Math.Sqrt(d: Math.Pow(p1.X - p2.X, 2) + Math.Pow(p1.Y - p2.Y, 2));
+            return (int)Math.Sqrt(Math.Pow(p1.X - p2.X, 2) + Math.Pow(p1.Y - p2.Y, 2));
         }
 
-        public static bool IsAheadX(Point master, Point aheader)
+        private static bool IsAheadX(Point master, Point aheader)
         {
-            if ((int)Math.Abs(master.X - aheader.X) < 10)
+            if (Math.Abs(master.X - aheader.X) < 10)
                 return true;
             return false;
         }
 
-        public static bool IsAheadY(Point master, Point aheader)
+        private static bool IsAheadY(Point master, Point aheader)
         {
-            if ((int)Math.Abs(master.Y - aheader.Y) < 10)
+            if (Math.Abs(master.Y - aheader.Y) < 10)
                 return true;
             return false;
         }
@@ -54,36 +54,36 @@ namespace FunctionalityLibrary.Calulation
         /// <param name="r">Фигура комнаты</param>
         /// <param name="start">Начальная координата нового объекта</param>
         /// <param name="end">Конечная координата нового объекта</param>
-        public static void CalculateAheadPoints(Figure r, ref Point start, ref Point end)
+        private static void CalculateAheadPoints(Figure r, ref Point start, ref Point end)
         {
             if (IsBetween(end.Y, r.FirstLocationPoint.Y, r.SecondLocationPoint.Y))
             {
-                if (Distance.IsAheadX(r.FirstLocationPoint, end))
+                if (IsAheadX(r.FirstLocationPoint, end))
                     end.X = r.FirstLocationPoint.X;
-                if (Distance.IsAheadX(r.SecondLocationPoint, end))
+                if (IsAheadX(r.SecondLocationPoint, end))
                     end.X = r.SecondLocationPoint.X;
             }
 
             if (IsBetween(end.X, r.FirstLocationPoint.X, r.SecondLocationPoint.X))
             {
-                if (Distance.IsAheadY(r.FirstLocationPoint, end))
+                if (IsAheadY(r.FirstLocationPoint, end))
                     end.Y = r.FirstLocationPoint.Y;
-                if (Distance.IsAheadY(r.SecondLocationPoint, end))
+                if (IsAheadY(r.SecondLocationPoint, end))
                     end.Y = r.SecondLocationPoint.Y;
             }
 
             if (IsBetween(start.X, r.FirstLocationPoint.X, r.SecondLocationPoint.X))
             {
-                if (Distance.IsAheadY(r.FirstLocationPoint, start))
+                if (IsAheadY(r.FirstLocationPoint, start))
                     start.Y = r.FirstLocationPoint.Y;
-                if (Distance.IsAheadY(r.SecondLocationPoint, start))
+                if (IsAheadY(r.SecondLocationPoint, start))
                     start.Y = r.SecondLocationPoint.Y;
             }
             if (IsBetween(start.Y, r.FirstLocationPoint.Y, r.SecondLocationPoint.Y))
             {
-                if (Distance.IsAheadX(r.FirstLocationPoint, start))
+                if (IsAheadX(r.FirstLocationPoint, start))
                     start.X = r.FirstLocationPoint.X;
-                if (Distance.IsAheadX(r.SecondLocationPoint, start))
+                if (IsAheadX(r.SecondLocationPoint, start))
                     start.X = r.SecondLocationPoint.X;
             }
         }
@@ -98,13 +98,11 @@ namespace FunctionalityLibrary.Calulation
             if (end.Y < 2)
                 end.Y = 1;
 
-            if (history != null)
-            {
-                var rooms = history.Where((r) => r.Value is RoomFigure);
+            if (history == null) return;
+            var rooms = history.Where(r => r.Value is RoomFigure);
 
-                foreach (var r in rooms)
-                    Distance.CalculateAheadPoints(r.Value, ref start, ref end);
-            }
+            foreach (var r in rooms)
+                CalculateAheadPoints(r.Value, ref start, ref end);
         }
 
     }
