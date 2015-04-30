@@ -6,47 +6,46 @@ namespace FunctionalityLibrary.Drawing.History
 {
     public class HistoryDrawing
     {
-        List<KeyValuePair<Bitmap, Figure>> history;
+        readonly List<KeyValuePair<Bitmap, Figure>> _history;
         public HistoryDrawing(Bitmap startItem)
         {
-            history = new List<KeyValuePair<Bitmap, Figure>>();
-            history.Add(new KeyValuePair<Bitmap, Figure>(startItem, null));
+            _history = new List<KeyValuePair<Bitmap, Figure>> {new KeyValuePair<Bitmap, Figure>(startItem, null)};
         }
 
         public List<KeyValuePair<Bitmap, Figure>> AllRecords()
         {
-            return history;
+            return _history;
         }
 
         public void Add(Bitmap bp, Figure f)
         {
-            history.Add(new KeyValuePair<Bitmap, Figure>(bp, f));
+            _history.Add(new KeyValuePair<Bitmap, Figure>(bp, f));
         }
 
         public void RemoveLast()
         {
-            history.Remove(history.Last());
+            _history.Remove(_history.Last());
         }
 
         public KeyValuePair<Bitmap, Figure> GetLast()
         {
-            return history.Last();
+            return _history.Last();
         }
 
         public void RemoveAfterByIndex(int index)
         {
-            if (history.Count - index != 0)
-                history.RemoveRange(index, history.Count - index);
+            if (_history.Count - index != 0)
+                _history.RemoveRange(index, _history.Count - index);
         }
 
         public KeyValuePair<Bitmap, Figure> GetByIndex(int i)
         {
-            return history[i];
+            return _history[i];
         }
 
         public int Count()
         {
-            return history.Count;
+            return _history.Count;
         }
         public void Clear()
         {

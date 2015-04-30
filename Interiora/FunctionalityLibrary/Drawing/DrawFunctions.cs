@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-
-namespace FunctionalityLibrary
+namespace FunctionalityLibrary.Drawing
 {
     public class DrawFunctions
     {

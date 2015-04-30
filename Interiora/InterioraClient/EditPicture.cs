@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using FunctionalityLibrary.Calulation;
 using FunctionalityLibrary.Drawing;
 using FunctionalityLibrary.Drawing.History;
 
@@ -138,7 +139,7 @@ namespace InterioraClient
                     isDrawing = true;
                     start = pictureBox1.PointToClient(Cursor.Position);
                     end = new Point(0, 0);
-                    FunctionalityLibrary.Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
+                    Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
                     stp.DrawPoint(ref drawing, start);
                     pictureBox1.Image = drawing;
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
@@ -154,7 +155,7 @@ namespace InterioraClient
                     drawing = (Bitmap)bmpBeforeDrawing.Clone();
                     f.FirstLocationPoint = start;
                     f.SecondLocationPoint = end;
-                    FunctionalityLibrary.Calculation.Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
+                    Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
 
                     history.Add(drawing, (Figure)f.Clone());
                     f.Draw(ref drawing, start, end);

@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FunctionalityLibrary;
-using Models;
+using FunctionalityLibrary.Drawing;
+using Modals;
 
 namespace InterioraClient
 {
