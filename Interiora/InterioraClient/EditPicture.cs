@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using FunctionalityLibrary.Calulation;
+using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Drawing;
 using FunctionalityLibrary.Drawing.History;
+using InterioraClient.Properties;
 
 namespace InterioraClient
 {
@@ -16,29 +17,29 @@ namespace InterioraClient
             InitializeComponent();
         }
 
-        public Bitmap saveBMP;
-        Bitmap bmpBeforeDrawing;
-        HistoryDrawing history;
-        int historyIterator;
-        Point start;
-        Point end;
-        bool isDrawing;
-        Bitmap drawing;
-        Figure f;
-        StartPoint stp = new StartPoint();
-        int buttonClicks;
+        public Bitmap SaveBmp;
+        Bitmap _bmpBeforeDrawing;
+        HistoryDrawing _history;
+        int _historyIterator;
+        Point _start;
+        Point _end;
+        bool _isDrawing;
+        Bitmap _drawing;
+        Figure _f;
+        readonly StartPoint _stp = new StartPoint();
+        int _buttonClicks;
 
         private void Edit_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = saveBMP;
+            pictureBox1.Image = SaveBmp;
             pictureBox1.Top = 5;
             pictureBox1.Left = 5;
-            history = new HistoryDrawing(saveBMP);
+            _history = new HistoryDrawing(SaveBmp);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var workform = new WorkForm();
+            var workform = new WorkForm { SaveBitmap = (Bitmap)pictureBox1.Image, History = this._history};
             workform.Show();
             Hide();
         }
@@ -51,47 +52,46 @@ namespace InterioraClient
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             float dScroll = trackBar1.Value;
-            Size newSize = new Size((int)(saveBMP.Width + (saveBMP.Width / 10.0 * dScroll)),
-                                    (int)(saveBMP.Height + (saveBMP.Height / 10.0 * dScroll)));
-            pictureBox1.Image = new Bitmap(saveBMP, newSize);
+            Size newSize = new Size((int)(SaveBmp.Width + (SaveBmp.Width / 10.0 * dScroll)),
+                                    (int)(SaveBmp.Height + (SaveBmp.Height / 10.0 * dScroll)));
+            pictureBox1.Image = new Bitmap(SaveBmp, newSize);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (--historyIterator < 0)
-                historyIterator = 0;
-            var lastHistory = history.GetByIndex(historyIterator);
+            if (--_historyIterator < 0)
+                _historyIterator = 0;
+            var lastHistory = _history.GetByIndex(_historyIterator);
 
             pictureBox1.Image = lastHistory.Key;
-            drawing = lastHistory.Key;
+            _drawing = lastHistory.Key;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            historyIterator++;
-            if (historyIterator >= history.Count())
-                historyIterator = history.Count() - 1;
+            _historyIterator++;
+            if (_historyIterator >= _history.Count())
+                _historyIterator = _history.Count() - 1;
 
-            var historyLast = history.GetByIndex(historyIterator);
-            Bitmap bp = historyLast.Key;
+            var historyLast = _history.GetByIndex(_historyIterator);
+            var bp = historyLast.Key;
             historyLast.Value.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
             pictureBox1.Image = historyLast.Key;
 
-            drawing = historyLast.Key;
+            _drawing = historyLast.Key;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var dialogRes = MessageBox.Show("Это удалит все ваши изменения!\nЭто действие необратимо!\nВы Уверены?", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            var dialogRes = MessageBox.Show(Resources.Delete_Message_Warning, Resources.Delete_Message_Warning_Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dialogRes == DialogResult.OK)
             {
-                history.Clear();
-                historyIterator = history.Count() - 1;
-                var historyLast = history.GetLast();
+                _history.Clear();
+                _historyIterator = _history.Count() - 1;
+                var historyLast = _history.GetLast();
 
-                Bitmap bp = historyLast.Key;
-                if (historyLast.Value != null)
-                    historyLast.Value.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
+                var bp = historyLast.Key;
+                historyLast.Value?.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
 
                 pictureBox1.Image = bp;
             }
@@ -100,70 +100,72 @@ namespace InterioraClient
         private void button2_Click(object sender, EventArgs e)
         {
             panel1.Enabled = true;
-            f = new DoorFigure();
+            _f = new DoorFigure();
             button7.Enabled = true;
             button6.Enabled = true;
             button2.Enabled = false;
-            isDrawing = true;
+            _isDrawing = true;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             panel1.Enabled = true;
-            f = new RoomFigure();
+            _f = new RoomFigure();
             button7.Enabled = false;
             button6.Enabled = true;
             button2.Enabled = true;
-            isDrawing = true;
+            _isDrawing = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             panel1.Enabled = true;
-            f = new WindowFigure();
+            _f = new WindowFigure();
             button7.Enabled = true;
             button6.Enabled = false;
             button2.Enabled = true;
-            isDrawing = true;
+            _isDrawing = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (isDrawing)
+            if (_isDrawing)
             {
-                buttonClicks++;
-                if (buttonClicks == 1)
+                _buttonClicks++;
+                if (_buttonClicks == 1)
                 {
-                    bmpBeforeDrawing = (Bitmap)pictureBox1.Image;
-                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
-                    isDrawing = true;
-                    start = pictureBox1.PointToClient(Cursor.Position);
-                    end = new Point(0, 0);
-                    Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
-                    stp.DrawPoint(ref drawing, start);
-                    pictureBox1.Image = drawing;
-                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
+                    _bmpBeforeDrawing = (Bitmap)pictureBox1.Image;
+                    _drawing = (Bitmap)_bmpBeforeDrawing.Clone();
+                    _isDrawing = true;
+                    _start = pictureBox1.PointToClient(Cursor.Position);
+                    _end = new Point(0, 0);
+                    Distance.CalculateBonders(ref _start, ref _end, pictureBox1, _history.AllRecords());
+                    _stp.DrawPoint(ref _drawing, _start);
+                    pictureBox1.Image = _drawing;
+                    _drawing = (Bitmap)_bmpBeforeDrawing.Clone();
                 }
                 else
                 {
-                    buttonClicks = 0;
+                    _buttonClicks = 0;
 
-                    end = pictureBox1.PointToClient(Cursor.Position);
-                    history.RemoveAfterByIndex(++historyIterator);
+                    _end = pictureBox1.PointToClient(Cursor.Position);
+                    _history.RemoveAfterByIndex(++_historyIterator);
 
 
-                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
-                    f.FirstLocationPoint = start;
-                    f.SecondLocationPoint = end;
-                    Distance.CalculateBonders(ref start, ref end, pictureBox1, history.AllRecords());
+                    _drawing = (Bitmap)_bmpBeforeDrawing.Clone();
+                    
+                    Distance.CalculateBonders(ref _start, ref _end, pictureBox1, _history.AllRecords());
 
-                    history.Add(drawing, (Figure)f.Clone());
-                    f.Draw(ref drawing, start, end);
+                    _f.FirstLocationPoint = _start;
+                    _f.SecondLocationPoint = _end;
 
-                    pictureBox1.Image = drawing;
-                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
+                    _history.Add(_drawing, (Figure)_f.Clone());
+                    _f.Draw(ref _drawing, _start, _end);
 
-                    drawing = null;
+                    pictureBox1.Image = _drawing;
+                    _drawing = (Bitmap)_bmpBeforeDrawing.Clone();
+
+                    _drawing = null;
                 }
             }
 

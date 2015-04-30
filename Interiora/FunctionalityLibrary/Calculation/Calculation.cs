@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary.Drawing;
 
-namespace FunctionalityLibrary.Calulation
+namespace FunctionalityLibrary.Calculation
 {
     public static class Distance
     {

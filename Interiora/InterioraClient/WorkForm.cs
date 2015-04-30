@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary.Drawing.History;
 using Modals;
 
 namespace InterioraClient
@@ -13,6 +14,9 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
+
+        public Bitmap SaveBitmap { private get; set; }
+        public HistoryDrawing History { private get; set; }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -27,7 +31,7 @@ namespace InterioraClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DrawFunctions drfun = new DrawFunctions();
+            var drfun = new DrawFunctions();
 
             //drfun.Table(ref pictureBox1);
             //drfun.Chair(ref pictureBox1);
@@ -52,12 +56,12 @@ namespace InterioraClient
                 Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
 
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
-                MessageBox.Show("Перейти к определению параметров");
+                //MessageBox.Show("Перейти к определению параметров");
                 var dbform = new DataBaseForm();
                 dbform.Show();
                // dbform.f = this;
                 var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();
-                AllModelsContext db= new AllModelsContext();
+                var db= new AllModelsContext();
                 if (listBox1.SelectedIndex == 0)
                 {
                     dbView.DataSource = db.FurnituresDb.ToList();
@@ -137,6 +141,11 @@ namespace InterioraClient
                 toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
             }
             //toolTip1.SetToolTip(listBox1, "Тут происходит получение данных о конкретном объекте");
+        }
+
+        private void WorkForm_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = SaveBitmap;
         }
     }
 }
