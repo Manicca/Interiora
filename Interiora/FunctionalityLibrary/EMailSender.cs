@@ -1,8 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
-using System.ComponentModel;
 using System.Windows.Forms;
+
 namespace FunctionalityLibrary
 {
      public class EMailSender
@@ -35,7 +36,7 @@ namespace FunctionalityLibrary
                     client.EnableSsl = true;
                     client.Credentials = new NetworkCredential(from.Split('@')[0], password);
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
+                    client.SendCompleted += SendCompletedCallback;
                     client.SendAsync(mail, mail);
                }
                catch (Exception e)
@@ -50,13 +51,12 @@ namespace FunctionalityLibrary
                var msg = (MailMessage)e.UserState;
 
                if (e.Cancelled)
-                    throw new Exception("Отправка почты отменена: " + msg.ToString());
-               else if (e.Error != null)
-                    throw new Exception(e.Error.ToString() + " : " + msg.ToString());
-               else
-                    MessageBox.Show("Ваше сообщение отправлено!");
+                    throw new Exception("Отправка почты отменена: " + msg);
+              if (e.Error != null)
+                  throw new Exception(e.Error + " : " + msg);
+              MessageBox.Show("Ваше сообщение отправлено!");
 
-               if (msg != null)
+              if (msg != null)
                     msg.Dispose();
           }
 

@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calulation\Calculation.cs" />
+    <Compile Include="Calculation\Calculation.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
     <Compile Include="Drawing\DoorFigure.cs" />
