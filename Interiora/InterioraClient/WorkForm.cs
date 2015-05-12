@@ -65,7 +65,8 @@ namespace InterioraClient
                 AllModelsContext db= new AllModelsContext();
                 if (listBox1.SelectedIndex == 0)
                 {
-                    dbView.DataSource = db.FurnituresDb.ToList();
+                    dbView.DataSource = db.FurnituresDb.ToList().Where(db.FurnituresDb.);
+                    
                 }
                 if (listBox1.SelectedIndex == 1)
                 {

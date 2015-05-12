@@ -1,0 +1,1 @@
+﻿insert into Furnitures (Type, Article, Cost, Params,SupplierId) values ('chair','1246','3200','50*50',1);
