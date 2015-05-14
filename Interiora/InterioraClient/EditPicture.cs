@@ -91,7 +91,7 @@ namespace InterioraClient
                 var historyLast = _history.GetLast();
 
                 var bp = historyLast.Key;
-                historyLast.Value?.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
+                historyLast.Value.Draw(ref bp, historyLast.Value.FirstLocationPoint, historyLast.Value.SecondLocationPoint);
 
                 pictureBox1.Image = bp;
             }

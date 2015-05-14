@@ -64,7 +64,7 @@ namespace InterioraClient
                 var db= new AllModelsContext();
                 if (listBox1.SelectedIndex == 0)
                 {
-                    dbView.DataSource = db.FurnituresDb.ToList().Where(db.FurnituresDb.);
+                   // dbView.DataSource = db.FurnituresDb.ToList().Where(db.FurnituresDb.);
                     
                 }
                 if (listBox1.SelectedIndex == 1)
