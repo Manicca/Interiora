@@ -66,39 +66,38 @@ namespace InterioraClient
                 if (listBox1.SelectedIndex == 0)
                 {
 
-                    dbView.DataSource = db.FurnituresDb.ToList();
-
+                    dbView.DataSource = db.FurnituresDb.Where(elem=>elem.Type=="Table").ToList();                    
                     
                     //BindingSource.Filter = "[Type] = 'chair'";               
                     
                 }
                 if (listBox1.SelectedIndex == 1)
                 {
-                    dbView.DataSource = db.FurnituresDb.ToList();
+                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "chair").ToList();     
                 }
                 if (listBox1.SelectedIndex == 2)
                 {
-                    dbView.DataSource = db.FurnituresDb.ToList();
+                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ForClothes").ToList();     
                 }
                 if (listBox1.SelectedIndex == 3)
                 {
-                    dbView.DataSource = db.FurnituresDb.ToList();
+                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "CupBoard").ToList();     
                 }
                 if (listBox1.SelectedIndex == 4)
                 {
-                    dbView.DataSource = db.FurnituresDb.ToList();
+                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ARM").ToList();     
                 }
                 if (listBox1.SelectedIndex == 5)
                 {
-                    dbView.DataSource = db.WebEquipmentsDb.ToList();
+                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 1).ToList(); ;
                 }
                 if (listBox1.SelectedIndex == 6)
                 {
-                    dbView.DataSource = db.WebEquipmentsDb.ToList();
+                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 2).ToList(); ;
                 }
                 if (listBox1.SelectedIndex == 7)
                 {
-                    dbView.DataSource = db.WebEquipmentsDb.ToList();
+                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 3).ToList(); ;
                 }
                 
                 //this.Hide();
