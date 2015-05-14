@@ -62,9 +62,14 @@ namespace InterioraClient
                // dbform.f = this;
                 var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();
                 var db= new AllModelsContext();
+                dbView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 if (listBox1.SelectedIndex == 0)
                 {
-                   // dbView.DataSource = db.FurnituresDb.ToList().Where(db.FurnituresDb.);
+
+                    dbView.DataSource = db.FurnituresDb.ToList();
+
+                    
+                    //BindingSource.Filter = "[Type] = 'chair'";               
                     
                 }
                 if (listBox1.SelectedIndex == 1)
