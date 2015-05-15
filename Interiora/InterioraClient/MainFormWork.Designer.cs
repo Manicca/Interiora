@@ -34,22 +34,12 @@ namespace InterioraClient
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(662, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Загрузить файл";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -88,6 +78,16 @@ namespace InterioraClient
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(662, 120);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 46);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Загрузить файл";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainFormWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,12 +112,11 @@ namespace InterioraClient
         }
 
         #endregion
-
-        private Button button1;
         private Button button2;
         private Button button3;
         private OpenFileDialog openFileDialog1;
           private Button button4;
-     }
+        private Button button1;
+    }
 }
 
