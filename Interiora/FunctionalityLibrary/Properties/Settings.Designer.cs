@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterioraClient.Properties {
+namespace FunctionalityLibrary.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -23,12 +23,27 @@ namespace InterioraClient.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int PixelsPerMeter {
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public float sizeReductionOfLine {
             get {
-                return ((int)(this["PixelsPerMeter"]));
+                return ((float)(this["sizeReductionOfLine"]));
+            }
+            set {
+                this["sizeReductionOfLine"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int sizeOfCross {
+            get {
+                return ((int)(this["sizeOfCross"]));
+            }
+            set {
+                this["sizeOfCross"] = value;
             }
         }
     }

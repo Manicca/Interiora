@@ -5,10 +5,19 @@ namespace FunctionalityLibrary.Drawing
 {
     public abstract class Figure : ICloneable
     {
-        public Point FirstLocationPoint;
-        public Point SecondLocationPoint;
-        public Graphics gr;
-        public virtual void Draw(ref Bitmap bmp, Point start, Point end) { }
+        public PointF FirstLocationPoint;
+        public PointF SecondLocationPoint;
+        protected Graphics Gr;
+        /// <summary>
+        /// Функция отрисовки фигуры
+        /// </summary>
+        /// <param name="bmp">Объект Bitmap для проведения отрисовки.</param>
+        /// <param name="start">Начальная точка фигуры. Как правило левый верхний угол.</param>
+        /// <param name="end">Конечная точка отрисовки.</param>
+        /// <param name="factor">Коэффициент увеличения.</param>
+        public virtual void Draw(ref Bitmap bmp, PointF start, PointF end, float factor) { }
+
+        
 
         public object Clone()
         {

@@ -1,16 +1,26 @@
 ﻿using System.Drawing;
+using FunctionalityLibrary.Calculation;
+using FunctionalityLibrary.Properties;
 
 namespace FunctionalityLibrary.Drawing
 {
     public class StartPoint : Figure
     {
-        public void DrawPoint(ref Bitmap bmp, Point p)
+        public void DrawPoint(ref Bitmap bmp, PointF p, float factor)
         {
-            int distance = 5;
-            gr = Graphics.FromImage(bmp);
-            gr.DrawLine(Pens.Red, p.X + distance, p.Y + distance, p.X - distance, p.Y - distance);
-            gr.DrawLine(Pens.Red, p.X - distance, p.Y + distance, p.X + distance, p.Y - distance);
+            Factor.CountFactor(ref p, factor);
+
+            Gr = Graphics.FromImage(bmp);
+            Gr.DrawLine(Pens.Red,
+                p.X + Settings.Default.sizeOfCross,
+                p.Y + Settings.Default.sizeOfCross,
+                p.X - Settings.Default.sizeOfCross,
+                p.Y - Settings.Default.sizeOfCross);
+            Gr.DrawLine(Pens.Red,
+                p.X - Settings.Default.sizeOfCross,
+                p.Y + Settings.Default.sizeOfCross,
+                p.X + Settings.Default.sizeOfCross,
+                p.Y - Settings.Default.sizeOfCross);
         }
     }
-
 }

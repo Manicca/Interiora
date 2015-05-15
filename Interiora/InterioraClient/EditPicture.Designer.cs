@@ -81,9 +81,8 @@ namespace InterioraClient
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(12, 453);
-            this.trackBar1.Maximum = 3;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(160, 45);
+            this.trackBar1.Size = new System.Drawing.Size(303, 45);
             this.trackBar1.TabIndex = 12;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
