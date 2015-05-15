@@ -28,7 +28,7 @@ namespace InterioraClient
         private void button3_Click(object sender, EventArgs e)
         {
             var form = new EditPicture { InitialBmp = bmBitmap };
-            form.Show();
+            form.Show(this);
             Hide();
         }
 
