@@ -18,6 +18,7 @@ namespace InterioraClient
 
         private int _sizeH = 0;
         private int _sizeW = 0;
+        private Bitmap bmBitmap;
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
@@ -26,7 +27,7 @@ namespace InterioraClient
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var form = new EditPicture { InitialBmp = (Bitmap)Resources.background4 };
+            var form = new EditPicture { InitialBmp = bmBitmap };
             form.Show();
             Hide();
         }
@@ -67,11 +68,11 @@ namespace InterioraClient
             var ppm = Settings.Default.PixelsPerMeter;
             _sizeH = heightCount;
             _sizeW = widthCount;
-            var bm = new Bitmap(_sizeW*ppm, _sizeH*ppm);
-            var gr = Graphics.FromImage(bm);
+            bmBitmap = new Bitmap(_sizeW*ppm, _sizeH*ppm);
+            var gr = Graphics.FromImage(bmBitmap);
             gr.Clear(Color.White);
             gr.Dispose();
-            //pictureBox1.Image = bm;
+            
             button3.Enabled = true;
         }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)

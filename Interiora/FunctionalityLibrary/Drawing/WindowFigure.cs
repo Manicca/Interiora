@@ -23,7 +23,7 @@ namespace FunctionalityLibrary.Drawing
             startD.Y += dx;
             startD.X -= dy;
 
-            var bluePen = new Pen(Color.Red, 1*factor);
+            var bluePen = new Pen(Color.Blue, 1*factor);
             Gr.DrawLine(bluePen, startD, endD); //отрисовка на конце перпендикулярчика
 
             endD = end;
