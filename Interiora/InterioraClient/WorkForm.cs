@@ -63,42 +63,28 @@ namespace InterioraClient
                 var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();
                 var db= new AllModelsContext();
                 dbView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                if (listBox1.SelectedIndex == 0)
+                switch (listBox1.SelectedIndex)
                 {
-
-                    dbView.DataSource = db.FurnituresDb.Where(elem=>elem.Type=="Table").ToList();                    
-                    
-                    //BindingSource.Filter = "[Type] = 'chair'";               
-                    
+                    case 0: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "Table").ToList();
+                        break;
+                    case 1: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "chair").ToList(); 
+                        break;
+                    case 2: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "CupBoard").ToList();
+                        break;
+                    case 3: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ForClothes").ToList();
+                        break;
+                        
+                    case 4:                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ARM").ToList();
+                    break;
+                    case 5:                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 1).ToList(); ;
+                    break;
+                    case 6:                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 2).ToList(); ;
+                    break;
+                    case 7:                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 3).ToList(); ;
+                    break;
                 }
-                if (listBox1.SelectedIndex == 1)
-                {
-                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "chair").ToList();     
-                }
-                if (listBox1.SelectedIndex == 2)
-                {
-                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ForClothes").ToList();     
-                }
-                if (listBox1.SelectedIndex == 3)
-                {
-                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "CupBoard").ToList();     
-                }
-                if (listBox1.SelectedIndex == 4)
-                {
-                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ARM").ToList();     
-                }
-                if (listBox1.SelectedIndex == 5)
-                {
-                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 1).ToList(); ;
-                }
-                if (listBox1.SelectedIndex == 6)
-                {
-                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 2).ToList(); ;
-                }
-                if (listBox1.SelectedIndex == 7)
-                {
-                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 3).ToList(); ;
-                }
+                
+               
                 
                 //this.Hide();
 

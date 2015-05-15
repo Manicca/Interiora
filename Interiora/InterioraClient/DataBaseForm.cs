@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Linq;
+
+using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary.Drawing.History;
+using Modals;
 
 namespace InterioraClient
 {
@@ -14,6 +20,10 @@ namespace InterioraClient
             Close();
            
         }
+
+        //private void textBox1_TextChanged(object sender, EventArgs e)
+        //{
+        //}
 
         
     }
