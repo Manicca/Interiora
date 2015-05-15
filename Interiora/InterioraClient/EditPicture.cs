@@ -84,6 +84,7 @@ namespace InterioraClient
 
             if (dialogRes != DialogResult.OK) return;
 
+
             _history.Clear();
             _historyIterator.Clear();
 
