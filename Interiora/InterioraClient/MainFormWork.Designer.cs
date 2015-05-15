@@ -36,16 +36,14 @@ namespace InterioraClient
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(671, 12);
+            this.button1.Location = new System.Drawing.Point(662, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 46);
             this.button1.TabIndex = 0;
@@ -55,7 +53,7 @@ namespace InterioraClient
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(671, 64);
+            this.button2.Location = new System.Drawing.Point(662, 64);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 50);
             this.button2.TabIndex = 1;
@@ -63,22 +61,10 @@ namespace InterioraClient
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::InterioraClient.Properties.Resources._2dkRaUJ9ArI;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(653, 411);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(671, 373);
+            this.button3.Location = new System.Drawing.Point(662, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 50);
             this.button3.TabIndex = 3;
@@ -94,7 +80,7 @@ namespace InterioraClient
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(671, 120);
+            this.button4.Location = new System.Drawing.Point(662, 172);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 50);
             this.button4.TabIndex = 4;
@@ -106,10 +92,10 @@ namespace InterioraClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 435);
+            this.BackgroundImage = global::InterioraClient.Properties.Resources.background4;
+            this.ClientSize = new System.Drawing.Size(804, 537);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -120,7 +106,6 @@ namespace InterioraClient
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormWork_FormClosing);
             this.Load += new System.EventHandler(this.MainFormWork_Load);
             this.Click += new System.EventHandler(this.MainFormWork_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,7 +114,6 @@ namespace InterioraClient
 
         private Button button1;
         private Button button2;
-        private PictureBox pictureBox1;
         private Button button3;
         private OpenFileDialog openFileDialog1;
           private Button button4;

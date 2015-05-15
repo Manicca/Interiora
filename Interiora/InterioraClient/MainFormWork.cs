@@ -26,8 +26,8 @@ namespace InterioraClient
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var form = new EditPicture { InitialBmp = (Bitmap)pictureBox1.Image };
-            form.Show(this);
+            var form = new EditPicture { InitialBmp = (Bitmap)Resources.background4 };
+            form.Show();
             Hide();
         }
 
@@ -71,13 +71,15 @@ namespace InterioraClient
             var gr = Graphics.FromImage(bm);
             gr.Clear(Color.White);
             gr.Dispose();
-            pictureBox1.Image = bm;
+            //pictureBox1.Image = bm;
             button3.Enabled = true;
         }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+            //pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
             button3.Enabled = true;
         }
+
+       
     }
 }
