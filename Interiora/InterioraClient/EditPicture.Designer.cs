@@ -176,6 +176,7 @@ namespace InterioraClient
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditPicture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditPicture_FormClosing);
             this.Load += new System.EventHandler(this.Edit_Load);

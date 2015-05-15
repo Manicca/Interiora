@@ -91,6 +91,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Name = "SizeInfoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SizeInfoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SizeInfoForm_FormClosed);
             this.Load += new System.EventHandler(this.SizeInfoForm_Load);

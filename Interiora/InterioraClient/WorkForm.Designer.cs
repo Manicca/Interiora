@@ -153,6 +153,7 @@ namespace InterioraClient
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "WorkForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Рабочее пространство";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkForm_FormClosing_1);
             this.Load += new System.EventHandler(this.WorkForm_Load);

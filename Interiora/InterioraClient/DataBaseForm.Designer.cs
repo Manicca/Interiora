@@ -61,7 +61,6 @@ namespace InterioraClient
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
-            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // DataBaseForm
             // 
@@ -72,7 +71,8 @@ namespace InterioraClient
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Name = "DataBaseForm";
-            this.Text = "DataBaseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DB";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

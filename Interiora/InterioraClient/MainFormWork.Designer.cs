@@ -116,6 +116,7 @@ namespace InterioraClient
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainFormWork";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormWork_FormClosing);
             this.Load += new System.EventHandler(this.MainFormWork_Load);
