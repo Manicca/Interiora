@@ -24,6 +24,7 @@ namespace InterioraClient
             doneform.Show();
             Hide();
         }
+
         private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormsHelper.FormCloser(this, ref e);
@@ -38,59 +39,61 @@ namespace InterioraClient
             drfun.ForClothes(ref pictureBox1);
         }
 
-
-
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
-
-            Point screenPosition = MousePosition;
-            Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
+            var screenPosition = MousePosition;
+            var listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
 
             listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
         }
+
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                Point screenPosition = MousePosition;
-                Point listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
+                var screenPosition = MousePosition;
+                var listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
 
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
                 //MessageBox.Show("Перейти к определению параметров");
                 var dbform = new DataBaseForm();
                 dbform.Show();
-               // dbform.f = this;
-                var dbView = (DataGridView)dbform.Controls.Find("dataGridView1", false).First();
-                var db= new AllModelsContext();
+                // dbform.f = this;
+                var dbView = (DataGridView) dbform.Controls.Find("dataGridView1", false).First();
+                var db = new AllModelsContext();
                 dbView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 switch (listBox1.SelectedIndex)
                 {
-                    case 0: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "Table").ToList();
+                    case 0:
+                        dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "Table").ToList();
                         break;
-                    case 1: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "chair").ToList(); 
+                    case 1:
+                        dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "chair").ToList();
                         break;
-                    case 2: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "CupBoard").ToList();
+                    case 2:
+                        dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "CupBoard").ToList();
                         break;
-                    case 3: dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ForClothes").ToList();
+                    case 3:
+                        dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ForClothes").ToList();
                         break;
-                        
-                    case 4:                    dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ARM").ToList();
-                    break;
-                    case 5:                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 1).ToList(); ;
-                    break;
-                    case 6:                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 2).ToList(); ;
-                    break;
-                    case 7:                    dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 3).ToList(); ;
-                    break;
+                    case 4:
+                        dbView.DataSource = db.FurnituresDb.Where(elem => elem.Type == "ARM").ToList();
+                        break;
+                    case 5:
+                        dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 1).ToList();
+                        break;
+                    case 6:
+                        dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 2).ToList();
+                        break;
+                    case 7:
+                        dbView.DataSource = db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 3).ToList();
+                        break;
                 }
-                
-               
-                
-                //this.Hide();
 
+
+                //this.Hide();
             }
         }
-
 
         private void WorkForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {

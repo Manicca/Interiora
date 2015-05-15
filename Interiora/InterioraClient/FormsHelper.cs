@@ -24,5 +24,12 @@ namespace InterioraClient
                          break;
                }
           }
-     }
+
+        public static void GoToBackwardForm(Form f, Form ownerForm)
+        {
+           f.Dispose();
+           ownerForm.Show();
+        }
+
+    }
 }
