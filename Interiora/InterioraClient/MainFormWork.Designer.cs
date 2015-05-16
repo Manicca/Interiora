@@ -44,7 +44,7 @@ namespace InterioraClient
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(662, 64);
+            this.button2.Location = new System.Drawing.Point(601, 64);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 50);
             this.button2.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace InterioraClient
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(662, 246);
+            this.button3.Location = new System.Drawing.Point(601, 271);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 50);
             this.button3.TabIndex = 3;
@@ -71,7 +71,7 @@ namespace InterioraClient
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(662, 172);
+            this.button4.Location = new System.Drawing.Point(601, 172);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 50);
             this.button4.TabIndex = 4;
@@ -81,7 +81,7 @@ namespace InterioraClient
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(662, 120);
+            this.button1.Location = new System.Drawing.Point(601, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 46);
             this.button1.TabIndex = 0;
@@ -93,8 +93,8 @@ namespace InterioraClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::InterioraClient.Properties.Resources.background4;
-            this.ClientSize = new System.Drawing.Size(804, 537);
+            this.BackgroundImage = global::InterioraClient.Properties.Resources.background1;
+            this.ClientSize = new System.Drawing.Size(794, 452);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
