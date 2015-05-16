@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace Modals.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class Add_new_tables : DbMigration
     {
         public override void Up()

@@ -45,6 +45,7 @@
     <Compile Include="Calculation\Distance.cs" />
     <Compile Include="Calculation\Factor.cs" />
     <Compile Include="Calculation\HistoryIterator.cs" />
+    <Compile Include="Calculation\ObjectContains.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
     <Compile Include="Drawing\DoorFigure.cs" />

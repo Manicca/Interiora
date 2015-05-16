@@ -1,11 +1,8 @@
+using System.Data.Entity.Migrations;
+
 namespace Modals.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Modals.AllModelsContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AllModelsContext>
     {
         public Configuration()
         {
@@ -13,7 +10,7 @@ namespace Modals.Migrations
             ContextKey = "Modals.AllModelsContext";
         }
 
-        protected override void Seed(Modals.AllModelsContext context)
+        protected override void Seed(AllModelsContext context)
         {
             //  This method will be called after migrating to the latest version.
 
