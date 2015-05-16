@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 using FunctionalityLibrary.Calculation;
-using FunctionalityLibrary.Drawing;
-using FunctionalityLibrary.Drawing.History;
 using Modals;
 
 namespace InterioraClient
 {
     public partial class DataBaseForm : Form
     {
+        public object SaveList;
+
         public DataBaseForm()
         {
             InitializeComponent();
         }
 
-        public object SaveList;
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var containString = textBox1.Text;
@@ -38,16 +37,5 @@ namespace InterioraClient
                 dataGridView1.DataSource = ff;
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void textBox1_TextChanged(object sender, EventArgs e)
-        //{
-        //}
-
-
     }
 }
