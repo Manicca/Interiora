@@ -152,7 +152,7 @@
       <Project>{d8716b0f-a032-4498-8c42-b32b5ff914d6}</Project>
       <Name>FunctionalityLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modals\Models.csproj">
+    <ProjectReference Include="..\Models\Models.csproj">
       <Project>{bb661f88-14fc-4efa-a48f-db4c82185e8e}</Project>
       <Name>Models</Name>
     </ProjectReference>

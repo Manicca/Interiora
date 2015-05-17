@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace InterioraClient
 {
-     public class FormsHelper
+    internal static class FormsHelper
      {
           public static void FormCloser(Form f, ref FormClosingEventArgs e)
           {

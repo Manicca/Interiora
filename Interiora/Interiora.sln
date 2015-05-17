@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterioraClient", "InterioraClient\InterioraClient.csproj", "{3210B2DF-D63B-4CA7-87FE-188833040A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Modals\Models.csproj", "{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{BB661F88-14FC-4EFA-A48F-DB4C82185E8E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalityLibrary", "FunctionalityLibrary\FunctionalityLibrary.csproj", "{D8716B0F-A032-4498-8C42-B32B5FF914D6}"
 EndProject

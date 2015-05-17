@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary.Drawing;
 using FunctionalityLibrary.Drawing.History;
-using Modals;
+using Models;
 
 namespace InterioraClient
 {

@@ -1,13 +1,13 @@
 using System.Data.Entity.Migrations;
 
-namespace Modals.Migrations
+namespace Models.Migrations
 {
     internal sealed class Configuration : DbMigrationsConfiguration<AllModelsContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Modals.AllModelsContext";
+            ContextKey = "Models.AllModelsContext";
         }
 
         protected override void Seed(AllModelsContext context)

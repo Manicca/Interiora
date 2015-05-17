@@ -1,6 +1,6 @@
 using System.Data.Entity.Migrations;
 
-namespace Modals.Migrations
+namespace Models.Migrations
 {
     public partial class Add_new_tables : DbMigration
     {
