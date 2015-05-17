@@ -40,11 +40,5 @@ namespace InterioraClient
             Close();
         }
 
-        private void SizeInfoForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            var work = Owner as MainFormWork;
-            if (work != null)
-                work.Enabled = true;
-        }
     }
 }

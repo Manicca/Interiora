@@ -93,7 +93,6 @@
             this.Name = "SizeInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SizeInfoForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SizeInfoForm_FormClosed);
             this.Load += new System.EventHandler(this.SizeInfoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -33,11 +33,7 @@ namespace InterioraClient
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,33 +50,6 @@ namespace InterioraClient
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Инструменты";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(8, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 57);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Авторасстановка";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(289, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 57);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Ручной режим";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(120, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 57);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Введите необходимое количество рабочих мест";
             // 
             // listBox1
             // 
@@ -101,14 +70,6 @@ namespace InterioraClient
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(226, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button3
             // 
@@ -146,16 +107,12 @@ namespace InterioraClient
             this.ClientSize = new System.Drawing.Size(1008, 494);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "WorkForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Рабочее пространство";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkForm_FormClosing_1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkForm_FormClosing);
             this.Load += new System.EventHandler(this.WorkForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -168,11 +125,7 @@ namespace InterioraClient
         #endregion
 
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Label label2;
         private ListBox listBox1;
-        private TextBox textBox1;
         private Button button3;
         private ToolTip toolTip1;
         private Panel panel1;

@@ -117,40 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="2dkRaUJ9ArI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2dkRaUJ9ArI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BACKGROUND" xml:space="preserve">
-    <value />
-  </data>
-  <data name="background4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Delete_Message_Warning" xml:space="preserve">
-    <value>Это удалит все ваши изменения!
-Это действие необратимо!
-Вы Уверены?</value>
-  </data>
-  <data name="Delete_Message_Warning_Title" xml:space="preserve">
-    <value>Предупреждение</value>
-  </data>
-  <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FormsHelper_FormCloser_CloseAppQuestion" xml:space="preserve">
-    <value>Закрыть приложение?</value>
-  </data>
-  <data name="FormsHelper_FormCloser_Warning" xml:space="preserve">
-    <value>Предупреждение</value>
-  </data>
-  <data name="ModeSelectorForm_ModeSelectorForm_Modes_Hands" xml:space="preserve">
-    <value>Ручной</value>
-  </data>
-  <data name="ModeSelectorForm_ModeSelectorForm_Modes_Auto" xml:space="preserve">
-    <value>Автоматический</value>
-  </data>
-  <data name="ModeSelectorForm_ModeSelectorForm_Semi_Automatic" xml:space="preserve">
-    <value>Полуатоматический</value>
-  </data>
 </root>

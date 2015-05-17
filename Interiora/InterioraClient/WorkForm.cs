@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using FunctionalityLibrary.Drawing;
 using FunctionalityLibrary.Drawing.History;
 using Models;
 
@@ -16,27 +15,13 @@ namespace InterioraClient
         }
 
         public Bitmap SaveBitmap { private get; set; }
-        public HistoryDrawing History { private get; set; }
+        public HistoryDrawing History { get; set; }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var doneform = new DoneForm();
             doneform.Show();
             Hide();
-        }
-
-        private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormsHelper.FormCloser(this, ref e);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var drfun = new DrawFunctions();
-
-            //drfun.Table(ref pictureBox1);
-            //drfun.Chair(ref pictureBox1);
-            drfun.ForClothes(ref pictureBox1);
         }
 
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
@@ -103,7 +88,7 @@ namespace InterioraClient
             }
         }
 
-        private void WorkForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormsHelper.FormCloser(this, ref e);
         }
@@ -148,6 +133,8 @@ namespace InterioraClient
         private void WorkForm_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = SaveBitmap;
+            var modeSelectorForm = new ModeSelectorForm();
+            modeSelectorForm.ShowDialog(this);
         }
     }
 }

@@ -59,8 +59,7 @@ namespace InterioraClient
         {
             
             var sizeInfoForm = new SizeInfoForm();
-            sizeInfoForm.Show(this);
-            this.Enabled = false;
+            sizeInfoForm.ShowDialog(this);
         }
 
         public void SetNewProjectSize(int heightCount, int widthCount)
