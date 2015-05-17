@@ -39,5 +39,25 @@ namespace InterioraClient
             var pattern = new Regex(@"[^\d]");
             tbBox.Text = pattern.Replace(tbBox.Text, "");
         }
+
+        public static void FormCloserOnlyWindow(Form f, ref FormClosingEventArgs e)
+        {
+            switch (e.CloseReason)
+            {
+                case CloseReason.UserClosing:
+                    var dialogRes = MessageBox.Show(Resources.FormsHelper_FormCloser_CloseWindowQuestion,
+                        Resources.FormsHelper_FormCloser_Warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dialogRes == DialogResult.Cancel)
+                        e.Cancel = true; // отмена закрытия формы
+                    else
+                    {
+                        f.Dispose();
+                    }
+                    break;
+                default:
+                    f.Close();
+                    break;
+            }
+        }
     }
 }

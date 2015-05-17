@@ -144,13 +144,13 @@
   <data name="FormsHelper_FormCloser_Warning" xml:space="preserve">
     <value>Предупреждение</value>
   </data>
-  <data name="ModeSelectorForm_ModeSelectorForm_Modes_Hands" xml:space="preserve">
-    <value>Ручной</value>
+  <data name="FormsHelper_FormCloser_CloseWindowQuestion" xml:space="preserve">
+    <value>Вы уверены, что хотите закрыть окно?</value>
   </data>
-  <data name="ModeSelectorForm_ModeSelectorForm_Modes_Auto" xml:space="preserve">
-    <value>Автоматический</value>
+  <data name="ModeSelectorForm_button1_Click_WrongTBData" xml:space="preserve">
+    <value>Заполните Поле количества АРМ!</value>
   </data>
-  <data name="ModeSelectorForm_ModeSelectorForm_Semi_Automatic" xml:space="preserve">
-    <value>Полуатоматический</value>
+  <data name="ModeSelectorForm_button1_Click_Error" xml:space="preserve">
+    <value>Ошибка</value>
   </data>
 </root>

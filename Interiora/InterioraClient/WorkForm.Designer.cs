@@ -114,6 +114,7 @@ namespace InterioraClient
             this.Text = "Рабочее пространство";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkForm_FormClosing);
             this.Load += new System.EventHandler(this.WorkForm_Load);
+            this.Shown += new System.EventHandler(this.WorkForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

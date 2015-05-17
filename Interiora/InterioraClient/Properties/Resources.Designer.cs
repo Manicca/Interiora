@@ -129,6 +129,15 @@ namespace InterioraClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Вы уверены, что хотите закрыть окно?.
+        /// </summary>
+        internal static string FormsHelper_FormCloser_CloseWindowQuestion {
+            get {
+                return ResourceManager.GetString("FormsHelper_FormCloser_CloseWindowQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Предупреждение.
         /// </summary>
         internal static string FormsHelper_FormCloser_Warning {
@@ -138,29 +147,20 @@ namespace InterioraClient.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Автоматический.
+        ///   Looks up a localized string similar to Ошибка.
         /// </summary>
-        internal static string ModeSelectorForm_ModeSelectorForm_Modes_Auto {
+        internal static string ModeSelectorForm_button1_Click_Error {
             get {
-                return ResourceManager.GetString("ModeSelectorForm_ModeSelectorForm_Modes_Auto", resourceCulture);
+                return ResourceManager.GetString("ModeSelectorForm_button1_Click_Error", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ручной.
+        ///   Looks up a localized string similar to Заполните Поле количества АРМ!.
         /// </summary>
-        internal static string ModeSelectorForm_ModeSelectorForm_Modes_Hands {
+        internal static string ModeSelectorForm_button1_Click_WrongTBData {
             get {
-                return ResourceManager.GetString("ModeSelectorForm_ModeSelectorForm_Modes_Hands", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Полуатоматический.
-        /// </summary>
-        internal static string ModeSelectorForm_ModeSelectorForm_Semi_Automatic {
-            get {
-                return ResourceManager.GetString("ModeSelectorForm_ModeSelectorForm_Semi_Automatic", resourceCulture);
+                return ResourceManager.GetString("ModeSelectorForm_button1_Click_WrongTBData", resourceCulture);
             }
         }
     }

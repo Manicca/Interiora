@@ -2,7 +2,9 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using FunctionalityLibrary;
 using FunctionalityLibrary.Drawing.History;
+using FunctionalityLibrary.Modes;
 using Models;
 
 namespace InterioraClient
@@ -12,6 +14,18 @@ namespace InterioraClient
         public WorkForm()
         {
             InitializeComponent();
+        }
+
+        private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
+        private int _preferredNumberOfWorkSpaces = -1;
+        public void SetMode(WorkMode newMode)
+        {
+            _mode = newMode;
+        }
+
+        public void SetPreferredNumberOfWorkSpaces(int number)
+        {
+            _preferredNumberOfWorkSpaces = number;
         }
 
         public Bitmap SaveBitmap { private get; set; }
@@ -133,8 +147,14 @@ namespace InterioraClient
         private void WorkForm_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = SaveBitmap;
+        }
+
+        private void WorkForm_Shown(object sender, EventArgs e)
+        {
             var modeSelectorForm = new ModeSelectorForm();
             modeSelectorForm.ShowDialog(this);
         }
     }
+
+    
 }

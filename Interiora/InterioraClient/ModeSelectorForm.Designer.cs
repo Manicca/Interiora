@@ -41,7 +41,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 25);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -96,6 +96,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "ModeSelectorForm";
             this.Text = "ModeSelectorForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModeSelectorForm_FormClosing);
             this.Load += new System.EventHandler(this.ModeSelectorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
