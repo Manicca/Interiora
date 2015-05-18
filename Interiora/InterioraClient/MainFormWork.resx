@@ -117,9 +117,87 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhngBTAIcAAP////7+//7+/v39/vz9/fz8/fv8/fv7/Pr7/Pn6+/j5+/j5+vf4+vb4+fb3+fX2
+        +PT2+PT1+PP19/P09/L09vHz9vDy9e/x9O7x9O7w9O3w8+zv8+zu8uvu8uvt8ens8ens8Ojr8Ojr7+fq
+        7+bq7+bp7uXp7uTo7ePn7OLm7OHl6+Dk6t/j6t7j6d7i6d3i6Nzh6Nvg59rf5tnf5tne5djd5dfc5Nbc
+        5Nbb49Xb49Xa49Ta4tPZ4tPZ4dLY4dHY4NHX4NDX4NDW38/W387V3s7U3s3U3s3T3czT3cvS3MrR3MnR
+        28nQ28jQ2sjP2sfP2cbO2cXN2MXM2MTM18PL18LK1sHK1sHJ1cDJ1cDI1b/I1L7H1L7H073G073G0rzF
+        0rvF0rvE0brD0bnD0LnC0LjC0LjBz7fBz7bAzrW/zbS+zbO+zLO9zLK8y7G7y7C7yrC6yq65ya24yKy3
+        x6u3x6u2xqq2xqq1xqi0xaizxKezxKayxKayw6Wxw6WxwqSwwqOwwaKvwaKuwKGuwKCtv5+sv56svp6r
+        vp2qvZypvZuovJqou5qnu5mnupimupeluZaluZakuJWkuJWjuJSit5Oit5OhtpKhtpKgtpGgtZCftZCf
+        tI+etI6es46ds42ds42csoycsoubsYqasYqZsImZsIiYr4eXroaWroWWrYWVrYSVrIOUrIKTq4GSqoCR
+        qn+QqX6PqH2PqH2Op3yOp3uNp3uNpnqMpnqMpXmLpXiLpXiKpHeJo3aIo3WIonWHonSHonOGoXKFoHGE
+        oHCEn3CDn2+Dnm+Cnm6Cnm2BnW2AnWyAnGt/nGt/m2p+m2l9mmh9mmh8mWd8mWd7mWZ7mGV6mGV6l2R5
+        l2N4lgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQJAADZACwAAAAAngBTAAAI/wABCBxIsKDBgwgTKlzIsKHDhxAj
+        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
+        AQEAOw==
+</value>
+  </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Предлагаю убрать кнопку ДАЛЕЕ
+ (т.к. при нажатии на новый проект
+ мы введем параметры и перейдем на другую форму)
+ и если выберем из библиотеки, 
+при загрузки при выполнении сразу переходим 
+на след кнопку. Вместо далее сделать выход - 
+и убрать эту синюю стандартную полоску</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>42</value>
   </metadata>

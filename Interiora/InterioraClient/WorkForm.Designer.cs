@@ -42,6 +42,7 @@ namespace InterioraClient
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -139,11 +140,22 @@ namespace InterioraClient
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(811, 25);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(108, 21);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Назад";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 494);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
@@ -177,5 +189,6 @@ namespace InterioraClient
         private ToolTip toolTip1;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Button button4;
     }
 }

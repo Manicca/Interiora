@@ -72,11 +72,11 @@ namespace InterioraClient
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 61);
+            this.panel1.Location = new System.Drawing.Point(12, 100);
             this.panel1.MaximumSize = new System.Drawing.Size(714, 386);
             this.panel1.MinimumSize = new System.Drawing.Size(514, 186);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(714, 386);
+            this.panel1.Size = new System.Drawing.Size(572, 347);
             this.panel1.TabIndex = 11;
             // 
             // trackBar1
@@ -89,7 +89,7 @@ namespace InterioraClient
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 12);
+            this.button3.Location = new System.Drawing.Point(12, 34);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 43);
             this.button3.TabIndex = 14;
@@ -99,7 +99,7 @@ namespace InterioraClient
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(86, 12);
+            this.button4.Location = new System.Drawing.Point(86, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(68, 43);
             this.button4.TabIndex = 15;
@@ -109,7 +109,7 @@ namespace InterioraClient
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(160, 12);
+            this.button5.Location = new System.Drawing.Point(160, 34);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(162, 43);
             this.button5.TabIndex = 16;
@@ -119,7 +119,7 @@ namespace InterioraClient
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(732, 12);
+            this.button2.Location = new System.Drawing.Point(613, 141);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(189, 43);
             this.button2.TabIndex = 17;
@@ -129,7 +129,7 @@ namespace InterioraClient
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(732, 61);
+            this.button6.Location = new System.Drawing.Point(613, 201);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(189, 43);
             this.button6.TabIndex = 18;
@@ -139,7 +139,7 @@ namespace InterioraClient
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(732, 110);
+            this.button7.Location = new System.Drawing.Point(613, 265);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(189, 43);
             this.button7.TabIndex = 19;
@@ -149,9 +149,9 @@ namespace InterioraClient
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(732, 415);
+            this.button8.Location = new System.Drawing.Point(699, 408);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(189, 32);
+            this.button8.Size = new System.Drawing.Size(129, 32);
             this.button8.TabIndex = 20;
             this.button8.Text = "Назад";
             this.button8.UseVisualStyleBackColor = true;
@@ -161,7 +161,8 @@ namespace InterioraClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 497);
+            this.BackgroundImage = global::InterioraClient.Properties.Resources.back;
+            this.ClientSize = new System.Drawing.Size(840, 452);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);

@@ -38,6 +38,7 @@ namespace InterioraClient
                     (int)comboBox2.SelectedItem);
             }
             Close();
+            
         }
 
         private void SizeInfoForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,6 +46,11 @@ namespace InterioraClient
             var work = Owner as MainFormWork;
             if (work != null)
                 work.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormsHelper.GoToBackwardForm(this, Owner);
         }
     }
 }

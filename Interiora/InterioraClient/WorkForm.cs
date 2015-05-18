@@ -149,5 +149,10 @@ namespace InterioraClient
         {
             pictureBox1.Image = SaveBitmap;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormsHelper.GoToBackwardForm(this, Owner);
+        }
     }
 }
