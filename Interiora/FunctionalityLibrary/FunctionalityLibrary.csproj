@@ -42,16 +42,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation.cs" />
+    <Compile Include="Calculation\Distance.cs" />
+    <Compile Include="Calculation\Factor.cs" />
+    <Compile Include="Calculation\HistoryIterator.cs" />
+    <Compile Include="Calculation\ObjectContains.cs" />
+    <Compile Include="Calculation\SizingImage.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
-    <Compile Include="DrawFunctions.cs" />
-    <Compile Include="FurnitureLocation.cs" />
+    <Compile Include="Drawing\Figures\DoorFigure.cs" />
+    <Compile Include="Drawing\Figures\DrawFunctions.cs" />
+    <Compile Include="Drawing\Figures\Figure.cs" />
+    <Compile Include="Drawing\History\HistoryDrawing.cs" />
+    <Compile Include="Drawing\OfficeEquipment\ChairOfficeFigure.cs" />
+    <Compile Include="Drawing\OfficeEquipment\OfficeFigure.cs" />
+    <Compile Include="Drawing\Figures\RoomFigure.cs" />
+    <Compile Include="Drawing\Figures\StartPointFigure.cs" />
+    <Compile Include="Drawing\OfficeEquipment\TableOfficeFigure.cs" />
+    <Compile Include="Drawing\Figures\WindowFigure.cs" />
     <Compile Include="EMailSender.cs" />
+    <Compile Include="Modes\EnumOfModes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="TranslatePicture.cs" />
     <Compile Include="MainForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebLocation.cs" />
+    <Compile Include="Modes\WorkMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -60,7 +84,24 @@
     <Content Include="license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{bb661f88-14fc-4efa-a48f-db4c82185e8e}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

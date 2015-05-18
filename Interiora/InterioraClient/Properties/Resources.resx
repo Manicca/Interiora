@@ -118,7 +118,123 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="2dkRaUJ9ArI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2dkRaUJ9ArI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sendblank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sendblank.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background23.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doc.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adddoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adddoor.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_Message_Warning_Title" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="оккн" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\оккн.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BACKGROUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ModeSelectorForm_button1_Click_WrongTBData" xml:space="preserve">
+    <value>Заполните Поле количества АРМ!</value>
+  </data>
+  <data name="доккн1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\доккн1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\del.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="доккн" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\доккн.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="кн3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\кн3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Кнопки" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Кнопки.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FormsHelper_FormCloser_CloseWindowQuestion" xml:space="preserve">
+    <value>Вы уверены, что хотите закрыть окно?</value>
+  </data>
+  <data name="ModeSelectorForm_button1_Click_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="далеекн" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\далеекн.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_Message_Warning" xml:space="preserve">
+    <value>Это удалит все ваши изменения!
+Это действие необратимо!
+Вы Уверены?</value>
+  </data>
+  <data name="FormsHelper_FormCloser_CloseAppQuestion" xml:space="preserve">
+    <value>Закрыть приложение?</value>
+  </data>
+  <data name="clearall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clearall.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="отпроткн" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\отпроткн.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FormsHelper_FormCloser_Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="newproject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newproject.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chousefromlibrary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chousefromlibrary.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="назадкн" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\назадкн.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loadfromfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loadfromfile.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sendreport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sendreport.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="отпбл" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\отпбл.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="retirn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\retirn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="кн2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\кн2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backmin.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addwind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addwind.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backforedit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backforedit.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,74 +1,79 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InterioraClient.Properties;
 using Models;
 
 namespace InterioraClient
 {
-     public partial class MainFormWork : Form
-     {
-          public MainFormWork()
-          {
-               InitializeComponent();
-          }
+    public partial class MainFormWork : Form
+    {
+        private int _sizeH;
+        private int _sizeW;
+        private Bitmap bmBitmap;
 
-          private void button1_Click(object sender, EventArgs e)
-          {
-               openFileDialog1.ShowDialog();
-               
-          }
+        public MainFormWork()
+        {
+            InitializeComponent();
+            _sizeH = 0;
+            _sizeW = 0;
+        }
 
-          private void button3_Click(object sender, EventArgs e)
-          {
-               var form = new InterioraClient.EditPicture();
-               form.saveBMP = (Bitmap)pictureBox1.Image;
-               form.Show();
-               this.Hide();
-          }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
 
-          private void MainFormWork_Load(object sender, EventArgs e)
-          {
+        public void NextForm()
+        {
+            var form = new EditPicture {InitialBmp = bmBitmap};
+            form.Show(this);
+            Hide();
+        }
 
-          }
+        private void MainFormWork_Load(object sender, EventArgs e)
+        {
+        }
 
-          private void MainFormWork_FormClosing(object sender, FormClosingEventArgs e)
-          {
-               FormsHelper.FormCloser(this, ref e);
-          }
+        private void MainFormWork_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormsHelper.FormCloser(this, ref e);
+        }
 
-          private void button2_Click(object sender, EventArgs e)
-          {
-               AllModelsContext _db = new AllModelsContext();
-               _db.SaveChanges();
-               _db.Dispose();
-               button3.Enabled = true;
-          }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var db = new AllModelsContext();
+            db.SaveChanges();
+            db.Dispose();
+        }
 
-          private void MainFormWork_Click(object sender, EventArgs e)
-          {
+        private void MainFormWork_Click(object sender, EventArgs e)
+        {
+        }
 
-          }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var sizeInfoForm = new SizeInfoForm();
+            sizeInfoForm.ShowDialog(this);
+            NextForm();
+        }
 
-          private void button4_Click(object sender, EventArgs e)
-          {
-               Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-               Graphics gr = Graphics.FromImage(bm);
-               gr.Clear(Color.White);
-               gr.Dispose();
-               pictureBox1.Image = bm;
-               button3.Enabled = true;
-          }
+        public void SetNewProjectSize(int heightCount, int widthCount)
+        {
+            var ppm = Settings.Default.PixelsPerMeter;
+            _sizeH = heightCount;
+            _sizeW = widthCount;
+            bmBitmap = new Bitmap(_sizeW*ppm, _sizeH*ppm);
+            var gr = Graphics.FromImage(bmBitmap);
+            gr.Clear(Color.White);
+            gr.Dispose();
 
-          private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-          {
-               pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
-               button3.Enabled = true;
-          }
-     }
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            //pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+        }
+    }
 }

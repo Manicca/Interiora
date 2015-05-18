@@ -54,6 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBaseForm.Designer.cs">
+      <DependentUpon>DataBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoneForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,14 +85,29 @@
     <Compile Include="MainFormWork.Designer.cs">
       <DependentUpon>MainFormWork.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModeSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModeSelectorForm.Designer.cs">
+      <DependentUpon>ModeSelectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SizeInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SizeInfoForm.Designer.cs">
+      <DependentUpon>SizeInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WorkForm.Designer.cs">
       <DependentUpon>WorkForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DataBaseForm.resx">
+      <DependentUpon>DataBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoneForm.resx">
       <DependentUpon>DoneForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +120,9 @@
     <EmbeddedResource Include="MainFormWork.resx">
       <DependentUpon>MainFormWork.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModeSelectorForm.resx">
+      <DependentUpon>ModeSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,6 +133,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SizeInfoForm.resx">
+      <DependentUpon>SizeInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WorkForm.resx">
       <DependentUpon>WorkForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,7 +151,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2dkRaUJ9ArI.jpg" />
@@ -134,10 +163,115 @@
       <Project>{d8716b0f-a032-4498-8c42-b32b5ff914d6}</Project>
       <Name>FunctionalityLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modals\Models.csproj">
+    <ProjectReference Include="..\Models\Models.csproj">
       <Project>{bb661f88-14fc-4efa-a48f-db4c82185e8e}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\пробакнопки.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Кнопки.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Кнопки.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кнопка1мф.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Кнопки.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кн2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кн3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\далеекн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\оккн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\назадкн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\доккн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\отпроткн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\отпбл.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\доккн1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background23.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadfromfile.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chousefromlibrary.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newproject.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendreport.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendblank.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backmin.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddoor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwind.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retirn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clearall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backforedit.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

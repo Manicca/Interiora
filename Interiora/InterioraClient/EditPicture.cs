@@ -1,163 +1,193 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FunctionalityLibrary;
+using FunctionalityLibrary.Calculation;
+using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary.Drawing.Figures;
+using FunctionalityLibrary.Drawing.History;
+using InterioraClient.Properties;
 
 namespace InterioraClient
 {
+    public partial class EditPicture : Form
+    {
+        private readonly HistoryIterator _historyIterator;
+        private readonly StartPointFigure _stp = new StartPointFigure();
+        private Bitmap _bmpBeforeDrawing;
+        private int _buttonClicks;
+        private Bitmap _drawing;
+        private PointF _end;
+        private Figure _f;
+        private float _factor = 1.0f;
+        private HistoryDrawing _history;
+        private bool _isDrawing;
+        private PointF _start;
+        public Bitmap InitialBmp;
+
+        public EditPicture()
+        {
+            InitializeComponent();
+            _historyIterator = new HistoryIterator(0, 0);
+        }
+
+        private void Edit_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = InitialBmp;
+            pictureBox1.Top = 5;
+            pictureBox1.Left = 5;
+            _history = new HistoryDrawing(InitialBmp);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var workform = new WorkForm {SaveBitmap = (Bitmap) pictureBox1.Image, History = _history};
+            workform.ShowDialog(this);
+            Hide();
+        }
+
+        private void EditPicture_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormsHelper.FormCloser(this, ref e);
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            _factor = 1.0f + (float) trackBar1.Value/trackBar1.Maximum;
+            pictureBox1.Image = SizingImage.GetNewSizedBitmap(_history, _factor, InitialBmp);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _historyIterator.PreviousOrFirst();
+            var currentHistoryRecord = _history.GetByIndex(_historyIterator.Current, _factor);
+
+            pictureBox1.Image = currentHistoryRecord;
+            _drawing = currentHistoryRecord;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _historyIterator.NextOrLast();
+            var currentHistoryRecord = _history.GetByIndex(_historyIterator.Current, _factor);
+            pictureBox1.Image = currentHistoryRecord;
+            _drawing = currentHistoryRecord;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var dialogRes = MessageBox.Show(Resources.Delete_Message_Warning,
+                Resources.Delete_Message_Warning_Title,
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            if (dialogRes != DialogResult.OK) return;
 
 
-     public partial class EditPicture : Form
-     {
-          public EditPicture()
-          {
-               InitializeComponent();
-          }
+            _history.Clear();
+            _historyIterator.Clear();
 
-          public Bitmap saveBMP;
-          Bitmap bmpBeforeDrawing;
-          HistoryDrawing history;
-          int historyIterator;
-          Point start = new Point();
-          Point end = new Point();
-          bool isDrawing = false;
-          Bitmap drawing;
-          Figure f;
+            var historyLast = _history.GetLastBitmapOrDefalut(_factor);
 
-          private void Edit_Load(object sender, EventArgs e)
-          {
-               pictureBox1.Image = saveBMP;
-               pictureBox1.Top = 5;
-               pictureBox1.Left = 5;
-               history = new HistoryDrawing(saveBMP);
-          }
+            pictureBox1.Image = historyLast;
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Enabled = true;
+            _f = new DoorFigure();
+         //  button7.Enabled = true;
+            button6.Enabled = true;
+            button2.Enabled = false;
+            _isDrawing = true;
+        }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            panel1.Enabled = true;
+            _f = new RoomFigure();
+            //button7.Enabled = false;
+            button6.Enabled = true;
+            button2.Enabled = true;
+            _isDrawing = true;
+        }
 
-          private void button1_Click(object sender, EventArgs e)
-          {
-               var workform = new InterioraClient.WorkForm();
-               workform.Show();
-               this.Hide();
-          }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel1.Enabled = true;
+            _f = new WindowFigure();
+           // button7.Enabled = true;
+            button6.Enabled = false;
+            button2.Enabled = true;
+            _isDrawing = true;
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (_isDrawing)
+            {
+                _buttonClicks++;
+                if (_buttonClicks == 1)
+                {
+                    trackBar1.Enabled = false;
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                    button5.Enabled = false;
 
-          private void EditPicture_FormClosing(object sender, FormClosingEventArgs e)
-          {
-               FormsHelper.FormCloser(this, ref e);
-          }
+                    _bmpBeforeDrawing = (Bitmap) pictureBox1.Image;
+                    _drawing = (Bitmap) _bmpBeforeDrawing.Clone();
 
-          private void trackBar1_Scroll(object sender, EventArgs e)
-          {
-               float dScroll = trackBar1.Value;
-               Size newSize = new Size((int)(saveBMP.Width + (saveBMP.Width / 10.0 * dScroll)),
-                                       (int)(saveBMP.Height + (saveBMP.Height / 10.0 * dScroll)));
-               pictureBox1.Image = new Bitmap(saveBMP, newSize);
+                    _isDrawing = true;
 
-               /*  if (panel1.HorizontalScroll.Enabled)
-                      panel1.HorizontalScroll.Value = panel1.HorizontalScroll.Maximum / 2;
-                 if (panel1.VerticalScroll.Enabled)
-                      panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum / 2;*/
-          }
+                    _start = pictureBox1.PointToClient(Cursor.Position);
+                    _end = new Point(0, 0);
+                    Factor.UnCountFactor(ref _start, _factor);
 
-          private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-          {
-               end = e.Location;
-               if (isDrawing)
-               {
-                    if (end.X > pictureBox1.Width)
-                         end.X = pictureBox1.Width - 2;
-                    if (end.Y > pictureBox1.Height)
-                         end.Y = pictureBox1.Height - 2;
-                    if (end.X < 2)
-                         end.X = 1;
-                    if (end.Y < 2)
-                         end.Y = 1;
-                    f.Draw(ref drawing, start, end);
-                    pictureBox1.Image = drawing;
-                    drawing = (Bitmap)bmpBeforeDrawing.Clone();
-               }
-          }
+                    Distance.CalculateBonders(ref _start, ref _end, pictureBox1, _history.AllRecords());
 
+                    _stp.DrawPoint(ref _drawing, _start, _factor);
 
-          private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-          {
-               bmpBeforeDrawing = (Bitmap)pictureBox1.Image;
-               drawing = bmpBeforeDrawing;
-               isDrawing = true;
-               start = e.Location;
+                    pictureBox1.Image = _drawing;
+                    _drawing = (Bitmap) _bmpBeforeDrawing.Clone();
+                }
+                else
+                {
+                    trackBar1.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    button5.Enabled = true;
 
-          }
+                    _buttonClicks = 0;
 
-          private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-          {
-               history.RemoveAfterByIndex(++historyIterator);
-               isDrawing = false;
-               history.Add((Bitmap)pictureBox1.Image);
-               drawing = null;
-          }
+                    _end = pictureBox1.PointToClient(Cursor.Position);
+                    Factor.UnCountFactor(ref _end, _factor);
 
-          private void button3_Click(object sender, EventArgs e)
-          {
-               if (--historyIterator < 0)
-                    historyIterator = 0;
-               var lastHistory = history.GetByIndex(historyIterator);
-               pictureBox1.Image = lastHistory;
-               drawing = lastHistory;
-          }
+                    _history.RemoveAfterByIndex(_historyIterator.Current);
 
-          private void button4_Click(object sender, EventArgs e)
-          {
-               historyIterator++;
-               if (historyIterator >= history.Count())
-                    historyIterator = history.Count() - 1;
-               var lastHistory = history.GetByIndex(historyIterator);
-               pictureBox1.Image = lastHistory;
-               drawing = lastHistory;
-          }
+                    _drawing = (Bitmap) _bmpBeforeDrawing.Clone();
 
-          private void button5_Click(object sender, EventArgs e)
-          {
-               var dialogRes = MessageBox.Show("Это удалит все ваши изменения!\nЭто действие необратимо!\nВы Уверены?", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-               if (dialogRes == DialogResult.OK)
-               {
-                    history.Clear();
-                    historyIterator = history.Count() - 1;
-                    pictureBox1.Image = history.GetLast();
-               }
-          }
+                    Distance.CalculateBonders(ref _start, ref _end, pictureBox1, _history.AllRecords());
 
-          private void button2_Click(object sender, EventArgs e)
-          {
-               panel1.Enabled = true;
-               f = new DoorFigure();
-               button7.Enabled = true;
-               button6.Enabled = true;
-               button2.Enabled = false;
-          }
+                    _f.FirstLocationPoint = _start;
+                    _f.SecondLocationPoint = _end;
 
-          private void button7_Click(object sender, EventArgs e)
-          {
-               panel1.Enabled = true;
-               f = new RoomFigure();
-               button7.Enabled = false;
-               button6.Enabled = true;
-               button2.Enabled = true;
-          }
+                    _history.Add((Figure) _f.Clone());
+                    _historyIterator.HistoryUpdate(_history.Count(), _history.Count());
+                    _f.Draw(ref _drawing, _start, _end, _factor);
 
-          private void button6_Click(object sender, EventArgs e)
-          {
-               panel1.Enabled = true;
-               f = new WindowFigure();
-               button7.Enabled = true;
-               button6.Enabled = false;
-               button2.Enabled = true;
-          }
-     }
+                    pictureBox1.Image = _drawing;
+                    _drawing = null;
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormsHelper.GoToBackwardForm(this, Owner);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }
