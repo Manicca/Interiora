@@ -13,5 +13,10 @@ namespace InterioraClient
           {
                FormsHelper.FormCloser(this, ref e);
           }
+
+          private void button2_Click(object sender, System.EventArgs e)
+          {
+              FormsHelper.GoToBackwardForm(this, Owner);
+          }
      }
 }

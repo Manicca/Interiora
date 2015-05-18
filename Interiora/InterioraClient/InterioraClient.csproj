@@ -151,7 +151,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2dkRaUJ9ArI.jpg" />
@@ -171,6 +173,105 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\пробакнопки.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Кнопки.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Кнопки.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кнопка1мф.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Кнопки.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кн2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кн3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\далеекн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\оккн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\назадкн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\доккн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\отпроткн.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\отпбл.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\доккн1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background23.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadfromfile.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chousefromlibrary.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newproject.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendreport.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendblank.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backmin.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddoor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwind.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retirn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clearall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backforedit.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,32 +9,31 @@ namespace InterioraClient
 {
     public partial class MainFormWork : Form
     {
+        private int _sizeH;
+        private int _sizeW;
+        private Bitmap bmBitmap;
+
         public MainFormWork()
         {
+            InitializeComponent();
             _sizeH = 0;
             _sizeW = 0;
-            InitializeComponent();
         }
 
-        private int _sizeH = 0;
-        private int _sizeW = 0;
-        private Bitmap bmBitmap;
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void NextForm()
         {
-            var form = new EditPicture { InitialBmp = bmBitmap };
+            var form = new EditPicture {InitialBmp = bmBitmap};
             form.Show(this);
             Hide();
         }
 
         private void MainFormWork_Load(object sender, EventArgs e)
         {
-
         }
 
         private void MainFormWork_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,19 +46,17 @@ namespace InterioraClient
             var db = new AllModelsContext();
             db.SaveChanges();
             db.Dispose();
-            button3.Enabled = true;
         }
 
         private void MainFormWork_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
             var sizeInfoForm = new SizeInfoForm();
             sizeInfoForm.ShowDialog(this);
+            NextForm();
         }
 
         public void SetNewProjectSize(int heightCount, int widthCount)
@@ -71,15 +68,12 @@ namespace InterioraClient
             var gr = Graphics.FromImage(bmBitmap);
             gr.Clear(Color.White);
             gr.Dispose();
-            
-            button3.Enabled = true;
+
         }
+
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             //pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
-            button3.Enabled = true;
         }
-
-       
     }
 }

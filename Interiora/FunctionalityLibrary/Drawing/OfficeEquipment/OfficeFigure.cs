@@ -2,7 +2,7 @@
 
 namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
-    public class MainOfficeClass
+    public class OfficeFigure
     {
         public PointF FirstLocationPoint;
         protected Graphics Gr;

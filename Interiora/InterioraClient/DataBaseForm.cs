@@ -37,5 +37,10 @@ namespace InterioraClient
                 dataGridView1.DataSource = ff;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormsHelper.GoToBackwardForm(this, Owner);
+        }
     }
 }

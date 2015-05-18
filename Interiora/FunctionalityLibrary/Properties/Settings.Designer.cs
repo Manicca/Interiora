@@ -46,5 +46,29 @@ namespace FunctionalityLibrary.Properties {
                 this["sizeOfCross"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public float PixelPerMeter {
+            get {
+                return ((float)(this["PixelPerMeter"]));
+            }
+            set {
+                this["PixelPerMeter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public float PixelPerСentimeter {
+            get {
+                return ((float)(this["PixelPerСentimeter"]));
+            }
+            set {
+                this["PixelPerСentimeter"] = value;
+            }
+        }
     }
 }

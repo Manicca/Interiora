@@ -11,7 +11,7 @@ namespace FunctionalityLibrary.Modes
             Mode = mode;
         }
 
-        public EnumOfModes Mode { get; }
+        public EnumOfModes Mode { get; set; }
 
         public override string ToString()
         {

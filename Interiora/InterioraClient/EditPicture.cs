@@ -41,7 +41,7 @@ namespace InterioraClient
         private void button1_Click(object sender, EventArgs e)
         {
             var workform = new WorkForm {SaveBitmap = (Bitmap) pictureBox1.Image, History = _history};
-            workform.Show();
+            workform.ShowDialog(this);
             Hide();
         }
 
@@ -95,7 +95,7 @@ namespace InterioraClient
         {
             panel1.Enabled = true;
             _f = new DoorFigure();
-            button7.Enabled = true;
+         //  button7.Enabled = true;
             button6.Enabled = true;
             button2.Enabled = false;
             _isDrawing = true;
@@ -105,7 +105,7 @@ namespace InterioraClient
         {
             panel1.Enabled = true;
             _f = new RoomFigure();
-            button7.Enabled = false;
+            //button7.Enabled = false;
             button6.Enabled = true;
             button2.Enabled = true;
             _isDrawing = true;
@@ -115,7 +115,7 @@ namespace InterioraClient
         {
             panel1.Enabled = true;
             _f = new WindowFigure();
-            button7.Enabled = true;
+           // button7.Enabled = true;
             button6.Enabled = false;
             button2.Enabled = true;
             _isDrawing = true;
