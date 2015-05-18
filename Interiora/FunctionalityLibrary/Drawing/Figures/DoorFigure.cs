@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using FunctionalityLibrary.Calculation;
 
-namespace FunctionalityLibrary.Drawing
+namespace FunctionalityLibrary.Drawing.Figures
 {
     public class DoorFigure : Figure
     {

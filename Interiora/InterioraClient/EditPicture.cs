@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary.Drawing.Figures;
 using FunctionalityLibrary.Drawing.History;
 using InterioraClient.Properties;
 
@@ -11,7 +12,7 @@ namespace InterioraClient
     public partial class EditPicture : Form
     {
         private readonly HistoryIterator _historyIterator;
-        private readonly StartPoint _stp = new StartPoint();
+        private readonly StartPointFigure _stp = new StartPointFigure();
         private Bitmap _bmpBeforeDrawing;
         private int _buttonClicks;
         private Bitmap _drawing;
@@ -51,11 +52,8 @@ namespace InterioraClient
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            _factor = 1.0f + trackBar1.Value/4f;
-            var newSize = new Size((int) (InitialBmp.Width*_factor),
-                (int) (InitialBmp.Height*_factor));
-
-            pictureBox1.Image = new Bitmap(_history.GetLastBitmapOrDefalut(_factor), newSize);
+            _factor = 1.0f + (float) trackBar1.Value/trackBar1.Maximum;
+            pictureBox1.Image = SizingImage.GetNewSizedBitmap(_history, _factor, InitialBmp);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -125,7 +123,6 @@ namespace InterioraClient
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
             if (_isDrawing)
             {
                 _buttonClicks++;
@@ -186,6 +183,11 @@ namespace InterioraClient
         private void button8_Click(object sender, EventArgs e)
         {
             FormsHelper.GoToBackwardForm(this, Owner);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

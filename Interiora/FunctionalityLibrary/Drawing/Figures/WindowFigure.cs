@@ -2,7 +2,7 @@
 using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Properties;
 
-namespace FunctionalityLibrary.Drawing
+namespace FunctionalityLibrary.Drawing.Figures
 {
     public class WindowFigure : Figure
     {

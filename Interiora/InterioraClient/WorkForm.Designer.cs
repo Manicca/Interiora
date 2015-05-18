@@ -45,7 +45,7 @@ namespace InterioraClient
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(875, 78);
+            this.label1.Location = new System.Drawing.Point(876, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 0;
@@ -63,7 +63,7 @@ namespace InterioraClient
             "Хаб",
             "Коммутатор",
             "Протянуть витую пару"});
-            this.listBox1.Location = new System.Drawing.Point(878, 94);
+            this.listBox1.Location = new System.Drawing.Point(879, 27);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(118, 303);
             this.listBox1.TabIndex = 4;
@@ -86,10 +86,11 @@ namespace InterioraClient
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(8, 76);
+            this.panel1.Location = new System.Drawing.Point(12, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(861, 406);
+            this.panel1.Size = new System.Drawing.Size(861, 455);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -99,6 +100,7 @@ namespace InterioraClient
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // WorkForm
             // 

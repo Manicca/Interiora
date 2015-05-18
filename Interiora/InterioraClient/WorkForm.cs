@@ -3,7 +3,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary;
+using FunctionalityLibrary.Drawing;
 using FunctionalityLibrary.Drawing.History;
+using FunctionalityLibrary.Drawing.OfficeEquipment;
 using FunctionalityLibrary.Modes;
 using Models;
 
@@ -109,39 +111,9 @@ namespace InterioraClient
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex == 0)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 1)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 2)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 3)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 4)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 5)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 6)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            if (listBox1.SelectedIndex == 7)
-            {
-                toolTip1.SetToolTip(listBox1, listBox1.SelectedItem.ToString());
-            }
-            //toolTip1.SetToolTip(listBox1, "Тут происходит получение данных о конкретном объекте");
+            var f = listBox1.SelectedItem as MainOfficeClass;
+            if (f != null)
+                toolTip1.SetToolTip(listBox1, f.GetToolTipInfo());
         }
 
         private void WorkForm_Load(object sender, EventArgs e)
@@ -153,6 +125,17 @@ namespace InterioraClient
         {
             var modeSelectorForm = new ModeSelectorForm();
             modeSelectorForm.ShowDialog(this);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var pos = pictureBox1.PointToClient(MousePosition);
+            
         }
     }
 

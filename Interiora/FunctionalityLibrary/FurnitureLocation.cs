@@ -1,6 +1,0 @@
-﻿namespace FunctionalityLibrary
-{
-    class FurnitureLocation
-    {
-    }
-}

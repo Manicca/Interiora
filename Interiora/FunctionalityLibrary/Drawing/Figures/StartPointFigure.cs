@@ -2,9 +2,9 @@
 using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Properties;
 
-namespace FunctionalityLibrary.Drawing
+namespace FunctionalityLibrary.Drawing.Figures
 {
-    public class StartPoint : Figure
+    public class StartPointFigure : Figure
     {
         public void DrawPoint(ref Bitmap bmp, PointF p, float factor)
         {

@@ -15,5 +15,10 @@ namespace FunctionalityLibrary.Calculation
             dotPointF.X *= factor;
             dotPointF.Y *= factor;
         }
+
+        public static void CountFactor(ref float a, float factor)
+        {
+            a *= factor;
+        }
     }
 }

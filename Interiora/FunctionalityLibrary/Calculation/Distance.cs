@@ -4,14 +4,22 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary.Drawing.Figures;
 
 namespace FunctionalityLibrary.Calculation
 {
     public static class Distance
     {
-        public static int GetFromPoints(PointF p1, PointF p2)
+        public static int GetDistanceFromPoints(PointF p1, PointF p2)
         {
             return (int) Math.Sqrt(Math.Pow(p1.X - p2.X, 2) + Math.Pow(p1.Y - p2.Y, 2));
+        }
+
+        public static PointF GetIncrementBetweenPointF(PointF pt1, PointF pt2)
+        {
+            pt1.X = Math.Abs(pt1.X - pt2.X);
+            pt1.Y = Math.Abs(pt1.Y - pt1.Y);
+            return pt1;
         }
 
         private static bool IsAheadX(PointF master, PointF aheader)

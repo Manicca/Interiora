@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using FunctionalityLibrary.Drawing.Figures;
 
 namespace FunctionalityLibrary.Drawing.History
 {
@@ -13,7 +14,6 @@ namespace FunctionalityLibrary.Drawing.History
 
         public HistoryDrawing(Image bpBitmap)
         {
-            
             _initialWidht = bpBitmap.Width;
             _initialHeight = bpBitmap.Height;
             _clearBmp = new Bitmap(_initialWidht, _initialHeight);

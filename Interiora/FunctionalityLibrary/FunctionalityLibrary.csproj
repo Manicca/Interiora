@@ -46,6 +46,7 @@
     <Compile Include="Calculation\Factor.cs" />
     <Compile Include="Calculation\HistoryIterator.cs" />
     <Compile Include="Calculation\ObjectContains.cs" />
+    <Compile Include="Calculation\SizingImage.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
     <Compile Include="Drawing\DoorFigure.cs" />
@@ -53,9 +54,9 @@
     <Compile Include="Drawing\Figure.cs" />
     <Compile Include="Drawing\History\HistoryDrawing.cs" />
     <Compile Include="Drawing\RoomFigure.cs" />
-    <Compile Include="Drawing\StartPoint.cs" />
+    <Compile Include="Drawing\StartPointFigure.cs" />
+    <Compile Include="Drawing\TableFigure.cs" />
     <Compile Include="Drawing\WindowFigure.cs" />
-    <Compile Include="FurnitureLocation.cs" />
     <Compile Include="EMailSender.cs" />
     <Compile Include="Modes\EnumOfModes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -93,6 +94,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{bb661f88-14fc-4efa-a48f-db4c82185e8e}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

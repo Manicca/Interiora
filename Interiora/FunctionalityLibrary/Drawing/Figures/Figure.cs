@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace FunctionalityLibrary.Drawing
+namespace FunctionalityLibrary.Drawing.Figures
 {
     public abstract class Figure : ICloneable
     {
@@ -16,8 +16,6 @@ namespace FunctionalityLibrary.Drawing
         /// <param name="end">Конечная точка отрисовки.</param>
         /// <param name="factor">Коэффициент увеличения.</param>
         public virtual void Draw(ref Bitmap bmp, PointF start, PointF end, float factor) { }
-
-        
 
         public object Clone()
         {

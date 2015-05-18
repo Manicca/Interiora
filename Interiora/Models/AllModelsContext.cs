@@ -4,6 +4,11 @@ namespace Models
 {
     public class AllModelsContext : DbContext
     {
+
+        public AllModelsContext()
+        {
+            Database.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Modals.AllModelsContext;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+        }
         public DbSet<Furniture> FurnituresDb { get; set; }
         public DbSet<Supplier> SuppliersDb { get; set; }
         public DbSet<WebEquipment> WebEquipmentsDb { get; set; }

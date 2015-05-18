@@ -26,7 +26,6 @@ namespace InterioraClient
 
         private void ModeSelectorForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -42,15 +41,11 @@ namespace InterioraClient
             own.SetMode(selectedItem);
             if (selectedItem != null && selectedItem.Mode != EnumOfModes.Manual)
                 if (textBox1.Text != "")
-                {
                     own.SetPreferredNumberOfWorkSpaces(int.Parse(textBox1.Text));
-                }
                 else
-                {
                     MessageBox.Show(Resources.ModeSelectorForm_button1_Click_WrongTBData,
                         Resources.ModeSelectorForm_button1_Click_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                    Close();
+            Dispose();
         }
 
         private void ModeSelectorForm_FormClosing(object sender, FormClosingEventArgs e)
