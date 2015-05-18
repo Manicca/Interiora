@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Drawing.History;
 using FunctionalityLibrary.Drawing.OfficeEquipment;
 using FunctionalityLibrary.Modes;
@@ -14,15 +15,19 @@ namespace InterioraClient
     public partial class WorkForm : Form
     {
         private readonly AllModelsContext _db = new AllModelsContext();
+        private readonly int maxZoom = 3;
+        private float _factor = 1.0f;
         private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
         private int _preferredNumberOfWorkSpaces = -1;
+        public Bitmap InitialBmp;
 
         public WorkForm()
         {
             InitializeComponent();
+            backgroundWorker1.RunWorkerAsync();
+            trackBar1.Value = trackBar1.Maximum/maxZoom;
         }
 
-        public Bitmap SaveBitmap { private get; set; }
         public HistoryDrawing History { get; set; }
 
         public void SetMode(WorkMode newMode)
@@ -101,9 +106,7 @@ namespace InterioraClient
                 }
 
                 dbform.ShowDialog(this);
-
             }
-
         }
 
         private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -120,7 +123,7 @@ namespace InterioraClient
 
         private void WorkForm_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = SaveBitmap;
+            pictureBox1.Image = InitialBmp;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -132,7 +135,6 @@ namespace InterioraClient
         {
             var modeSelectorForm = new ModeSelectorForm();
             modeSelectorForm.ShowDialog(this);
-            backgroundWorker1.RunWorkerAsync();
         }
 
         /*Стол
@@ -154,7 +156,11 @@ namespace InterioraClient
             var item = listBox1.SelectedItem as OfficeFigure;
             var bmp = (Bitmap) pictureBox1.Image;
             if (item != null)
+            {
                 item.Draw(ref bmp, pos, 1);
+                item.FirstLocationPoint = pos;
+                History.AddOfficeFigure(item.Clone() as OfficeFigure);
+            }
             pictureBox1.Image = bmp;
         }
 
@@ -163,7 +169,9 @@ namespace InterioraClient
             var officeFigures = new List<OfficeFigure>
             {
                 new TableOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "Table")),
-                new ChairOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "Chair"))
+                new ChairOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "Chair")),
+                new CupboardOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "CupBoard")),
+                new ForClothesOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "ForClothes"))
             };
 
             e.Result = officeFigures;
@@ -174,6 +182,13 @@ namespace InterioraClient
             listBox1.Items.Clear();
             listBox1.DataSource = e.Result;
             listBox1.Enabled = true;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            _factor = FormsHelper.GetFactor(ref trackBar1, maxZoom);
+            pictureBox1.Image = SizingImage.GetNewSizedBitmapFigures(History, _factor, InitialBmp);
+            label2.Text = $"Зум {(int) (_factor*100.0f)}%";
         }
     }
 }

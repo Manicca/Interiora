@@ -29,12 +29,13 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         {
             Gr = Graphics.FromImage(bmp);
             var pn = new Pen(Color.Black, 1 * factor);
-
+            var sizeW = _sizeW;
+            var sizeH = _sizeH;
             Factor.CountFactor(ref start, factor);
-            Factor.CountFactor(ref _sizeW, factor);
-            Factor.CountFactor(ref _sizeH, factor);
+            Factor.CountFactor(ref sizeW, factor);
+            Factor.CountFactor(ref sizeH, factor);
 
-            Gr.DrawEllipse(pn, start.X, start.Y, _sizeW, _sizeH);
+            Gr.DrawEllipse(pn, start.X, start.Y, sizeW, sizeH);
         }
 
         public override string ToString()

@@ -33,15 +33,15 @@ namespace FunctionalityLibrary.Calculation
 
         public int PreviousOrFirst()
         {
-            if (--_current < 0)
-                _current = 0;
+            if (--_current < 1)
+                _current = 1;
             return _current;
         }
 
         public void Clear()
         {
-            _current = 0;
-            _count = 0;
+            _current = 1;
+            _count = 1;
         }
 
         public void HistoryUpdate(int newCount, int current)

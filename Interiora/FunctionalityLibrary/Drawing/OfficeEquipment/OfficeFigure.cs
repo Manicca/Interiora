@@ -1,8 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
-    public class OfficeFigure
+    public class OfficeFigure : ICloneable
     {
         public PointF FirstLocationPoint;
         protected Graphics Gr;

@@ -54,6 +54,8 @@
     <Compile Include="Drawing\Figures\Figure.cs" />
     <Compile Include="Drawing\History\HistoryDrawing.cs" />
     <Compile Include="Drawing\OfficeEquipment\ChairOfficeFigure.cs" />
+    <Compile Include="Drawing\OfficeEquipment\CupboardOfficeFigure.cs" />
+    <Compile Include="Drawing\OfficeEquipment\ForClothesOfficeFigure.cs" />
     <Compile Include="Drawing\OfficeEquipment\OfficeFigure.cs" />
     <Compile Include="Drawing\Figures\RoomFigure.cs" />
     <Compile Include="Drawing\Figures\StartPointFigure.cs" />
