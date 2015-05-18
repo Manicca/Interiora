@@ -97,7 +97,7 @@ namespace InterioraClient
         {
             panel1.Enabled = true;
             _f = new DoorFigure();
-            button7.Enabled = true;
+         //  button7.Enabled = true;
             button6.Enabled = true;
             button2.Enabled = false;
             _isDrawing = true;
@@ -107,7 +107,7 @@ namespace InterioraClient
         {
             panel1.Enabled = true;
             _f = new RoomFigure();
-            button7.Enabled = false;
+            //button7.Enabled = false;
             button6.Enabled = true;
             button2.Enabled = true;
             _isDrawing = true;
@@ -117,7 +117,7 @@ namespace InterioraClient
         {
             panel1.Enabled = true;
             _f = new WindowFigure();
-            button7.Enabled = true;
+           // button7.Enabled = true;
             button6.Enabled = false;
             button2.Enabled = true;
             _isDrawing = true;

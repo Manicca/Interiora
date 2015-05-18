@@ -105,12 +105,14 @@ namespace InterioraClient
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(811, 25);
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImage = global::InterioraClient.Properties.Resources.cancle;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Location = new System.Drawing.Point(8, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 21);
+            this.button4.Size = new System.Drawing.Size(160, 40);
             this.button4.TabIndex = 9;
-            this.button4.Text = "Назад";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // WorkForm

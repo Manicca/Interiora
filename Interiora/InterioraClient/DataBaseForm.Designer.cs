@@ -59,7 +59,7 @@ namespace InterioraClient
             this.dataGridView1.Location = new System.Drawing.Point(12, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(304, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(560, 352);
             this.dataGridView1.TabIndex = 1;
             // 
             // textBox1
@@ -74,7 +74,7 @@ namespace InterioraClient
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(679, 98);
+            this.label1.Location = new System.Drawing.Point(693, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 3;

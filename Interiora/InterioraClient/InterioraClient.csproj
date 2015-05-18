@@ -255,6 +255,24 @@
   <ItemGroup>
     <None Include="Resources\backmin.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddoor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwind.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retirn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clearall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backforedit.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
