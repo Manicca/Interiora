@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary.Calculation;
-using Modals;
+using Models;
 
 namespace InterioraClient
 {

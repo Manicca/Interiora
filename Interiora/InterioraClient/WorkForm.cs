@@ -2,9 +2,10 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using FunctionalityLibrary.Drawing;
+using FunctionalityLibrary;
 using FunctionalityLibrary.Drawing.History;
-using Modals;
+using FunctionalityLibrary.Modes;
+using Models;
 
 namespace InterioraClient
 {
@@ -15,28 +16,26 @@ namespace InterioraClient
             InitializeComponent();
         }
 
+        private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
+        private int _preferredNumberOfWorkSpaces = -1;
+        public void SetMode(WorkMode newMode)
+        {
+            _mode = newMode;
+        }
+
+        public void SetPreferredNumberOfWorkSpaces(int number)
+        {
+            _preferredNumberOfWorkSpaces = number;
+        }
+
         public Bitmap SaveBitmap { private get; set; }
-        public HistoryDrawing History { private get; set; }
+        public HistoryDrawing History { get; set; }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var doneform = new DoneForm();
             doneform.Show();
             Hide();
-        }
-
-        private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormsHelper.FormCloser(this, ref e);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var drfun = new DrawFunctions();
-
-            //drfun.Table(ref pictureBox1);
-            //drfun.Chair(ref pictureBox1);
-            drfun.ForClothes(ref pictureBox1);
         }
 
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
@@ -103,7 +102,7 @@ namespace InterioraClient
             }
         }
 
-        private void WorkForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormsHelper.FormCloser(this, ref e);
         }
@@ -154,5 +153,12 @@ namespace InterioraClient
         {
             FormsHelper.GoToBackwardForm(this, Owner);
         }
+        private void WorkForm_Shown(object sender, EventArgs e)
+        {
+            var modeSelectorForm = new ModeSelectorForm();
+            modeSelectorForm.ShowDialog(this);
+        }
     }
+
+    
 }

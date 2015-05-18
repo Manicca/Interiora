@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace Modals
+namespace Models
 {
     public class AllModelsContext : DbContext
     {

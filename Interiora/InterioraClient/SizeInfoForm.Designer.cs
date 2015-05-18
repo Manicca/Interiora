@@ -39,7 +39,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 100);
+            this.comboBox1.Location = new System.Drawing.Point(71, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(51, 21);
             this.comboBox1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(157, 100);
+            this.comboBox2.Location = new System.Drawing.Point(169, 61);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(51, 21);
             this.comboBox2.TabIndex = 1;
@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 74);
+            this.label1.Location = new System.Drawing.Point(68, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 13);
             this.label1.TabIndex = 2;
@@ -65,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 103);
+            this.label2.Location = new System.Drawing.Point(139, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 3;
@@ -73,29 +73,34 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(226, 74);
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::InterioraClient.Properties.Resources.ok;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Location = new System.Drawing.Point(377, 252);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 23);
+            this.button1.Size = new System.Drawing.Size(130, 40);
             this.button1.TabIndex = 4;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(226, 148);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = global::InterioraClient.Properties.Resources.cancle;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.Location = new System.Drawing.Point(71, 251);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 28);
+            this.button2.Size = new System.Drawing.Size(130, 40);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Назад";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SizeInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 192);
+            this.BackgroundImage = global::InterioraClient.Properties.Resources.backmin;
+            this.ClientSize = new System.Drawing.Size(536, 303);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -105,7 +110,6 @@
             this.Name = "SizeInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SizeInfoForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SizeInfoForm_FormClosed);
             this.Load += new System.EventHandler(this.SizeInfoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

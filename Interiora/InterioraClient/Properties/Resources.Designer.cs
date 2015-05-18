@@ -71,6 +71,16 @@ namespace InterioraClient.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back1 {
+            get {
+                object obj = ResourceManager.GetObject("back1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
         internal static string BACKGROUND {
@@ -110,6 +120,36 @@ namespace InterioraClient.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backmin {
+            get {
+                object obj = ResourceManager.GetObject("backmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancle {
+            get {
+                object obj = ResourceManager.GetObject("cancle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chousefromlibrary {
+            get {
+                object obj = ResourceManager.GetObject("chousefromlibrary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Это удалит все ваши изменения!
         ///Это действие необратимо!
         ///Вы Уверены?.
@@ -126,6 +166,121 @@ namespace InterioraClient.Properties {
         internal static string Delete_Message_Warning_Title {
             get {
                 return ResourceManager.GetString("Delete_Message_Warning_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doc {
+            get {
+                object obj = ResourceManager.GetObject("doc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Закрыть приложение?.
+        /// </summary>
+        internal static string FormsHelper_FormCloser_CloseAppQuestion {
+            get {
+                return ResourceManager.GetString("FormsHelper_FormCloser_CloseAppQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы уверены, что хотите закрыть окно?.
+        /// </summary>
+        internal static string FormsHelper_FormCloser_CloseWindowQuestion {
+            get {
+                return ResourceManager.GetString("FormsHelper_FormCloser_CloseWindowQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Предупреждение.
+        /// </summary>
+        internal static string FormsHelper_FormCloser_Warning {
+            get {
+                return ResourceManager.GetString("FormsHelper_FormCloser_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loadfromfile {
+            get {
+                object obj = ResourceManager.GetObject("loadfromfile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка.
+        /// </summary>
+        internal static string ModeSelectorForm_button1_Click_Error {
+            get {
+                return ResourceManager.GetString("ModeSelectorForm_button1_Click_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заполните Поле количества АРМ!.
+        /// </summary>
+        internal static string ModeSelectorForm_button1_Click_WrongTBData {
+            get {
+                return ResourceManager.GetString("ModeSelectorForm_button1_Click_WrongTBData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newproject {
+            get {
+                object obj = ResourceManager.GetObject("newproject", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next {
+            get {
+                object obj = ResourceManager.GetObject("next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ok {
+            get {
+                object obj = ResourceManager.GetObject("ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sendblank {
+            get {
+                object obj = ResourceManager.GetObject("sendblank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sendreport {
+            get {
+                object obj = ResourceManager.GetObject("sendreport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Modals
+namespace Models
 {
      public class Supplier
      {

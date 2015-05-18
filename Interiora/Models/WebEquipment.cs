@@ -1,4 +1,4 @@
-﻿namespace Modals
+﻿namespace Models
 {
      public class WebEquipment
      {

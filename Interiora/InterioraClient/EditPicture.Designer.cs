@@ -59,7 +59,7 @@ namespace InterioraClient
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(732, 453);
+            this.button1.Location = new System.Drawing.Point(613, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 32);
             this.button1.TabIndex = 5;
@@ -72,7 +72,7 @@ namespace InterioraClient
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 100);
+            this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.MaximumSize = new System.Drawing.Size(714, 386);
             this.panel1.MinimumSize = new System.Drawing.Size(514, 186);
             this.panel1.Name = "panel1";
@@ -81,7 +81,7 @@ namespace InterioraClient
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(12, 453);
+            this.trackBar1.Location = new System.Drawing.Point(12, 431);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(303, 45);
             this.trackBar1.TabIndex = 12;
@@ -89,7 +89,7 @@ namespace InterioraClient
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 34);
+            this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 43);
             this.button3.TabIndex = 14;
@@ -99,7 +99,7 @@ namespace InterioraClient
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(86, 34);
+            this.button4.Location = new System.Drawing.Point(86, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(68, 43);
             this.button4.TabIndex = 15;
@@ -109,7 +109,7 @@ namespace InterioraClient
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(160, 34);
+            this.button5.Location = new System.Drawing.Point(160, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(162, 43);
             this.button5.TabIndex = 16;
@@ -149,9 +149,9 @@ namespace InterioraClient
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(699, 408);
+            this.button8.Location = new System.Drawing.Point(613, 431);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(129, 32);
+            this.button8.Size = new System.Drawing.Size(189, 32);
             this.button8.TabIndex = 20;
             this.button8.Text = "Назад";
             this.button8.UseVisualStyleBackColor = true;
@@ -161,8 +161,8 @@ namespace InterioraClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::InterioraClient.Properties.Resources.back;
-            this.ClientSize = new System.Drawing.Size(840, 452);
+            this.BackgroundImage = global::InterioraClient.Properties.Resources.back1;
+            this.ClientSize = new System.Drawing.Size(826, 488);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -202,6 +202,6 @@ namespace InterioraClient
           private Button button2;
           private Button button6;
           private Button button7;
-        private Button button8;
+          private Button button8;
     }
 }

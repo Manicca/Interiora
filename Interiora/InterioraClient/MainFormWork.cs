@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using InterioraClient.Properties;
-using Modals;
+using Models;
 
 namespace InterioraClient
 {
@@ -11,9 +11,10 @@ namespace InterioraClient
     {
         public MainFormWork()
         {
+            InitializeComponent();
             _sizeH = 0;
             _sizeW = 0;
-            InitializeComponent();
+            
         }
 
         private int _sizeH = 0;
@@ -59,8 +60,7 @@ namespace InterioraClient
         {
             
             var sizeInfoForm = new SizeInfoForm();
-            sizeInfoForm.Show(this);
-            this.Enabled = false;
+            sizeInfoForm.ShowDialog(this);
         }
 
         public void SetNewProjectSize(int heightCount, int widthCount)
