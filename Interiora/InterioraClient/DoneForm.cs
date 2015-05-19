@@ -40,5 +40,12 @@ namespace InterioraClient
           {
               FormsHelper.GoToBackwardForm(this, Owner);
           }
+
+          private void button4_Click(object sender, EventArgs e)
+          {
+              var aboutcustoms = new AboutCustoms();
+              aboutcustoms.ShowDialog(this);
+              
+          }
      }
 }

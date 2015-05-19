@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-
+using System;
 namespace Models
 {
     public class AllModelsContext : DbContext
@@ -7,7 +7,7 @@ namespace Models
 
         public AllModelsContext()
         {
-            Database.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Modals.AllModelsContext;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            Database.Connection.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Models\SampleDataBase.mdf;Integrated Security=True";
         }
         public DbSet<Furniture> FurnituresDb { get; set; }
         public DbSet<Supplier> SuppliersDb { get; set; }

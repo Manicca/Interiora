@@ -44,7 +44,7 @@ namespace InterioraClient
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.BackgroundImage = global::InterioraClient.Properties.Resources.ok;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Location = new System.Drawing.Point(187, 390);
+            this.button1.Location = new System.Drawing.Point(189, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 50);
             this.button1.TabIndex = 0;
@@ -85,7 +85,7 @@ namespace InterioraClient
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.BackgroundImage = global::InterioraClient.Properties.Resources.cancle;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Location = new System.Drawing.Point(12, 390);
+            this.button2.Location = new System.Drawing.Point(12, 396);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 50);
             this.button2.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace InterioraClient
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterioraClient.Properties.Resources.back1;
-            this.ClientSize = new System.Drawing.Size(849, 452);
+            this.ClientSize = new System.Drawing.Size(834, 458);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
