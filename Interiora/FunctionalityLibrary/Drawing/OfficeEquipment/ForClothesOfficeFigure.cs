@@ -1,24 +1,20 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using FunctionalityLibrary.Calculation;
-using FunctionalityLibrary.Properties;
 using Models;
 
 namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
-    public class TableOfficeFigure : OfficeFigure
+    public class ForClothesOfficeFigure : OfficeFigure
     {
         private readonly Furniture _f;
         private float _sizeH;
         private float _sizeW;
 
-        public TableOfficeFigure(Furniture f)
+        public ForClothesOfficeFigure(Furniture f)
         {
             _f = f;
 
-            if (f.Type != "Table") throw new Exception("Нельзя использовать тип : " + f.Type);
             var splited = f.Params.Split('*');
-
             _sizeW = float.Parse(splited[0]);
             _sizeH = float.Parse(splited[1]);
         }
@@ -34,12 +30,13 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
             Factor.CountFactor(ref sizeW, factor);
             Factor.CountFactor(ref sizeH, factor);
 
-            Gr.DrawRectangle(pn, start.X, start.Y, sizeW, sizeH);
+            Gr.DrawLine(pn, start.X, start.Y, start.X + sizeW, start.Y + sizeH);
+            Gr.DrawLine(pn, start.X, start.Y + sizeH, start.X + sizeW, start.Y);
         }
 
         public override string ToString()
         {
-            return "Стол";
+            return "Вешалка";
         }
 
         public override string GetToolTipInfo()

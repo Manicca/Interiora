@@ -2,12 +2,14 @@
 using System.Drawing;
 using System.Linq;
 using FunctionalityLibrary.Drawing.Figures;
+using FunctionalityLibrary.Drawing.OfficeEquipment;
 
 namespace FunctionalityLibrary.Drawing.History
 {
     public class HistoryDrawing
     {
-        private readonly List<Figure> _history;
+        private readonly List<Figure> _historyFigures;
+        private readonly List<OfficeFigure> _historyOfficeFigures; 
         private readonly int _initialHeight;
         private readonly int _initialWidht;
         private readonly Bitmap _clearBmp;
@@ -20,70 +22,111 @@ namespace FunctionalityLibrary.Drawing.History
             var gr = Graphics.FromImage(_clearBmp);
             gr.Clear(Color.White);
             gr.Dispose();
-            _history = new List<Figure>();
+            _historyFigures = new List<Figure>();
+            _historyOfficeFigures = new List<OfficeFigure>();
         }
 
-        public List<Figure> AllRecords()
+        public List<Figure> AllFiguresRecords()
         {
-            return _history;
+            return _historyFigures;
         }
 
-        public void Add(Figure f)
+        public void AddFigure(Figure f)
         {
-            _history.Add(f);
+            _historyFigures.Add(f);
         }
 
-        public void RemoveLast()
+        public void AddOfficeFigure(OfficeFigure f)
         {
-            _history.Remove(_history.Last());
+            _historyOfficeFigures.Add(f);
         }
 
-        public Figure GetLast()
+        public void RemoveFigureAfterByIndex(int index)
         {
-            return _history.Last();
+            if (_historyFigures.Count - index > 0)
+                _historyFigures.RemoveRange(index, _historyFigures.Count - index);
         }
 
-        public void RemoveAfterByIndex(int index)
+        public void RemoveOfficeFigureAfterByIndex(int index)
         {
-            if (_history.Count - index > 0)
-                _history.RemoveRange(index, _history.Count - index);
+            if (_historyOfficeFigures.Count - index > 0)
+                _historyOfficeFigures.RemoveRange(index, _historyOfficeFigures.Count - index);
         }
 
-        public Bitmap GetByIndex(int index, float factor)
+
+        public Bitmap GetFigureByIndex(int index, float factor)
         {
             var realWidth = (int)(_initialWidht * factor);
             var realHeight = (int)(_initialHeight * factor);
             var bp = new Bitmap(_clearBmp, realWidth, realHeight);
-            if (_history == null) return bp;
-            if (_history.Count == 0) return bp;
+            if (_historyFigures == null) return bp;
+            if (_historyFigures.Count == 0) return bp;
             if (index == 0) return bp; // Крайний случай, чтобы фигурки не отрисовывались
             for (var i = 0; i < index; i++)
             {
-                var figure = _history[i];
+                var figure = _historyFigures[i];
                 figure.Draw(ref bp, figure.FirstLocationPoint, figure.SecondLocationPoint, factor);
             }
             return bp;
         }
 
-        public int Count()
+        public Bitmap GetOfficeFigureByIndex(int index, float factor)
         {
-            return _history.Count;
+            var realWidth = (int)(_initialWidht * factor);
+            var realHeight = (int)(_initialHeight * factor);
+            var bp = new Bitmap(_clearBmp, realWidth, realHeight);
+            if (_historyOfficeFigures == null) return bp;
+            if (_historyOfficeFigures.Count == 0) return bp;
+            if (index == 0) return bp; // Крайний случай, чтобы фигурки не отрисовывались
+            for (var i = 0; i < index; i++)
+            {
+                var figure = _historyOfficeFigures[i];
+                figure.Draw(ref bp, figure.FirstLocationPoint, factor);
+            }
+            return bp;
         }
 
-        public void Clear()
+        public int CountFigures()
         {
-            RemoveAfterByIndex(0);
+            return _historyFigures.Count;
         }
 
-        public Bitmap GetLastBitmapOrDefalut(float factor)
+        public int CountOfficeFigures()
+        {
+            return _historyOfficeFigures.Count;
+        }
+
+
+        public void ClearFigures()
+        {
+            RemoveFigureAfterByIndex(1);
+        }
+
+        public void ClearOfficeFigures()
+        {
+            RemoveOfficeFigureAfterByIndex(1);
+        }
+
+        public Bitmap GetLastBitmapOrDefalutOnlyFigures(float factor)
         {
             var realWidth = (int) (_initialWidht*factor);
             var realHeight = (int) (_initialHeight*factor);
             var bp = new Bitmap(_clearBmp, realWidth, realHeight);
-            if (_history != null)
-                foreach (var figure in _history)
+            if (_historyFigures != null)
+                foreach (var figure in _historyFigures)
                 {
                     figure.Draw(ref bp, figure.FirstLocationPoint, figure.SecondLocationPoint, factor);
+                }
+            return bp;
+        }
+
+        public Bitmap GetLastBitmapOrDefalutOfficeFigures(float factor)
+        {
+            var bp = GetLastBitmapOrDefalutOnlyFigures(factor);
+            if (_historyOfficeFigures != null)
+                foreach (var figure in _historyOfficeFigures)
+                {
+                    figure.Draw(ref bp, figure.FirstLocationPoint, factor);
                 }
             return bp;
         }

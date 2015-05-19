@@ -12,21 +12,7 @@ namespace FunctionalityLibrary.Drawing.Figures
 
 
 
-        public void Cupboard(ref PictureBox targetPictureBox)
-        {
-            Bitmap bmp;
-            if (targetPictureBox.Image == null)
-                bmp = new Bitmap(targetPictureBox.Width, targetPictureBox.Height);
-            else
-                bmp = (Bitmap) targetPictureBox.Image;
-            var gr = Graphics.FromImage(bmp);
-
-
-            var pn = new Pen(Color.Black, 1);
-            gr.DrawRectangle(pn, 40, 0, 10, 20);
-
-            targetPictureBox.Image = (Bitmap) bmp.Clone();
-        }
+       
 
         public void ForClothes(ref PictureBox targetPictureBox)
         {

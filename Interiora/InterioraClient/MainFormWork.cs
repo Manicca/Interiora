@@ -11,7 +11,7 @@ namespace InterioraClient
     {
         private int _sizeH;
         private int _sizeW;
-        private Bitmap bmBitmap;
+        private Bitmap _bmBitmap;
 
         public MainFormWork()
         {
@@ -27,7 +27,7 @@ namespace InterioraClient
 
         public void NextForm()
         {
-            var form = new EditPicture {InitialBmp = bmBitmap};
+            var form = new EditPicture {InitialBmp = _bmBitmap};
             form.Show(this);
             Hide();
         }
@@ -64,8 +64,8 @@ namespace InterioraClient
             var ppm = Settings.Default.PixelsPerMeter;
             _sizeH = heightCount;
             _sizeW = widthCount;
-            bmBitmap = new Bitmap(_sizeW*ppm, _sizeH*ppm);
-            var gr = Graphics.FromImage(bmBitmap);
+            _bmBitmap = new Bitmap(_sizeW*ppm, _sizeH*ppm);
+            var gr = Graphics.FromImage(_bmBitmap);
             gr.Clear(Color.White);
             gr.Dispose();
 

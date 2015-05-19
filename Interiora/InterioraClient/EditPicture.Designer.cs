@@ -41,6 +41,7 @@ namespace InterioraClient
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -85,9 +86,12 @@ namespace InterioraClient
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(12, 431);
+            this.trackBar1.Maximum = 27;
+            this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(303, 45);
+            this.trackBar1.Size = new System.Drawing.Size(441, 45);
             this.trackBar1.TabIndex = 12;
+            this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // button3
@@ -162,12 +166,22 @@ namespace InterioraClient
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(459, 445);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Зум 100%";
+            // 
             // EditPicture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterioraClient.Properties.Resources.back1;
             this.ClientSize = new System.Drawing.Size(826, 488);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
@@ -206,5 +220,6 @@ namespace InterioraClient
           private Button button2;
           private Button button6;
           private Button button8;
+        private Label label1;
     }
 }

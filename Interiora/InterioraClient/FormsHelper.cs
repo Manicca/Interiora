@@ -59,5 +59,12 @@ namespace InterioraClient
                     break;
             }
         }
+
+        public static float GetFactor(ref TrackBar tbBar, float maxZoom)
+        {
+            var scrolled = tbBar.Value;
+            var maxScrolled = tbBar.Maximum;
+            return maxZoom * scrolled / maxScrolled;
+        }
     }
 }

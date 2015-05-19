@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InterioraClient
@@ -19,13 +12,6 @@ namespace InterioraClient
 
         private void SizeInfoForm_Load(object sender, EventArgs e)
         {
-            for (var i = 1; i <= 10; i++)
-            {
-                comboBox1.Items.Add(i);
-                comboBox2.Items.Add(i);
-            }
-            comboBox1.SelectedIndex = 1;
-            comboBox2.SelectedIndex = 1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,12 +19,12 @@ namespace InterioraClient
             var work = Owner as MainFormWork;
             if (work != null)
             {
-                
-                work.SetNewProjectSize((int)comboBox1.SelectedItem,
-                    (int)comboBox2.SelectedItem);
+                var w = int.Parse(textBox1.Text);
+                var h = int.Parse(textBox2.Text);
+
+                work.SetNewProjectSize(w, h);
             }
             Close();
-            
         }
 
         private void SizeInfoForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -51,6 +37,21 @@ namespace InterioraClient
         private void button2_Click(object sender, EventArgs e)
         {
             FormsHelper.GoToBackwardForm(this, Owner);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            FormsHelper.RemoveNotDigitsFromTb(ref textBox1);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            FormsHelper.RemoveNotDigitsFromTb(ref textBox2);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using FunctionalityLibrary.Drawing;
 using FunctionalityLibrary.Drawing.Figures;
 
 namespace FunctionalityLibrary.Calculation
@@ -95,16 +94,16 @@ namespace FunctionalityLibrary.Calculation
             }
         }
 
-        public static void CalculateBonders(ref PointF start, ref PointF end, PictureBox pictureBox1,
+        public static void CalculateBonders(ref PointF start, ref PointF end, PictureBox pictureBox1, float factor,
             List<Figure> history = null)
         {
-            if (end.X > pictureBox1.Width)
+            if (end.X*factor > pictureBox1.Width)
                 end.X = pictureBox1.Width - 2;
-            if (end.Y > pictureBox1.Height)
+            if (end.Y*factor > pictureBox1.Height)
                 end.Y = pictureBox1.Height - 2;
-            if (end.X < 2)
+            if (end.X*factor < 2)
                 end.X = 1;
-            if (end.Y < 2)
+            if (end.Y*factor < 2)
                 end.Y = 1;
 
             if (history == null) return;
