@@ -5,6 +5,7 @@ using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Drawing.Figures;
 using FunctionalityLibrary.Drawing.History;
 using InterioraClient.Properties;
+using Models;
 
 namespace InterioraClient
 {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using FunctionalityLibrary.Calculation;
 using FunctionalityLibrary.Drawing.History;
@@ -14,7 +13,7 @@ namespace InterioraClient
 {
     public partial class WorkForm : Form
     {
-        private readonly AllModelsContext _db = new AllModelsContext();
+        private readonly DbWorker _db = new DbWorker();
         private readonly int maxZoom = 3;
         private float _factor = 1.0f;
         private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
@@ -72,35 +71,36 @@ namespace InterioraClient
                 switch (listBox1.SelectedIndex)
                 {
                     case 0:
-                        dbView.DataSource = _db.FurnituresDb.Where(elem => elem.Type == "Table").ToList();
+
+                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "Table");
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 1:
-                        dbView.DataSource = _db.FurnituresDb.Where(elem => elem.Type == "chair").ToList();
+                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "chair");
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 2:
-                        dbView.DataSource = _db.FurnituresDb.Where(elem => elem.Type == "CupBoard").ToList();
+                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "CupBoard");
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 3:
-                        dbView.DataSource = _db.FurnituresDb.Where(elem => elem.Type == "ForClothes").ToList();
+                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ForClothes");
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 4:
-                        dbView.DataSource = _db.FurnituresDb.Where(elem => elem.Type == "ARM").ToList();
+                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ARM");
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 5:
-                        dbView.DataSource = _db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 1).ToList();
+                        dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 1);
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 6:
-                        dbView.DataSource = _db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 2).ToList();
+                        dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 2);
                         dbform.SaveList = dbView.DataSource;
                         break;
                     case 7:
-                        dbView.DataSource = _db.WebEquipmentsDb.Where(elem => elem.TypeOfWebEquipmentId == 3).ToList();
+                        dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 3);
                         dbform.SaveList = dbView.DataSource;
                         break;
                 }
@@ -168,10 +168,10 @@ namespace InterioraClient
         {
             var officeFigures = new List<OfficeFigure>
             {
-                new TableOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "Table")),
-                new ChairOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "Chair")),
-                new CupboardOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "CupBoard")),
-                new ForClothesOfficeFigure(_db.FurnituresDb.FirstOrDefault(elem => elem.Type == "ForClothes"))
+                new TableOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "Table")),
+                new ChairOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "Chair")),
+                new CupboardOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "CupBoard")),
+                new ForClothesOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "ForClothes"))
             };
 
             e.Result = officeFigures;

@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using System;
+
+namespace Models
 {
     public class Furniture
     {
@@ -17,6 +19,12 @@
             Cost = cost;
             this.Params = Params;
             SupplierId = supplierId;
+            Type = type;
+        }
+
+        public static explicit operator Furniture(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

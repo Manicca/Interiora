@@ -1,21 +1,33 @@
 ﻿using System.Data.Entity;
+using Models.Initializers;
 
 namespace Models
 {
+    
     public class AllModelsContext : DbContext
     {
 
-        public AllModelsContext()
+        public AllModelsContext() : base("AllModelsContext")
         {
-            Database.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Modals.AllModelsContext;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            var ensureDllIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+            Database.SetInitializer<AllModelsContext>(new TestDataDbInitializer());
         }
-        public DbSet<Furniture> FurnituresDb { get; set; }
-        public DbSet<Supplier> SuppliersDb { get; set; }
-        public DbSet<WebEquipment> WebEquipmentsDb { get; set; }
+        public DbSet<Furniture> FurnitureDb { get; set; }
+        public DbSet<Supplier> SupplierDb { get; set; }
+        public DbSet<WebEquipment> WebEquipmentDb { get; set; }
         public DbSet<TypeOfWebEquipment> TypeOfWebEquipmentDb { get; set; }
 
-        public DbSet<FurnitureLocation> FurnitureLocationsDb { get; set; }
-        public DbSet<Workspace> Workspaces { get; set; }
+        public DbSet<FurnitureLocation> FurnitureLocationDb { get; set; }
+        public DbSet<Workspace> WorkspaceDb { get; set; }
+
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //Configure domain classes using Fluent API here
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
 

@@ -16,12 +16,12 @@ namespace Models.Migrations
                     })
                 .PrimaryKey(t => t.FurnitureLocationId)
                 .ForeignKey("dbo.Furnitures", t => t.FurnitureId, cascadeDelete: true)
-                .ForeignKey("dbo.Workspaces", t => t.WorkspaceId, cascadeDelete: true)
+                .ForeignKey("dbo.WorkspaceDb", t => t.WorkspaceId, cascadeDelete: true)
                 .Index(t => t.FurnitureId)
                 .Index(t => t.WorkspaceId);
             
             CreateTable(
-                "dbo.Workspaces",
+                "dbo.WorkspaceDb",
                 c => new
                     {
                         WorkspaceId = c.Int(nullable: false, identity: true),
@@ -33,11 +33,11 @@ namespace Models.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.FurnitureLocations", "WorkspaceId", "dbo.Workspaces");
+            DropForeignKey("dbo.FurnitureLocations", "WorkspaceId", "dbo.WorkspaceDb");
             DropForeignKey("dbo.FurnitureLocations", "FurnitureId", "dbo.Furnitures");
             DropIndex("dbo.FurnitureLocations", new[] { "WorkspaceId" });
             DropIndex("dbo.FurnitureLocations", new[] { "FurnitureId" });
-            DropTable("dbo.Workspaces");
+            DropTable("dbo.WorkspaceDb");
             DropTable("dbo.FurnitureLocations");
         }
     }

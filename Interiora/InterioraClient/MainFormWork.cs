@@ -18,6 +18,7 @@ namespace InterioraClient
             InitializeComponent();
             _sizeH = 0;
             _sizeW = 0;
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,9 +44,7 @@ namespace InterioraClient
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var db = new AllModelsContext();
-            db.SaveChanges();
-            db.Dispose();
+           
         }
 
         private void MainFormWork_Click(object sender, EventArgs e)
