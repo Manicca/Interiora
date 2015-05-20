@@ -8,7 +8,7 @@ namespace Models
           public string Name { get; set; }
           public string Mail { get; set; }
           public string DG { get; set; }
-          public virtual List<Supplier> Suppliers { get; set; }
+          public virtual List<Furniture> Furnitures { get; set; }
           public virtual List<WebEquipment> WebEquipment { get; set; }
           public Supplier(string Name, string Mail, string DG)
           {
