@@ -16,7 +16,6 @@ namespace Models
             return selectedDb;
         }
 
-
         public TT AddToBd<TT>(TT tmp) where TT : class
         {
             var selectedDb = GetDb<TT>();

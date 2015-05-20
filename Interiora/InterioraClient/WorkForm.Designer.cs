@@ -42,6 +42,7 @@ namespace InterioraClient
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -109,7 +110,7 @@ namespace InterioraClient
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.Location = new System.Drawing.Point(8, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 40);
+            this.button4.Size = new System.Drawing.Size(74, 40);
             this.button4.TabIndex = 9;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -139,12 +140,25 @@ namespace InterioraClient
             this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Location = new System.Drawing.Point(88, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 40);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Редактировать";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterioraClient.Properties.Resources.back1;
             this.ClientSize = new System.Drawing.Size(1008, 494);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button4);
@@ -179,5 +193,6 @@ namespace InterioraClient
         private BackgroundWorker backgroundWorker1;
         private Label label2;
         private TrackBar trackBar1;
+        private Button button1;
     }
 }

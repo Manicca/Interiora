@@ -187,5 +187,11 @@ namespace InterioraClient
             pictureBox1.Image = SizingImage.GetNewSizedBitmapFigures(History, _factor, InitialBmp);
             label2.Text = $"Зум {(int) (_factor*100.0f)}%";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Text = "Закончить редактирование";
+
+        }
     }
 }
