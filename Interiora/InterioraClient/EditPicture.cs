@@ -73,6 +73,7 @@ namespace InterioraClient
             label1.Text = $"Зум {(int)(_factor*100.0f)}%";
         }
 
+
         private void button3_Click(object sender, EventArgs e)
         {
             _historyIterator.PreviousOrFirst();
