@@ -66,6 +66,12 @@
     <Compile Include="EditPicture.Designer.cs">
       <DependentUpon>EditPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="AboutCustoms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutCustoms.Designer.cs">
+      <DependentUpon>AboutCustoms.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsHelper.cs" />
     <Compile Include="LibrarySelectorForm.cs">
       <SubType>Form</SubType>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditPicture.resx">
       <DependentUpon>EditPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutCustoms.resx">
+      <DependentUpon>AboutCustoms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibrarySelectorForm.resx">
       <DependentUpon>LibrarySelectorForm.cs</DependentUpon>

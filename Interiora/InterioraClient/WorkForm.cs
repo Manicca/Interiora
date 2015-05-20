@@ -56,57 +56,54 @@ namespace InterioraClient
 
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button != MouseButtons.Right) return;
+            var screenPosition = MousePosition;
+            var listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
+
+            listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
+            //MessageBox.Show("Перейти к определению параметров");
+            var dbform = new DataBaseForm();
+            // dbform.f = this;
+            var dbView = dbform.dataGridView1;
+
+            dbView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            switch (listBox1.SelectedIndex)
             {
-                var screenPosition = MousePosition;
-                var listBoxClientAreaPosition = listBox1.PointToClient(screenPosition);
-
-                listBox1.SelectedIndex = listBox1.IndexFromPoint(listBoxClientAreaPosition);
-                //MessageBox.Show("Перейти к определению параметров");
-                var dbform = new DataBaseForm();
-                // dbform.f = this;
-                var dbView = dbform.dataGridView1;
-
-                dbView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                switch (listBox1.SelectedIndex)
-                {
-                    case 0:
-
-                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "Table");
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 1:
-                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "chair");
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 2:
-                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "CupBoard");
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 3:
-                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ForClothes");
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 4:
-                        dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ARM");
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 5:
-                        dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 1);
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 6:
-                        dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 2);
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                    case 7:
-                        dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 3);
-                        dbform.SaveList = dbView.DataSource;
-                        break;
-                }
-
-                dbform.ShowDialog(this);
+                case 0:
+                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "Table");
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 1:
+                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "chair");
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 2:
+                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "CupBoard");
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 3:
+                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ForClothes");
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 4:
+                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ARM");
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 5:
+                    dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 1);
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 6:
+                    dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 2);
+                    dbform.SaveList = dbView.DataSource;
+                    break;
+                case 7:
+                    dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 3);
+                    dbform.SaveList = dbView.DataSource;
+                    break;
             }
+
+            dbform.ShowDialog(this);
         }
 
         private void WorkForm_FormClosing(object sender, FormClosingEventArgs e)
