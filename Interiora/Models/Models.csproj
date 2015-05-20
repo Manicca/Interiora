@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201504302251462_Add_new_tables.Designer.cs">
       <DependentUpon>201504302251462_Add_new_tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505201918390_ChangeWrongClient.cs" />
+    <Compile Include="Migrations\201505201918390_ChangeWrongClient.Designer.cs">
+      <DependentUpon>201505201918390_ChangeWrongClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workspace.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504302251462_Add_new_tables.resx">
       <DependentUpon>201504302251462_Add_new_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505201918390_ChangeWrongClient.resx">
+      <DependentUpon>201505201918390_ChangeWrongClient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

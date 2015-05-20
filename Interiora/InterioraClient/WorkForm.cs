@@ -185,7 +185,7 @@ namespace InterioraClient
         {
             _factor = FormsHelper.GetFactor(ref trackBar1, maxZoom);
             pictureBox1.Image = SizingImage.GetNewSizedBitmapFigures(History, _factor, InitialBmp);
-            label2.Text = $"Зум {(int) (_factor*100.0f)}%";
+            label2.Text = "Увеличение" + (int) (_factor*100.0f) + "%";
         }
 
         private void button1_Click(object sender, EventArgs e)

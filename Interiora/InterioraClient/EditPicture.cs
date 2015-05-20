@@ -70,7 +70,7 @@ namespace InterioraClient
         {
             _factor = FormsHelper.GetFactor(ref trackBar1, maxZoom);
             pictureBox1.Image = SizingImage.GetNewSizedBitmapFigures(_history, _factor, InitialBmp);
-            label1.Text = $"Зум {(int)(_factor*100.0f)}%";
+            label1.Text = "Увеличение" + (int)(_factor * 100.0f) + "%";
         }
 
 
