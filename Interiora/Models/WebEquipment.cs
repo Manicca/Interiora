@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 namespace Models
 {
      public class WebEquipment
@@ -10,5 +10,17 @@ namespace Models
           public virtual TypeOfWebEquipment TypeOfWebEquipment { get; set; }
           public int SupplierId { get; set; }
           public virtual Supplier Supplier { get; set; }
+
+         public WebEquipment(){}
+
+         public WebEquipment (int WebEquipmentID, string cost, string atributes, int TypeOfWebID)
+         {
+             WebEquipmentId = WebEquipmentID;
+             Cost = cost;
+             Atributes = atributes;
+             TypeOfWebEquipmentId = TypeOfWebID;
+         }
+
+         
      }
 }

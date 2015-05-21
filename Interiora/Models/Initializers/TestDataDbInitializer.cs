@@ -24,7 +24,7 @@ namespace Models.Initializers
             suppliers.ForEach(s => context.SupplierDb.Add(s));
             context.SaveChanges();
 
-
+            
             var furnitures = new List<Furniture>
             {
                 new Furniture("Table", "163718904", "5000", "250*150", 1),
@@ -68,7 +68,30 @@ namespace Models.Initializers
 
             furnitures.ForEach(f => context.FurnitureDb.Add(f));
             context.SaveChanges();
-           
+
+
+            var typeofWeb = new List<TypeOfWebEquipment>
+            {
+                new TypeOfWebEquipment(1,"Хаб"),
+                new TypeOfWebEquipment(2,"Комутатор"),
+                new TypeOfWebEquipment(3,"Витая пара")
+            };
+            typeofWeb.ForEach(w => context.TypeOfWebEquipmentDb.Add(w));
+            context.SaveChanges();
+
+            var WebEquipment = new List<WebEquipment> 
+            {
+                new WebEquipment(4, "450", "10*10", 1),
+                new WebEquipment(7, "500", "15*10", 1),
+                new WebEquipment(8, "600", "20*20", 2),
+                new WebEquipment(10,"650", "10*15", 2),
+                new WebEquipment(25,"600", "1", 3),
+                new WebEquipment(27,"800", "10*20", 1),
+                new WebEquipment(28,"750", "15*25", 2),
+                new WebEquipment(29,  "750", "1", 3)
+            };
+            WebEquipment.ForEach(we => context.WebEquipmentDb.Add(we));
+            context.SaveChanges();
         }
     }
 }
