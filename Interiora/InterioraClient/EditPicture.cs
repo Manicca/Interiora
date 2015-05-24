@@ -55,7 +55,7 @@ namespace InterioraClient
         private void button1_Click(object sender, EventArgs e)
         {
             var workform = new WorkForm {InitialBmp = (Bitmap) pictureBox1.Image, History = _history};
-            workform.ShowDialog(this);
+            workform.Show(this);
             Hide();
         }
 

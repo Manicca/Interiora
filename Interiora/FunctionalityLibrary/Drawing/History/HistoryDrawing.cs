@@ -3,10 +3,11 @@ using System.Drawing;
 using System.Linq;
 using FunctionalityLibrary.Drawing.Figures;
 using FunctionalityLibrary.Drawing.OfficeEquipment;
+using System;
 
 namespace FunctionalityLibrary.Drawing.History
 {
-    public class HistoryDrawing
+    public class HistoryDrawing : IDisposable
     {
         private readonly List<Figure> _historyFigures;
         private readonly List<OfficeFigure> _historyOfficeFigures; 
@@ -130,5 +131,42 @@ namespace FunctionalityLibrary.Drawing.History
                 }
             return bp;
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // Для определения избыточных вызовов
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    _clearBmp.Dispose();
+                }
+
+                // TODO: освободить неуправляемые ресурсы (неуправляемые объекты) и переопределить ниже метод завершения.
+                // TODO: задать большие поля как null.
+
+                disposedValue = true;
+            }
+        }
+
+        // TODO: переопределить метод завершения, только если Dispose(bool disposing) выше включает код для освобождения неуправляемых ресурсов.
+        // ~HistoryDrawing() {
+        //   // Не изменяйте этот код. Разместите код очистки выше в методе Dispose(bool disposing).
+        //   Dispose(false);
+        // }
+
+        // Этот код добавлен для правильной реализации шаблона высвобождаемого класса.
+        public void Dispose()
+        {
+            // Не изменяйте этот код. Разместите код очистки выше в методе Dispose(bool disposing).
+            Dispose(true);
+            // TODO: раскомментировать следующую строку, если метод завершения переопределен выше.
+            // GC.SuppressFinalize(this);
+        }
+        #endregion
+
+
     }
 }

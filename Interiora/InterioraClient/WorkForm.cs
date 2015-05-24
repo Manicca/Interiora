@@ -24,6 +24,7 @@ namespace InterioraClient
         {
             InitializeComponent();
             backgroundWorker1.RunWorkerAsync();
+            button4.Enabled = false;
             trackBar1.Value = trackBar1.Maximum/maxZoom;
         }
 
@@ -42,7 +43,7 @@ namespace InterioraClient
         private void button3_Click(object sender, EventArgs e)
         {
             var doneform = new DoneForm();
-            doneform.Show();
+            doneform.Show(this);
             Hide();
         }
 
@@ -74,7 +75,7 @@ namespace InterioraClient
                     dbform.SaveList = dbView.DataSource;
                     break;
                 case 1:
-                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "chair");
+                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "Chair");
                     dbform.SaveList = dbView.DataSource;
                     break;
                 case 2:
@@ -149,12 +150,13 @@ namespace InterioraClient
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            var pos = pictureBox1.PointToClient(MousePosition);
+            var pos = (PointF)pictureBox1.PointToClient(MousePosition);
             var item = listBox1.SelectedItem as OfficeFigure;
             var bmp = (Bitmap) pictureBox1.Image;
             if (item != null)
             {
-                item.Draw(ref bmp, pos, 1);
+                Factor.UnCountFactor(ref pos, _factor);
+                item.Draw(ref bmp, pos, _factor);
                 item.FirstLocationPoint = pos;
                 History.AddOfficeFigure(item.Clone() as OfficeFigure);
             }
@@ -179,6 +181,7 @@ namespace InterioraClient
             listBox1.Items.Clear();
             listBox1.DataSource = e.Result;
             listBox1.Enabled = true;
+            button4.Enabled = true;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
