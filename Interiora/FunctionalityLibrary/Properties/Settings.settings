@@ -14,5 +14,8 @@
     <Setting Name="PixelPerСentimeter" Type="System.Single" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
+    <Setting Name="indentFromWall" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">35</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

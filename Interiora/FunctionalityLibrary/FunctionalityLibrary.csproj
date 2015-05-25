@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculation\CoordinateCorrector.cs" />
     <Compile Include="Calculation\Distance.cs" />
     <Compile Include="Calculation\Factor.cs" />
     <Compile Include="Calculation\HistoryIterator.cs" />
@@ -52,11 +53,14 @@
     <Compile Include="Calculation\SizingImage.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
+    <Compile Include="Drawing\DrawingHelpers\RectangleHelper.cs" />
     <Compile Include="Drawing\Figures\DoorFigure.cs" />
     <Compile Include="Drawing\Figures\DrawFunctions.cs" />
     <Compile Include="Drawing\Figures\Figure.cs" />
     <Compile Include="Drawing\History\HistoryDrawing.cs" />
     <Compile Include="Drawing\OfficeEquipment\ChairOfficeFigure.cs" />
+    <Compile Include="Drawing\OfficeEquipment\Switchboard.cs" />
+    <Compile Include="Drawing\OfficeEquipment\TwistedPair.cs" />
     <Compile Include="Drawing\OfficeEquipment\CupboardOfficeFigure.cs" />
     <Compile Include="Drawing\OfficeEquipment\ForClothesOfficeFigure.cs" />
     <Compile Include="Drawing\OfficeEquipment\OfficeFigure.cs" />

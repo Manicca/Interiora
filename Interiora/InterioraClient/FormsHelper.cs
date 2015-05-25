@@ -66,5 +66,10 @@ namespace InterioraClient
             var maxScrolled = tbBar.Maximum;
             return maxZoom * scrolled / maxScrolled;
         }
+
+        public static DialogResult FormWarningMeassage(string question)
+        {
+            return MessageBox.Show(question, Resources.FormsHelper_FormCloser_Warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning); ;
+        }
     }
 }
