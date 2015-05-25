@@ -55,7 +55,7 @@ namespace InterioraClient
         private void button1_Click(object sender, EventArgs e)
         {
             var workform = new WorkForm {InitialBmp = (Bitmap) pictureBox1.Image, History = _history};
-            workform.ShowDialog(this);
+            workform.Show(this);
             Hide();
         }
 
@@ -182,6 +182,7 @@ namespace InterioraClient
                     _history.RemoveFigureAfterByIndex(_historyIterator.Current);
 
                     _drawing = (Bitmap) _bmpBeforeDrawing.Clone();
+                    CoordinateCorrector.CorrectAngle(_start, ref _end);
 
                     Distance.CalculateBonders(ref _start, ref _end, pictureBox1, _factor, _history.AllFiguresRecords());
 

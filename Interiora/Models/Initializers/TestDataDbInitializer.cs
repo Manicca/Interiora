@@ -20,11 +20,9 @@ namespace Models.Initializers
                 new Supplier("Человек Паук", "man@mail.ru", "Буйнов Кирилл Михайлович"),
                 new Supplier("World Wide Web", "wowiwe@mail.ru", null)
             };
-
             suppliers.ForEach(s => context.SupplierDb.Add(s));
             context.SaveChanges();
 
-            
             var furnitures = new List<Furniture>
             {
                 new Furniture("Table", "163718904", "5000", "60*110", 1),
@@ -65,33 +63,32 @@ namespace Models.Initializers
                 new Furniture("Table", "147931357", "3600", "65*100", 7),
                 new Furniture("ARM", "325893113", "30500", "75*110", 7)
             };
-
             furnitures.ForEach(f => context.FurnitureDb.Add(f));
             context.SaveChanges();
 
-
-
-            var typeofWeb = new List<TypeOfWebEquipment>
+            var towe = new List<TypeOfWebEquipment>
             {
-                new TypeOfWebEquipment(1,"Хаб"),
-                new TypeOfWebEquipment(2,"Комутатор"),
-                new TypeOfWebEquipment(3,"Витая пара")
-            };
-            typeofWeb.ForEach(w => context.TypeOfWebEquipmentDb.Add(w));
+                new TypeOfWebEquipment("Хаб"),
+                new TypeOfWebEquipment("Комутатор"),
+                new TypeOfWebEquipment("Витая пара")
+             };
+            towe.ForEach(f => context.TypeOfWebEquipmentDb.Add(f));
             context.SaveChanges();
 
-            var WebEquipment = new List<WebEquipment> 
+            var we = new List<WebEquipment>
             {
-                new WebEquipment(4, "450", "10*10", 1),
-                new WebEquipment(7, "500", "15*10", 1),
-                new WebEquipment(8, "600", "20*20", 2),
-                new WebEquipment(10,"650", "10*15", 2),
-                new WebEquipment(25,"600", "1", 3),
-                new WebEquipment(27,"800", "10*20", 1),
-                new WebEquipment(28,"750", "15*25", 2),
-                new WebEquipment(29,  "750", "1", 3)
+                new WebEquipment ( "450", "10*10", 1, 8),
+                new WebEquipment ( "500", "15*10", 1, 8),
+                new WebEquipment ( "600", "20*20", 2, 8),
+                new WebEquipment ( "650", "10*15", 2, 8),
+                new WebEquipment ( "600", "1", 3, 8),
+                new WebEquipment ( "800", "10*20", 1, 9),
+                new WebEquipment ( "750", "15*25", 2, 9),
+                new WebEquipment ( "750", "1", 3, 9)
             };
-            WebEquipment.ForEach(we => context.WebEquipmentDb.Add(we));
+
+            we.ForEach(f => context.WebEquipmentDb.Add(f));
+
             context.SaveChanges();
 
         }

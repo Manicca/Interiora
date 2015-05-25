@@ -4,19 +4,12 @@ namespace Models
 {
     public class TypeOfWebEquipment
     {
-          public int TypeOfWebEquipmentId { get; set; }
-          public string Name {get; set;}
-        public TypeOfWebEquipment (){}
-        public TypeOfWebEquipment (int typeID, string name)
+        public int TypeOfWebEquipmentId { get; set; }
+        public string Name { get; set; }
+        public TypeOfWebEquipment(string name)
         {
-            TypeOfWebEquipmentId = typeID;
-            Name=name;
+            Name = name;
         }
-        
-
-        public static explicit operator TypeOfWebEquipment(string t)
-        {
-            throw new NotImplementedException();
-        }
+        public TypeOfWebEquipment() { }
     }
 }

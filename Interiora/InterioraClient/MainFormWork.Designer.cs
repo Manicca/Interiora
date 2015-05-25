@@ -22,6 +22,7 @@ namespace InterioraClient
             if (disposing && (components != null))
             {
                 components.Dispose();
+                _bmBitmap.Dispose();
             }
             base.Dispose(disposing);
         }

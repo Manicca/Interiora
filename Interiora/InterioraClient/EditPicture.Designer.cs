@@ -19,6 +19,7 @@ namespace InterioraClient
             if (disposing && (components != null))
             {
                 components.Dispose();
+                _history.Dispose();
             }
             base.Dispose(disposing);
         }
