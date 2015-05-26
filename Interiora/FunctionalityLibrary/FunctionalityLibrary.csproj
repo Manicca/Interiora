@@ -31,12 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AODL, Version=1.2.0.1, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\AODL.dll</HintPath>
+      <HintPath>..\packages\AODL.1.2.0.1\lib\AODL.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\packages\AODL.1.2.0.1\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
@@ -64,7 +64,6 @@
     <Compile Include="DataBaseWork.cs" />
     <Compile Include="Drawing\DrawingHelpers\RectangleHelper.cs" />
     <Compile Include="Drawing\Figures\DoorFigure.cs" />
-    <Compile Include="Drawing\Figures\DrawFunctions.cs" />
     <Compile Include="Drawing\Figures\Figure.cs" />
     <Compile Include="Drawing\History\HistoryDrawing.cs" />
     <Compile Include="Drawing\OfficeEquipment\ChairOfficeFigure.cs" />

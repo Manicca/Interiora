@@ -27,6 +27,7 @@ namespace InterioraClient
         private PointF _end;
         private FormsHelper.ButtonClicker _buttonClicker = new FormsHelper.ButtonClicker();
         private readonly StartPointFigure _stp = new StartPointFigure();
+        private Bitmap _saveBmp;
 
         public WorkForm()
         {
@@ -36,8 +37,27 @@ namespace InterioraClient
             trackBar1.Value = trackBar1.Maximum / maxZoom;
         }
 
+        public void BlockInstruments()
+        {
+            listBox1.Enabled = false;
+        }
+
+        public void UnBlockInstruments()
+        {
+            listBox1.Enabled = true;
+        }
+
         public HistoryDrawing History { get; set; }
 
+        private void RestoreBmp(ref Bitmap bmp)
+        {
+            bmp = (Bitmap)_saveBmp.Clone();
+        }
+
+        private void SaveBmp(Bitmap bmp)
+        {
+            _saveBmp = (Bitmap)bmp.Clone();
+        }
 
         public void SetMode(WorkMode newMode)
         {
@@ -205,22 +225,31 @@ namespace InterioraClient
             var currentPosition = (PointF)pictureBox1.PointToClient(MousePosition);
             var selectedItem = listBox1.SelectedItem as OfficeFigure;
             var isOptionalDrawing = selectedItem is TwistedPair;
+            var isNeedMoreDrawingArea = selectedItem is Switchboard;
             var bmp = (Bitmap)pictureBox1.Image;
             _buttonClicker.Click();
+
             if(!_buttonClicker.IsSecondClick())
             {
+                BlockInstruments();
                 _start = currentPosition;
                 Factor.UnCountFactor(ref _start, _factor);
+                SaveBmp(bmp);
                 _stp.DrawPoint(ref bmp, _start, _factor);
                 selectedItem.FirstLocationPoint = currentPosition;
                 if (!isOptionalDrawing)
                 {
                     _buttonClicker.RemoveStatistics();
+                    History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
+
                     var tmpItem = selectedItem;
-                    var resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History);
+                    var resCoor = true;
+                    if(!isNeedMoreDrawingArea)
+                         resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History); // Временный хак, сейчас можно поставить switch на стол
                     selectedItem = tmpItem;
                     if (resCoor)
                     {
+                        RestoreBmp(ref bmp);
                         selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
                         History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
                         _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
@@ -229,10 +258,26 @@ namespace InterioraClient
                     {
                         FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + selectedItem.ToString() + "\"!" +
                             Environment.NewLine + "Возможно объект пересекается с другими объектами.");
+                        RestoreBmp(ref bmp);
                     }
+                    UnBlockInstruments();
+
                 }
             }
-            
+            else
+            {
+                RestoreBmp(ref bmp);
+                _end = currentPosition;
+                var twisted = selectedItem as TwistedPair;
+                twisted.Points.Add(_end);
+                History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
+                twisted.DrawLine(ref bmp, _start, _end, _factor, History);
+                History.AddOfficeFigure(twisted);
+                _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+                twisted.Points.Clear();
+                UnBlockInstruments();
+            }
+
 
 
             pictureBox1.Image = bmp;
@@ -246,8 +291,10 @@ namespace InterioraClient
                 new ChairOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "Chair")),
                 new CupboardOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "CupBoard")),
                 new ForClothesOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "ForClothes")),
-                new TwistedPair(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 3))
+                new Switchboard(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipment.Name == "Коммутатор")),
+                new TwistedPair(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipment.Name == "Витая пара"))
             };
+            
             e.Result = officeFigures;
         }
 

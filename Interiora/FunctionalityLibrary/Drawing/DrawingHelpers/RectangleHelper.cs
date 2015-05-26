@@ -35,7 +35,7 @@ namespace FunctionalityLibrary.Drawing.DrawingHelpers
 
         public static void DrawRectangle(PointF start, float sizeW, float sizeH, ref Bitmap bp, float factor)
         {
-            var end = Calculation.Distance.GetPointFromSize(start, sizeW, sizeW);
+            var end = Calculation.Distance.GetPointFromSize(start, sizeW, sizeH);
             DrawRectangle(start, end, ref bp, factor);
         }
     }

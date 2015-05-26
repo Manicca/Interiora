@@ -44,7 +44,7 @@ namespace FunctionalityLibrary.Drawing.History
 
         public void AddOfficeFigure(OfficeFigure f)
         {
-            _historyOfficeFigures.Add(f);
+            _historyOfficeFigures.Add((OfficeFigure)f.Clone());
         }
 
         public void RemoveFigureAfterByIndex(int index)

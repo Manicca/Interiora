@@ -53,7 +53,7 @@ namespace FunctionalityLibrary.Calculation
 
             foreach (var t in of)
             {
-                if (t.IsCrosses(tfo.FirstLocationPoint, tfo.SizeW, tfo.SizeH))
+                if (t.IsCrossesFigure(tfo.FirstLocationPoint, tfo.SizeW, tfo.SizeH))
                     return false;
             }
 
