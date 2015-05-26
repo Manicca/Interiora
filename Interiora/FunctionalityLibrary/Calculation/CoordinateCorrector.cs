@@ -29,6 +29,25 @@ namespace FunctionalityLibrary.Calculation
                 end = p2;
         }
 
+        public static void CorrectSwitchCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor)
+        {
+            var indent = Settings.Default.indentFrmoWallForSwitch * factor;
+            if (tfo.FirstLocationPoint.X < indent)
+                tfo.FirstLocationPoint.X = indent;
+
+            if (tfo.FirstLocationPoint.Y < indent)
+                tfo.FirstLocationPoint.Y = indent;
+
+
+            if (tfo.SizeH + tfo.FirstLocationPoint.Y > bp.Height - indent)
+            {
+                tfo.FirstLocationPoint.Y = bp.Height - indent - tfo.SizeH;
+            }
+            if (tfo.SizeW + tfo.FirstLocationPoint.X > bp.Width - indent)
+            {
+                tfo.FirstLocationPoint.X = bp.Width - indent - tfo.SizeW;
+            }
+        }
 
         public static bool CorrectOfficeCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor, HistoryDrawing history)
         {

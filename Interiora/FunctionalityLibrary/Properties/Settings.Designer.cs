@@ -73,13 +73,25 @@ namespace FunctionalityLibrary.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("35")]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
         public float indentFromWall {
             get {
                 return ((float)(this["indentFromWall"]));
             }
             set {
                 this["indentFromWall"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public float indentFrmoWallForSwitch {
+            get {
+                return ((float)(this["indentFrmoWallForSwitch"]));
+            }
+            set {
+                this["indentFrmoWallForSwitch"] = value;
             }
         }
     }

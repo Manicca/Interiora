@@ -28,15 +28,18 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
 
         public override void Draw(ref Bitmap bmp, PointF start, float factor)
         {
-
             var pen = new Pen(Color.Red, 1 * factor);
+
             if (Points != null && Points.Count > 0)
             {
                 Gr = Graphics.FromImage(bmp);
                 var past = FirstLocationPoint;
                 foreach (var point in Points)
                 {
-                    Gr.DrawLine(pen, past, point);
+                    Factor.CountFactor(ref past, factor);
+                    var tmp = point;
+                    Factor.CountFactor(ref tmp, factor);
+                    Gr.DrawLine(pen, past, tmp);
                     past = point;
                 }
             }
@@ -44,8 +47,6 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
 
         public void DrawLine(ref Bitmap bmp, PointF start, PointF end, float factor, History.HistoryDrawing history)
         {
-            Factor.CountFactor(ref start, factor);
-            Factor.CountFactor(ref end, factor);
             var pen = new Pen(Color.Red, 1 * factor);
             var switches = history.AllOfficeFiguresRecords().Where(e => e is Switchboard).Select(e => e as Switchboard);
             foreach (var _switch in switches)

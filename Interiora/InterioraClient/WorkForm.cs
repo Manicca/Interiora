@@ -229,7 +229,7 @@ namespace InterioraClient
             var bmp = (Bitmap)pictureBox1.Image;
             _buttonClicker.Click();
 
-            if(!_buttonClicker.IsSecondClick())
+            if (!_buttonClicker.IsSecondClick())
             {
                 BlockInstruments();
                 _start = currentPosition;
@@ -244,8 +244,10 @@ namespace InterioraClient
 
                     var tmpItem = selectedItem;
                     var resCoor = true;
-                    if(!isNeedMoreDrawingArea)
-                         resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History); // Временный хак, сейчас можно поставить switch на стол
+                    if (isNeedMoreDrawingArea)
+                        CoordinateCorrector.CorrectSwitchCoordinate(ref tmpItem, bmp, _factor);
+                    else
+                        resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History); // Временный хак, сейчас можно поставить switch на стол
                     selectedItem = tmpItem;
                     if (resCoor)
                     {
@@ -268,13 +270,18 @@ namespace InterioraClient
             {
                 RestoreBmp(ref bmp);
                 _end = currentPosition;
+                Factor.UnCountFactor(ref _end, _factor);
+
                 var twisted = selectedItem as TwistedPair;
                 twisted.Points.Add(_end);
                 History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
                 twisted.DrawLine(ref bmp, _start, _end, _factor, History);
+
                 History.AddOfficeFigure(twisted);
                 _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+
                 twisted.Points.Clear();
+
                 UnBlockInstruments();
             }
 
@@ -294,7 +301,7 @@ namespace InterioraClient
                 new Switchboard(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipment.Name == "Коммутатор")),
                 new TwistedPair(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipment.Name == "Витая пара"))
             };
-            
+
             e.Result = officeFigures;
         }
 
