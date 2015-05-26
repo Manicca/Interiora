@@ -32,6 +32,11 @@ namespace FunctionalityLibrary.Drawing.History
             return _historyFigures;
         }
 
+        public List<OfficeFigure> AllOfficeFiguresRecords()
+        {
+            return _historyOfficeFigures;
+        }
+
         public void AddFigure(Figure f)
         {
             _historyFigures.Add(f);
@@ -39,7 +44,7 @@ namespace FunctionalityLibrary.Drawing.History
 
         public void AddOfficeFigure(OfficeFigure f)
         {
-            _historyOfficeFigures.Add(f);
+            _historyOfficeFigures.Add((OfficeFigure)f.Clone());
         }
 
         public void RemoveFigureAfterByIndex(int index)
@@ -57,6 +62,8 @@ namespace FunctionalityLibrary.Drawing.History
 
         public Bitmap GetFigureByIndex(int index, float factor)
         {
+            if (index < 1)
+                index = 1;
             var realWidth = (int)(_initialWidht * factor);
             var realHeight = (int)(_initialHeight * factor);
             var bp = new Bitmap(_clearBmp, realWidth, realHeight);
@@ -73,9 +80,8 @@ namespace FunctionalityLibrary.Drawing.History
 
         public Bitmap GetOfficeFigureByIndex(int index, float factor)
         {
-            var realWidth = (int)(_initialWidht * factor);
-            var realHeight = (int)(_initialHeight * factor);
-            var bp = new Bitmap(_clearBmp, realWidth, realHeight);
+            var bp = GetLastBitmapOrDefalutOnlyFigures(factor);
+
             if (_historyOfficeFigures == null) return bp;
             if (_historyOfficeFigures.Count == 0) return bp;
             if (index == 0) return bp; // Крайний случай, чтобы фигурки не отрисовывались
@@ -105,7 +111,7 @@ namespace FunctionalityLibrary.Drawing.History
 
         public void ClearOfficeFigures()
         {
-            RemoveOfficeFigureAfterByIndex(1);
+            RemoveOfficeFigureAfterByIndex(0);
         }
 
         public Bitmap GetLastBitmapOrDefalutOnlyFigures(float factor)

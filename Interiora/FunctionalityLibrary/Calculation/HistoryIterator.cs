@@ -33,8 +33,8 @@ namespace FunctionalityLibrary.Calculation
 
         public int PreviousOrFirst()
         {
-            if (--_current < 1)
-                _current = 1;
+            if (--_current < 0)
+                _current = 0;
             return _current;
         }
 

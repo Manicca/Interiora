@@ -8,11 +8,9 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
     public class ChairOfficeFigure : OfficeFigure
     {
-        
+
 
         private readonly Furniture _f;
-        private float _sizeH;
-        private float _sizeW;
 
         public ChairOfficeFigure(Furniture f)
         {
@@ -20,17 +18,16 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
 
             if (f.Type != "Chair") throw new Exception("Нельзя использовать тип : " + f.Type);
             var splited = f.Params.Split('*');
-
-            _sizeW = float.Parse(splited[0]);
-            _sizeH = float.Parse(splited[1]);
+            SizeW = float.Parse(splited[0]);
+            SizeH = float.Parse(splited[1]);
         }
 
         public override void Draw(ref Bitmap bmp, PointF start, float factor)
         {
             Gr = Graphics.FromImage(bmp);
             var pn = new Pen(Color.Black, 1 * factor);
-            var sizeW = _sizeW;
-            var sizeH = _sizeH;
+            var sizeW = SizeW;
+            var sizeH = SizeH;
             Factor.CountFactor(ref start, factor);
             Factor.CountFactor(ref sizeW, factor);
             Factor.CountFactor(ref sizeH, factor);

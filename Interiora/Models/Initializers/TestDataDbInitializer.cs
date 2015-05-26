@@ -20,10 +20,8 @@ namespace Models.Initializers
                 new Supplier("Человек Паук", "man@mail.ru", "Буйнов Кирилл Михайлович"),
                 new Supplier("World Wide Web", "wowiwe@mail.ru", null)
             };
-
             suppliers.ForEach(s => context.SupplierDb.Add(s));
             context.SaveChanges();
-
 
             var furnitures = new List<Furniture>
             {
@@ -65,9 +63,34 @@ namespace Models.Initializers
                 new Furniture("Table", "147931357", "3600", "65*100", 7),
                 new Furniture("ARM", "325893113", "30500", "75*110", 7)
             };
-
             furnitures.ForEach(f => context.FurnitureDb.Add(f));
             context.SaveChanges();
+
+            var towe = new List<TypeOfWebEquipment>
+            {
+                new TypeOfWebEquipment("Хаб"),
+                new TypeOfWebEquipment("Комутатор"),
+                new TypeOfWebEquipment("Витая пара")
+             };
+            towe.ForEach(f => context.TypeOfWebEquipmentDb.Add(f));
+            context.SaveChanges();
+
+            var we = new List<WebEquipment>
+            {
+                new WebEquipment ( "450", "10*10", 1, 8),
+                new WebEquipment ( "500", "15*10", 1, 8),
+                new WebEquipment ( "600", "20*20", 2, 8),
+                new WebEquipment ( "650", "10*15", 2, 8),
+                new WebEquipment ( "600", "1", 3, 8),
+                new WebEquipment ( "800", "10*20", 1, 9),
+                new WebEquipment ( "750", "15*25", 2, 9),
+                new WebEquipment ( "750", "1", 3, 9)
+            };
+
+            we.ForEach(f => context.WebEquipmentDb.Add(f));
+
+            context.SaveChanges();
+
         }
     }
 }

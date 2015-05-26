@@ -8,6 +8,8 @@ using FunctionalityLibrary.Drawing.History;
 using FunctionalityLibrary.Drawing.OfficeEquipment;
 using FunctionalityLibrary.Modes;
 using Models;
+using InterioraClient.Properties;
+using FunctionalityLibrary.Drawing.Figures;
 
 namespace InterioraClient
 {
@@ -18,17 +20,44 @@ namespace InterioraClient
         private float _factor = 1.0f;
         private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
         private int _preferredNumberOfWorkSpaces = -1;
+        private List<PointF> PointsForTwistedPair = new List<PointF>();
         public Bitmap InitialBmp;
+        private HistoryIterator _historyIterator = new HistoryIterator(0, 0);
+        private PointF _start;
+        private PointF _end;
+        private FormsHelper.ButtonClicker _buttonClicker = new FormsHelper.ButtonClicker();
+        private readonly StartPointFigure _stp = new StartPointFigure();
+        private Bitmap _saveBmp;
 
         public WorkForm()
         {
             InitializeComponent();
             backgroundWorker1.RunWorkerAsync();
             button4.Enabled = false;
-            trackBar1.Value = trackBar1.Maximum/maxZoom;
+            trackBar1.Value = trackBar1.Maximum / maxZoom;
+        }
+
+        public void BlockInstruments()
+        {
+            listBox1.Enabled = false;
+        }
+
+        public void UnBlockInstruments()
+        {
+            listBox1.Enabled = true;
         }
 
         public HistoryDrawing History { get; set; }
+
+        private void RestoreBmp(ref Bitmap bmp)
+        {
+            bmp = (Bitmap)_saveBmp.Clone();
+        }
+
+        private void SaveBmp(Bitmap bmp)
+        {
+            _saveBmp = (Bitmap)bmp.Clone();
+        }
 
         public void SetMode(WorkMode newMode)
         {
@@ -86,10 +115,10 @@ namespace InterioraClient
                     dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ForClothes");
                     dbform.SaveList = dbView.DataSource;
                     break;
-                case 4:
-                    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ARM");
-                    dbform.SaveList = dbView.DataSource;
-                    break;
+                //case 4:
+                //    dbView.DataSource = _db.SelectFromBd<Furniture>(elem => elem.Type == "ARM");
+                //    dbform.SaveList = dbView.DataSource;
+                //    break;
                 case 5:
                     dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 1);
                     dbform.SaveList = dbView.DataSource;
@@ -98,7 +127,7 @@ namespace InterioraClient
                     dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 2);
                     dbform.SaveList = dbView.DataSource;
                     break;
-                case 7:
+                case 4:
                     dbView.DataSource = _db.SelectFromBd<WebEquipment>(elem => elem.TypeOfWebEquipmentId == 3);
                     dbform.SaveList = dbView.DataSource;
                     break;
@@ -150,16 +179,107 @@ namespace InterioraClient
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            var pos = (PointF)pictureBox1.PointToClient(MousePosition);
-            var item = listBox1.SelectedItem as OfficeFigure;
-            var bmp = (Bitmap) pictureBox1.Image;
-            if (item != null)
+
+
+            //if (selectedItem != null)
+            //{
+            //    Factor.UnCountFactor(ref pos, _factor);
+            //    History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
+
+            //    selectedItem.FirstLocationPoint = pos;
+
+            //    if (!IsOptionalDrawing)
+            //    {
+            //        var tmpItem = selectedItem;
+            //        var resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History);
+            //        selectedItem = tmpItem;
+            //        if (resCoor)
+            //        {
+            //            selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
+            //            History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
+            //            _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+            //        }
+            //        else
+            //        {
+            //            FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + selectedItem.ToString() + "\"!" +
+            //                Environment.NewLine + "Возможно объект пересекается с другими объектами.");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (++_buttonClicks == 1)
+            //        {
+            //            _start = pos;
+            //        }
+            //        else
+            //        {
+            //            _end = pos;
+            //            _buttonClicks = 0;
+            //            var tmp = selectedItem as TwistedPair;
+            //            selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
+            //            History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
+            //            _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+            //        }
+            //    }
+            //}
+            var currentPosition = (PointF)pictureBox1.PointToClient(MousePosition);
+            var selectedItem = listBox1.SelectedItem as OfficeFigure;
+            var isOptionalDrawing = selectedItem is TwistedPair;
+            var isNeedMoreDrawingArea = selectedItem is Switchboard;
+            var bmp = (Bitmap)pictureBox1.Image;
+            _buttonClicker.Click();
+
+            if(!_buttonClicker.IsSecondClick())
             {
-                Factor.UnCountFactor(ref pos, _factor);
-                item.Draw(ref bmp, pos, _factor);
-                item.FirstLocationPoint = pos;
-                History.AddOfficeFigure(item.Clone() as OfficeFigure);
+                BlockInstruments();
+                _start = currentPosition;
+                Factor.UnCountFactor(ref _start, _factor);
+                SaveBmp(bmp);
+                _stp.DrawPoint(ref bmp, _start, _factor);
+                selectedItem.FirstLocationPoint = currentPosition;
+                if (!isOptionalDrawing)
+                {
+                    _buttonClicker.RemoveStatistics();
+                    History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
+
+                    var tmpItem = selectedItem;
+                    var resCoor = true;
+                    if(!isNeedMoreDrawingArea)
+                         resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History); // Временный хак, сейчас можно поставить switch на стол
+                    selectedItem = tmpItem;
+                    if (resCoor)
+                    {
+                        RestoreBmp(ref bmp);
+                        selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
+                        History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
+                        _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+                    }
+                    else
+                    {
+                        FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + selectedItem.ToString() + "\"!" +
+                            Environment.NewLine + "Возможно объект пересекается с другими объектами.");
+                        RestoreBmp(ref bmp);
+                    }
+                    UnBlockInstruments();
+
+                }
             }
+            else
+            {
+                RestoreBmp(ref bmp);
+                _end = currentPosition;
+                var twisted = selectedItem as TwistedPair;
+                twisted.Points.Add(_end);
+                History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
+                twisted.DrawLine(ref bmp, _start, _end, _factor, History);
+                History.AddOfficeFigure(twisted);
+                _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+                twisted.Points.Clear();
+                UnBlockInstruments();
+            }
+
+
+
             pictureBox1.Image = bmp;
         }
 
@@ -170,9 +290,11 @@ namespace InterioraClient
                 new TableOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "Table")),
                 new ChairOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "Chair")),
                 new CupboardOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "CupBoard")),
-                new ForClothesOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "ForClothes"))
+                new ForClothesOfficeFigure(_db.SelectFirstOrDefaultFromBd<Furniture>(elem => elem.Type == "ForClothes")),
+                new Switchboard(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipment.Name == "Коммутатор")),
+                new TwistedPair(_db.SelectFirstOrDefaultFromBd<WebEquipment>(elem => elem.TypeOfWebEquipment.Name == "Витая пара"))
             };
-
+            
             e.Result = officeFigures;
         }
 
@@ -188,12 +310,53 @@ namespace InterioraClient
         {
             _factor = FormsHelper.GetFactor(ref trackBar1, maxZoom);
             pictureBox1.Image = SizingImage.GetNewSizedBitmapFigures(History, _factor, InitialBmp);
-            label2.Text = "Увеличение" + (int) (_factor*100.0f) + "%";
+            label2.Text = "Увеличение" + (int)(_factor * 100.0f) + "%";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Text = "Закончить редактирование";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _historyIterator.PreviousOrFirst();
+            var currentHistoryRecord = History.GetOfficeFigureByIndex(_historyIterator.Current, _factor);
+            pictureBox1.Image = currentHistoryRecord;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            _historyIterator.NextOrLast();
+            var currentHistoryRecord = History.GetOfficeFigureByIndex(_historyIterator.Current, _factor);
+            pictureBox1.Image = currentHistoryRecord;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var dialogRes = MessageBox.Show(Resources.Delete_Message_Warning,
+                Resources.Delete_Message_Warning_Title,
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            if (dialogRes != DialogResult.OK) return;
+
+
+            History.ClearOfficeFigures();
+            _historyIterator.Clear();
+
+            var historyLast = History.GetLastBitmapOrDefalutOfficeFigures(_factor);
+
+            pictureBox1.Image = historyLast;
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
 
         }
     }
