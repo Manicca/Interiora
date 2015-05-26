@@ -9,6 +9,7 @@ using FunctionalityLibrary.Drawing.OfficeEquipment;
 using FunctionalityLibrary.Modes;
 using Models;
 using InterioraClient.Properties;
+using FunctionalityLibrary.Drawing.Figures;
 
 namespace InterioraClient
 {
@@ -22,6 +23,10 @@ namespace InterioraClient
         private List<PointF> PointsForTwistedPair = new List<PointF>();
         public Bitmap InitialBmp;
         private HistoryIterator _historyIterator = new HistoryIterator(0, 0);
+        private PointF _start;
+        private PointF _end;
+        private FormsHelper.ButtonClicker _buttonClicker = new FormsHelper.ButtonClicker();
+        private readonly StartPointFigure _stp = new StartPointFigure();
 
         public WorkForm()
         {
@@ -32,7 +37,7 @@ namespace InterioraClient
         }
 
         public HistoryDrawing History { get; set; }
-        
+
 
         public void SetMode(WorkMode newMode)
         {
@@ -154,40 +159,82 @@ namespace InterioraClient
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            var pos = (PointF)pictureBox1.PointToClient(MousePosition);
-            var item = listBox1.SelectedItem as OfficeFigure;
-            var bmp = (Bitmap)pictureBox1.Image;
-            if (item != null)
-            {
-                Factor.UnCountFactor(ref pos, _factor);
-                History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
 
-                item.FirstLocationPoint = pos;
-                if (!(item is TwistedPair))
+
+            //if (selectedItem != null)
+            //{
+            //    Factor.UnCountFactor(ref pos, _factor);
+            //    History.RemoveOfficeFigureAfterByIndex(_historyIterator.Current);
+
+            //    selectedItem.FirstLocationPoint = pos;
+
+            //    if (!IsOptionalDrawing)
+            //    {
+            //        var tmpItem = selectedItem;
+            //        var resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History);
+            //        selectedItem = tmpItem;
+            //        if (resCoor)
+            //        {
+            //            selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
+            //            History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
+            //            _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+            //        }
+            //        else
+            //        {
+            //            FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + selectedItem.ToString() + "\"!" +
+            //                Environment.NewLine + "Возможно объект пересекается с другими объектами.");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (++_buttonClicks == 1)
+            //        {
+            //            _start = pos;
+            //        }
+            //        else
+            //        {
+            //            _end = pos;
+            //            _buttonClicks = 0;
+            //            var tmp = selectedItem as TwistedPair;
+            //            selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
+            //            History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
+            //            _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
+            //        }
+            //    }
+            //}
+            var currentPosition = (PointF)pictureBox1.PointToClient(MousePosition);
+            var selectedItem = listBox1.SelectedItem as OfficeFigure;
+            var isOptionalDrawing = selectedItem is TwistedPair;
+            var bmp = (Bitmap)pictureBox1.Image;
+            _buttonClicker.Click();
+            if(!_buttonClicker.IsSecondClick())
+            {
+                _start = currentPosition;
+                Factor.UnCountFactor(ref _start, _factor);
+                _stp.DrawPoint(ref bmp, _start, _factor);
+                selectedItem.FirstLocationPoint = currentPosition;
+                if (!isOptionalDrawing)
                 {
-                    var tmpItem = item;
-                    var resCoor = CoordinateCorrector.CorrectTableCoordinate(ref tmpItem, bmp, _factor, History);
-                    item = tmpItem;
+                    _buttonClicker.RemoveStatistics();
+                    var tmpItem = selectedItem;
+                    var resCoor = CoordinateCorrector.CorrectOfficeCoordinate(ref tmpItem, bmp, _factor, History);
+                    selectedItem = tmpItem;
                     if (resCoor)
                     {
-                        item.Draw(ref bmp, item.FirstLocationPoint, _factor);
-                        History.AddOfficeFigure(item.Clone() as OfficeFigure);
+                        selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
+                        History.AddOfficeFigure(selectedItem.Clone() as OfficeFigure);
                         _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
                     }
                     else
                     {
-                        FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + item.ToString() + "\"!" +
+                        FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + selectedItem.ToString() + "\"!" +
                             Environment.NewLine + "Возможно объект пересекается с другими объектами.");
                     }
                 }
-                else
-                {
-                    
-                    item.Draw(ref bmp, item.FirstLocationPoint, _factor);
-                    History.AddOfficeFigure(item.Clone() as OfficeFigure);
-                    _historyIterator.HistoryUpdate(History.CountOfficeFigures(), History.CountOfficeFigures());
-                }
             }
+            
+
+
             pictureBox1.Image = bmp;
         }
 
@@ -222,7 +269,6 @@ namespace InterioraClient
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Text = "Закончить редактирование";
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -258,6 +304,11 @@ namespace InterioraClient
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
         {
 
         }

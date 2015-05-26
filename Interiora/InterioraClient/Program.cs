@@ -14,7 +14,7 @@ namespace InterioraClient
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AppDomain.CurrentDomain.SetData("DataDirectory", Application.StartupPath);
-            Application.Run(new MainFormWork());
+            Application.Run(new LoginForm());
         }
     }
 }

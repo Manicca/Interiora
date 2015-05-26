@@ -39,6 +39,7 @@ namespace InterioraClient
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,13 +58,13 @@ namespace InterioraClient
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = global::InterioraClient.Properties.Resources.ok;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Location = new System.Drawing.Point(913, 339);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Location = new System.Drawing.Point(689, 385);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 44);
+            this.button3.Size = new System.Drawing.Size(92, 49);
             this.button3.TabIndex = 7;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -77,11 +78,11 @@ namespace InterioraClient
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(771, 352);
+            this.label2.Location = new System.Drawing.Point(591, 396);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 13);
+            this.label2.Size = new System.Drawing.Size(92, 26);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Зум 100%";
+            this.label2.Text = "Увеличение 100%";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // trackBar1
@@ -89,11 +90,11 @@ namespace InterioraClient
             this.trackBar1.BackColor = System.Drawing.Color.Green;
             this.tableLayoutPanel1.SetColumnSpan(this.trackBar1, 6);
             this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBar1.Location = new System.Drawing.Point(3, 334);
+            this.trackBar1.Location = new System.Drawing.Point(3, 385);
             this.trackBar1.Maximum = 27;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(762, 49);
+            this.trackBar1.Size = new System.Drawing.Size(582, 49);
             this.trackBar1.TabIndex = 22;
             this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -103,15 +104,16 @@ namespace InterioraClient
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 9;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.42681F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.01236F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.Controls.Add(this.button8, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 6, 2);
             this.tableLayoutPanel1.Controls.Add(this.button1, 4, 0);
@@ -121,9 +123,9 @@ namespace InterioraClient
             this.tableLayoutPanel1.Controls.Add(this.button4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button5, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.listBox1, 8, 1);
             this.tableLayoutPanel1.Controls.Add(this.button7, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 8, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -131,8 +133,21 @@ namespace InterioraClient
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1034, 386);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 437);
             this.tableLayoutPanel1.TabIndex = 28;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button8.Location = new System.Drawing.Point(591, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(92, 49);
+            this.button8.TabIndex = 30;
+            this.button8.Text = "Применить";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel1
             // 
@@ -143,7 +158,7 @@ namespace InterioraClient
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(890, 270);
+            this.panel1.Size = new System.Drawing.Size(680, 321);
             this.panel1.TabIndex = 29;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -162,9 +177,9 @@ namespace InterioraClient
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(515, 3);
+            this.button1.Location = new System.Drawing.Point(395, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 49);
+            this.button1.Size = new System.Drawing.Size(92, 49);
             this.button1.TabIndex = 24;
             this.button1.Text = "Повернуть налево";
             this.button1.UseVisualStyleBackColor = false;
@@ -176,9 +191,9 @@ namespace InterioraClient
             this.button6.BackgroundImage = global::InterioraClient.Properties.Resources.clearall;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Location = new System.Drawing.Point(387, 3);
+            this.button6.Location = new System.Drawing.Point(297, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 49);
+            this.button6.Size = new System.Drawing.Size(92, 49);
             this.button6.TabIndex = 27;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -191,7 +206,7 @@ namespace InterioraClient
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button4.Location = new System.Drawing.Point(3, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 49);
+            this.button4.Size = new System.Drawing.Size(92, 49);
             this.button4.TabIndex = 9;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -202,9 +217,9 @@ namespace InterioraClient
             this.button5.BackgroundImage = global::InterioraClient.Properties.Resources.retirn;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(259, 3);
+            this.button5.Location = new System.Drawing.Point(199, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 49);
+            this.button5.Size = new System.Drawing.Size(92, 49);
             this.button5.TabIndex = 26;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -215,9 +230,9 @@ namespace InterioraClient
             this.button2.BackgroundImage = global::InterioraClient.Properties.Resources.del;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(131, 3);
+            this.button2.Location = new System.Drawing.Point(101, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 49);
+            this.button2.Size = new System.Drawing.Size(92, 49);
             this.button2.TabIndex = 25;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -226,7 +241,7 @@ namespace InterioraClient
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(955, 42);
+            this.label1.Location = new System.Drawing.Point(705, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 0;
@@ -238,10 +253,11 @@ namespace InterioraClient
             this.listBox1.Enabled = false;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
-            "Загрузка инструментов"});
-            this.listBox1.Location = new System.Drawing.Point(899, 58);
+            "Загрузка",
+            "инструментов..."});
+            this.listBox1.Location = new System.Drawing.Point(689, 58);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(132, 270);
+            this.listBox1.Size = new System.Drawing.Size(92, 321);
             this.listBox1.TabIndex = 4;
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -252,9 +268,9 @@ namespace InterioraClient
             this.button7.BackColor = System.Drawing.Color.White;
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.Location = new System.Drawing.Point(643, 3);
+            this.button7.Location = new System.Drawing.Point(493, 3);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 49);
+            this.button7.Size = new System.Drawing.Size(92, 49);
             this.button7.TabIndex = 28;
             this.button7.Text = "Повернуть направо";
             this.button7.UseVisualStyleBackColor = false;
@@ -263,7 +279,7 @@ namespace InterioraClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 386);
+            this.ClientSize = new System.Drawing.Size(784, 437);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "WorkForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -298,5 +314,6 @@ namespace InterioraClient
         private Button button2;
         private Button button7;
         private Panel panel1;
+        private Button button8;
     }
 }

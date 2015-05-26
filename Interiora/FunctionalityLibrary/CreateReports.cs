@@ -23,6 +23,7 @@ namespace FunctionalityLibrary
            };
            doc.Add(a1);
             //здесь будет план
+            // Правда? ГДЕ ОН?! Я ЕГО НЕ ВИЖУ!
             //iTextSharp.text.Image k = iTextSharp.text.Image.GetInstance(@"Plan.jpg");
             //k.Alignment = Element.ALIGN_CENTER;
             //doc.Add(k);

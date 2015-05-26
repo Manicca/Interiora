@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using FunctionalityLibrary;
+using System.Collections.Generic;
 
 namespace InterioraClient
 {
@@ -13,7 +14,7 @@ namespace InterioraClient
 
         private void button2_Click(object sender, EventArgs e)
         {
-            EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk");
+            EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk", new List<string> { "itextsharp.dll" });
         }
 
         private void DoneForm_FormClosing(object sender, FormClosingEventArgs e)

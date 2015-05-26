@@ -7,6 +7,27 @@ namespace InterioraClient
 {
     internal static class FormsHelper
     {
+        public class ButtonClicker
+        {
+            private int _clicks;
+
+            public void Click()
+            {
+                if (++_clicks >= 2)
+                    _clicks = 0;
+            }
+
+            public bool IsSecondClick()
+            {
+                return _clicks % 2 == 0;
+            }
+
+            public void RemoveStatistics()
+            {
+                _clicks = 0;
+            }
+        }
+
         public static void FormCloser(Form f, ref FormClosingEventArgs e)
         {
             switch (e.CloseReason)

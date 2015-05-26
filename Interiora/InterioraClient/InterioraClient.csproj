@@ -79,6 +79,12 @@
     <Compile Include="LibrarySelectorForm.Designer.cs">
       <DependentUpon>LibrarySelectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFormWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LibrarySelectorForm.resx">
       <DependentUpon>LibrarySelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFormWork.resx">
       <DependentUpon>MainFormWork.cs</DependentUpon>

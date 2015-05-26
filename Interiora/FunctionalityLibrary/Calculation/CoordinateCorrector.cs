@@ -30,7 +30,7 @@ namespace FunctionalityLibrary.Calculation
         }
 
 
-        public static bool CorrectTableCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor, HistoryDrawing history)
+        public static bool CorrectOfficeCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor, HistoryDrawing history)
         {
             var indent = Settings.Default.indentFromWall * factor;
             if (tfo.FirstLocationPoint.X < indent)
