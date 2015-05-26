@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
+
+
 namespace FunctionalityLibrary
 {
     class CreateReports
@@ -172,8 +174,7 @@ namespace FunctionalityLibrary
             doc.Close();
             MessageBox.Show("Готово!");
         }
-       void eblancCalc()
-       {
-       }
+       
     }
+    
 }
