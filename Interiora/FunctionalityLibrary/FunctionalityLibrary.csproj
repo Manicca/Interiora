@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AODL, Version=1.2.0.1, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\AODL.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
     </Reference>
@@ -51,6 +59,7 @@
     <Compile Include="Calculation\HistoryIterator.cs" />
     <Compile Include="Calculation\ObjectContains.cs" />
     <Compile Include="Calculation\SizingImage.cs" />
+    <Compile Include="CreateBlank.cs" />
     <Compile Include="CreateReports.cs" />
     <Compile Include="DataBaseWork.cs" />
     <Compile Include="Drawing\DrawingHelpers\RectangleHelper.cs" />
