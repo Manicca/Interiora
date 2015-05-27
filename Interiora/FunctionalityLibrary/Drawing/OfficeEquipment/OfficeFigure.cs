@@ -23,6 +23,13 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
             return "Офисное оборудование";
         }
 
+        public virtual void Rotate ()
+        {
+            var tmp = SizeW;
+            SizeW = SizeH;
+            SizeH = tmp;
+        }
+
         public virtual object Clone()
         {
             return MemberwiseClone();
@@ -35,7 +42,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
             var p2 = Distance.GetPointFromSize(start, sizeW, 0);
             var p3 = Distance.GetPointFromSize(start, 0, sizeH);
             var p4 = Distance.GetPointFromSize(start, sizeW, sizeH);
-            return Gr.IsVisible(start) || Gr.IsVisible(p2) || Gr.IsVisible(p3) || Gr.IsVisible(p4);
+            return Gr.IsVisible(start) || Gr.IsVisible(p2) || Gr.IsVisible(p3) || Gr.IsVisible(p4) || Gr.IsVisible(new RectangleF(start, new SizeF(sizeW, sizeH)));
         }
 
         public virtual bool IsCrossesPoint(PointF start, float offsetError = 0)

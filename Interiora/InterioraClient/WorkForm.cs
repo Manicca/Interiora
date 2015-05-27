@@ -258,6 +258,7 @@ namespace InterioraClient
                     }
                     else
                     {
+                        selectedItem.Draw(ref bmp, selectedItem.FirstLocationPoint, _factor);
                         FormsHelper.FormWarningMeassage("Нельзя так разместить объект типа \"" + selectedItem.ToString() + "\"!" +
                             Environment.NewLine + "Возможно объект пересекается с другими объектами.");
                         RestoreBmp(ref bmp);
@@ -322,7 +323,9 @@ namespace InterioraClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Text = "Закончить редактирование";
+            var selectedtem = listBox1.SelectedItem as OfficeFigure;
+            selectedtem.Rotate();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
