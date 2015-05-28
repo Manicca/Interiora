@@ -25,14 +25,14 @@ namespace FunctionalityLibrary
                 Paragraph parag = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
                 var text = TextBuilder.BuildTextCollection(spreadsheetDocument, " ");
                 Cell cell = table.CreateCell();
-                parag.TextContent.Add(new SimpleText(spreadsheetDocument, 'элемент бд, где поставщик ид=ид'));
+                //parag.TextContent.Add(new SimpleText(spreadsheetDocument, 'элемент бд, где поставщик ид=ид'));
                 cell.Content.Add(parag);
                 table.InsertCellAt(0, 0, cell);
                 spreadsheetDocument.TableCollection.Add(table);
                  spreadsheetDocument.SaveTo("Matr.ods");
             }
     }
-       void CreateBlank() //бланк
+       void CreateBla() //бланк
        {
 
        }
