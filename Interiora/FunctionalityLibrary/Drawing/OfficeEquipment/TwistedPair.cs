@@ -15,8 +15,8 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         {
             Points = new List<PointF>();
         }
-        new private float SizeH;
-        new private float SizeW;
+        new private float SizeH = 0;
+        new private float SizeW = 0;
         public TwistedPair(WebEquipment we)
         {
             Equipment = we;
@@ -96,6 +96,11 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
             var res = (TwistedPair)MemberwiseClone();
             res.Points = Points.Select(e => new PointF(e.X, e.Y)).ToList();
             return res;
+        }
+
+        public override void Rotate()
+        {
+            return;
         }
 
     }
