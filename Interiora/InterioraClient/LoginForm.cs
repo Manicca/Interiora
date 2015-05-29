@@ -93,7 +93,9 @@ namespace InterioraClient
                 }
                 else
                 {
-                    //вход под редактором
+                    AdminForms.MainAdminForm f = new AdminForms.MainAdminForm();
+                    f.Show(this);
+                    Hide();
                 }
             }
             else
