@@ -12,6 +12,7 @@ namespace Models
             var ensureDllIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
             Database.SetInitializer<AllModelsContext>(new TestDataDbInitializer());
         }
+
         public DbSet<Furniture> FurnitureDb { get; set; }
         public DbSet<Supplier> SupplierDb { get; set; }
         public DbSet<WebEquipment> WebEquipmentDb { get; set; }

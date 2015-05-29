@@ -3,7 +3,6 @@
     public enum EnumOfModes
     {
         Auto,
-        Semi,
         Manual
     }
 }

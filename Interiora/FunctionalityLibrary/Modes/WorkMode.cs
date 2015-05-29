@@ -21,8 +21,6 @@ namespace FunctionalityLibrary.Modes
                     return Resources.WorkMode_Manual;
                 case EnumOfModes.Auto:
                     return Resources.WorkMode_Auto;
-                case EnumOfModes.Semi:
-                    return Resources.WorkMode_Semi;
                 default:
                     return "";
             }

@@ -11,9 +11,8 @@ namespace InterioraClient
         {
             InitializeComponent();
             comboBox1.Items.Add(new WorkMode(EnumOfModes.Auto));
-            comboBox1.Items.Add(new WorkMode(EnumOfModes.Semi));
             comboBox1.Items.Add(new WorkMode(EnumOfModes.Manual));
-            comboBox1.SelectedIndex = 2;
+            comboBox1.SelectedIndex = 1;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
