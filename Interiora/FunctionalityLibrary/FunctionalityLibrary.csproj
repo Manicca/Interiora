@@ -77,7 +77,11 @@
     <Compile Include="Drawing\OfficeEquipment\TableOfficeFigure.cs" />
     <Compile Include="Drawing\Figures\WindowFigure.cs" />
     <Compile Include="EMailSender.cs" />
+<<<<<<< HEAD
     <Compile Include="InfoCustoms.cs" />
+=======
+    <Compile Include="Logger.cs" />
+>>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
     <Compile Include="Modes\EnumOfModes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

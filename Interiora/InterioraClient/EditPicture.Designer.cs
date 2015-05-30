@@ -66,7 +66,7 @@ namespace InterioraClient
             this.button1.BackgroundImage = global::InterioraClient.Properties.Resources.next;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(627, 304);
+            this.button1.Location = new System.Drawing.Point(627, 330);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 49);
             this.button1.TabIndex = 5;
@@ -142,7 +142,7 @@ namespace InterioraClient
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(471, 356);
+            this.label1.Location = new System.Drawing.Point(471, 382);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 55);
             this.label1.TabIndex = 21;
@@ -177,19 +177,28 @@ namespace InterioraClient
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 411);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 437);
             this.tableLayoutPanel1.TabIndex = 22;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel1
             // 
+<<<<<<< HEAD
+=======
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+>>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 58);
             this.panel1.Name = "panel1";
             this.tableLayoutPanel1.SetRowSpan(this.panel1, 4);
+<<<<<<< HEAD
             this.panel1.Size = new System.Drawing.Size(618, 295);
+=======
+            this.panel1.Size = new System.Drawing.Size(618, 321);
+>>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
             this.panel1.TabIndex = 21;
             // 
             // button8
@@ -198,7 +207,7 @@ namespace InterioraClient
             this.button8.BackgroundImage = global::InterioraClient.Properties.Resources.cancle;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.Location = new System.Drawing.Point(627, 359);
+            this.button8.Location = new System.Drawing.Point(627, 385);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(154, 49);
             this.button8.TabIndex = 20;
@@ -207,9 +216,16 @@ namespace InterioraClient
             // 
             // trackBar1
             // 
+<<<<<<< HEAD
             this.tableLayoutPanel1.SetColumnSpan(this.trackBar1, 3);
             this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackBar1.Location = new System.Drawing.Point(3, 359);
+=======
+            this.trackBar1.BackColor = System.Drawing.Color.Green;
+            this.tableLayoutPanel1.SetColumnSpan(this.trackBar1, 3);
+            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackBar1.Location = new System.Drawing.Point(3, 385);
+>>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
             this.trackBar1.Maximum = 27;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
@@ -222,7 +238,7 @@ namespace InterioraClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 411);
+            this.ClientSize = new System.Drawing.Size(784, 437);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
