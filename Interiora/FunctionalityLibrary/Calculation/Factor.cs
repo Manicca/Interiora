@@ -2,7 +2,7 @@
 
 namespace FunctionalityLibrary.Calculation
 {
-    public static class Factor
+    public static class Factor //увеличение
     {
         public static void UnCountFactor(ref PointF dotPointF, float factor)
         {

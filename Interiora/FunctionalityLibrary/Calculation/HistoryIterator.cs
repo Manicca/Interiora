@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FunctionalityLibrary.Calculation
 {
-    public class HistoryIterator
+    public class HistoryIterator 
     {
         public HistoryIterator(int count, int current)
         {

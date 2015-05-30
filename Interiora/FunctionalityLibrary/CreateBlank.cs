@@ -12,7 +12,7 @@ using AODL.Document.TextDocuments;
 
 namespace FunctionalityLibrary
 {
-    class CreateBlank 
+   public class CreateBlank 
     {
         int countsup=0;
         void Supl(int id) //бланк в разрезе по поставщикам, поэтому функция для фильтрации объектов того или иного поставщика

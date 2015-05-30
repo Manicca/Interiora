@@ -7,9 +7,9 @@ using System;
 
 namespace FunctionalityLibrary.Drawing.History
 {
-    public class HistoryDrawing : IDisposable
+    public class HistoryDrawing : IDisposable //можно УНИЧТОЖАТЬ
     {
-        private readonly List<Figure> _historyFigures;
+        private readonly List<Figure> _historyFigures; 
         private readonly List<OfficeFigure> _historyOfficeFigures; 
         private readonly int _initialHeight;
         private readonly int _initialWidht;
@@ -44,7 +44,7 @@ namespace FunctionalityLibrary.Drawing.History
 
         public void AddOfficeFigure(OfficeFigure f)
         {
-            _historyOfficeFigures.Add(f);
+            _historyOfficeFigures.Add((OfficeFigure)f.Clone());
         }
 
         public void RemoveFigureAfterByIndex(int index)
@@ -60,7 +60,7 @@ namespace FunctionalityLibrary.Drawing.History
         }
 
 
-        public Bitmap GetFigureByIndex(int index, float factor)
+        public Bitmap GetFigureByIndex(int index, float factor) 
         {
             if (index < 1)
                 index = 1;
@@ -127,7 +127,7 @@ namespace FunctionalityLibrary.Drawing.History
             return bp;
         }
 
-        public Bitmap GetLastBitmapOrDefalutOfficeFigures(float factor)
+        public Bitmap GetLastBitmapOrDefalutOfficeFigures(float factor) //получает последнюю битмап карту с учетом фактора
         {
             var bp = GetLastBitmapOrDefalutOnlyFigures(factor);
             if (_historyOfficeFigures != null)

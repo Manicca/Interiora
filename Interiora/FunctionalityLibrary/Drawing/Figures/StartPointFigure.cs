@@ -5,7 +5,7 @@ using FunctionalityLibrary.Properties;
 namespace FunctionalityLibrary.Drawing.Figures
 {
     public class StartPointFigure : Figure
-    {
+    {//крестик при тыкании
         public void DrawPoint(ref Bitmap bmp, PointF p, float factor)
         {
             Factor.CountFactor(ref p, factor);

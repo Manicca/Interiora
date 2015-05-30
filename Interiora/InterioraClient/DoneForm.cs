@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using FunctionalityLibrary;
 using System.Collections.Generic;
-
 namespace InterioraClient
 {
     public partial class DoneForm : Form
@@ -11,7 +10,14 @@ namespace InterioraClient
         {
             InitializeComponent();
         }
+        public CreateBlank crbl = new FunctionalityLibrary.CreateBlank();
+        public CreateReports crrep = new FunctionalityLibrary.CreateReports();
+        public InfoCustoms info = new FunctionalityLibrary.InfoCustoms();
 
+        public void SetInfo(InfoCustoms inf)
+        {
+            info = inf;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk", new List<string> { "itextsharp.dll" });
@@ -45,8 +51,8 @@ namespace InterioraClient
         private void button4_Click(object sender, EventArgs e)
         {
             var aboutcustoms = new AboutCustoms();
-            aboutcustoms.Show(this);
-            Hide();
+            aboutcustoms.ShowDialog(this);
+
         }
     }
 }

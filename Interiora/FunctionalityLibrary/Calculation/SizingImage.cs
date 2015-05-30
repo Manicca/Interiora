@@ -5,7 +5,7 @@ namespace FunctionalityLibrary.Calculation
 {
     public static class SizingImage
     {
-        public static Bitmap GetNewSizedBitmapFigures(HistoryDrawing history, float factor, Bitmap initialBmp)
+        public static Bitmap GetNewSizedBitmapFigures(HistoryDrawing history, float factor, Bitmap initialBmp) //получение нового изображения с учетом фактора
         {
             
             var newSize = new Size((int)(initialBmp.Width * factor),

@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace FunctionalityLibrary.Drawing.Figures
 {
-    public abstract class Figure : ICloneable
+    public abstract class Figure : ICloneable 
     {
         public PointF FirstLocationPoint;
         public PointF SecondLocationPoint;

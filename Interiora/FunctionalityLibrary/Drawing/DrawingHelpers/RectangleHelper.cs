@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace FunctionalityLibrary.Drawing.DrawingHelpers
 {
-    class RectangleHelper
+    class RectangleHelper //просто нарисовать квадрат
     {
 
-        public static void DrawRectangle(PointF start, PointF end, ref Bitmap bp, float factor)
+        public static void DrawRectangle(PointF start, PointF end, ref Bitmap bp, float factor) // от точки до точки (вписывает)
         {
             Graphics Gr = Graphics.FromImage(bp);
             Factor.CountFactor(ref start, factor);
@@ -33,9 +33,10 @@ namespace FunctionalityLibrary.Drawing.DrawingHelpers
             Gr.Dispose();
         }
 
-        public static void DrawRectangle(PointF start, float sizeW, float sizeH, ref Bitmap bp, float factor)
+        public static void DrawRectangle(PointF start, float sizeW, float sizeH, ref Bitmap bp, float factor) //по ширине и высоте из точки
         {
-            var end = Calculation.Distance.GetPointFromSize(start, sizeW, sizeW);
+            var end = Calculation.Distance.GetPointFromSize(start, sizeW, sizeH);
+            
             DrawRectangle(start, end, ref bp, factor);
         }
     }

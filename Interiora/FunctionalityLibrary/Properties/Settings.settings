@@ -15,7 +15,10 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="indentFromWall" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">35</Value>
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="indentFrmoWallForSwitch" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">10</Value>
     </Setting>
   </Settings>
 </SettingsFile>

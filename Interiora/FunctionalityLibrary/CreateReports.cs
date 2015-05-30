@@ -8,64 +8,64 @@ using iTextSharp.text.pdf;
 
 namespace FunctionalityLibrary
 {
-    class CreateReports
+    public class CreateReports
     {
-       void reportPDF()
-       {
-            var doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(@"Document1.pdf", FileMode.Create));
-            doc.Open();
-            var baseFont = BaseFont.CreateFont("ARIAL.TTF", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            var bc = BaseColor.BLACK;
-            var j = new Phrase("Отчет ", new Font(baseFont, 12, 0, bc));
-           var a1 = new Paragraph(j)
-           {
-               Alignment = Element.ALIGN_CENTER,
-               SpacingAfter = 5
-           };
-           doc.Add(a1);
-            //здесь будет план
-            // Правда? ГДЕ ОН?! Я ЕГО НЕ ВИЖУ!
-            //iTextSharp.text.Image k = iTextSharp.text.Image.GetInstance(@"Plan.jpg");
-            //k.Alignment = Element.ALIGN_CENTER;
-            //doc.Add(k);
+       //void reportPDF()
+       //{
+       //     var doc = new Document();
+       //     PdfWriter.GetInstance(doc, new FileStream(@"Document1.pdf", FileMode.Create));
+       //     doc.Open();
+       //     var baseFont = BaseFont.CreateFont("ARIAL.TTF", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+       //     var bc = BaseColor.BLACK;
+       //     var j = new Phrase("Отчет ", new Font(baseFont, 12, 0, bc));
+       //    var a1 = new Paragraph(j)
+       //    {
+       //        Alignment = Element.ALIGN_CENTER,
+       //        SpacingAfter = 5
+       //    };
+       //    doc.Add(a1);
+       //     //здесь будет план
+       //     // Правда? ГДЕ ОН?! Я ЕГО НЕ ВИЖУ!
+       //     //iTextSharp.text.Image k = iTextSharp.text.Image.GetInstance(@"Plan.jpg");
+       //     //k.Alignment = Element.ALIGN_CENTER;
+       //     //doc.Add(k);
 
-            //таблица данных
-            var table = new PdfPTable(6);//№пп //тип // поставщик //артикул //стоимость за 1 //кол-во //сумма
+       //     //таблица данных
+       //     var table = new PdfPTable(6);//№пп //тип // поставщик //артикул //стоимость за 1 //кол-во //сумма
 
-            var cell0 = new PdfPCell(new Phrase("№ п/п", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell0);
+       //     var cell0 = new PdfPCell(new Phrase("№ п/п", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell0);
 
-            var cell = new PdfPCell(new Phrase("Объект", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell);
+       //     var cell = new PdfPCell(new Phrase("Объект", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell);
 
-            var cell1 = new PdfPCell(new Phrase(" Поставщик", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell1);
+       //     var cell1 = new PdfPCell(new Phrase(" Поставщик", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell1);
 
-            var cell2 = new PdfPCell(new Phrase("Артикул", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell2);
-
-
-            var cell3 = new PdfPCell(new Phrase(" Стоимость за единицу", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell3);
+       //     var cell2 = new PdfPCell(new Phrase("Артикул", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell2);
 
 
-            var cell4 = new PdfPCell(new Phrase("Количество", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell4);
-
-            var cell5 = new PdfPCell(new Phrase("Сумма", new Font(baseFont, 12, 0, bc)));
-            table.AddCell(cell5);
-            //
-            doc.Add(table);
+       //     var cell3 = new PdfPCell(new Phrase(" Стоимость за единицу", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell3);
 
 
+       //     var cell4 = new PdfPCell(new Phrase("Количество", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell4);
 
-            doc.Close();
-            MessageBox.Show("Готово!");
+       //     var cell5 = new PdfPCell(new Phrase("Сумма", new Font(baseFont, 12, 0, bc)));
+       //     table.AddCell(cell5);
+       //     //
+       //     doc.Add(table);
 
-        }
-        void blankPDF(string inn, string adress, string bankinfo, string direct, string buch, string number, string mail)
-       {
+
+
+       //     doc.Close();
+       //     MessageBox.Show("Готово!");
+
+       // }
+      public  void blankPDF(InfoCustoms info)
+        {
             var doc = new Document();
             PdfWriter.GetInstance(doc, new FileStream(@"Document2.pdf", FileMode.Create));
             doc.Open();
@@ -123,13 +123,13 @@ namespace FunctionalityLibrary
             var cel0 = new PdfPCell(new Phrase("ИНН/КПП", new Font(baseFont, 12, 0, bc)));
             table2.AddCell(cel0);
 
-            var cel = new PdfPCell(new Phrase(inn));
+            var cel = new PdfPCell(new Phrase(info.inn));
             table2.AddCell(cel);
 
             var cel1 = new PdfPCell(new Phrase(" Юридический адрес", new Font(baseFont, 12, 0, bc)));
             table2.AddCell(cel1);
 
-            var cel2 = new PdfPCell(new Phrase(adress));
+            var cel2 = new PdfPCell(new Phrase(info.adress));
             table2.AddCell(cel2);
 
 
@@ -137,31 +137,31 @@ namespace FunctionalityLibrary
             table2.AddCell(cel3);
 
 
-            var cel4 = new PdfPCell(new Phrase(bankinfo));
+            var cel4 = new PdfPCell(new Phrase(info.bankinfo));
             table2.AddCell(cel4);
 
             var cel5 = new PdfPCell(new Phrase("Директор", new Font(baseFont, 12, 0, bc)));
             table2.AddCell(cel5);
 
-            var cel6 = new PdfPCell(new Phrase(direct));
+            var cel6 = new PdfPCell(new Phrase(info.direct));
             table2.AddCell(cel6);
 
             var cel7 = new PdfPCell(new Phrase("Главный бухгалтер", new Font(baseFont, 12, 0, bc)));
             table2.AddCell(cel7);
 
-            var cel8 = new PdfPCell(new Phrase(buch));
+            var cel8 = new PdfPCell(new Phrase(info.buch));
             table2.AddCell(cel8);
 
             var cel9 = new PdfPCell(new Phrase("Телефон", new Font(baseFont, 12, 0, bc)));
             table2.AddCell(cel9);
 
-            var cel10 = new PdfPCell(new Phrase(number));
+            var cel10 = new PdfPCell(new Phrase(info.number));
             table2.AddCell(cel10);
 
             var cel11 = new PdfPCell(new Phrase("e-mail", new Font(baseFont, 12, 0, bc)));
             table2.AddCell(cel11);
 
-            var cel12 = new PdfPCell(new Phrase(mail));
+            var cel12 = new PdfPCell(new Phrase(info.mail));
             table2.AddCell(cel12);
 
             doc.Add(table2);

@@ -44,15 +44,5 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         {
             return "Размеры: " + _f.Params;
         }
-
-        public override bool IsCrosses(PointF start, float sizeW, float sizeH)
-        {
-            var SecondLocationPoint = Distance.GetPointFromSize(FirstLocationPoint, SizeW, SizeH);
-            Gr.Clip = new Region(new RectangleF(FirstLocationPoint, new SizeF(SizeW, SizeH)));
-            var p2 = Distance.GetPointFromSize(start, sizeW, 0);
-            var p3 = Distance.GetPointFromSize(start, 0, sizeH);
-            var p4 = Distance.GetPointFromSize(start, sizeW, sizeH);
-            return Gr.IsVisible(start) || Gr.IsVisible(p2) || Gr.IsVisible(p3) || Gr.IsVisible(p4);
-        }
     }
 }

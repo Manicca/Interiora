@@ -10,14 +10,14 @@ using FunctionalityLibrary.Drawing.History;
 
 namespace FunctionalityLibrary.Calculation
 {
-    public static class CoordinateCorrector
+    public static class CoordinateCorrector //жесткие вычисления
     {
         /// <summary>
         /// Корректировка координат. В програме нельзя ставить окна под углом.
         /// </summary>
         /// <param name="start">Стартовая точка рисования</param>
         /// <param name="end">Точка для корректировки</param>
-        public static void CorrectAngle(PointF start, ref PointF end)
+        public static void CorrectAngle(PointF start, ref PointF end) //окна перпендикулярные не косые
         {
             var p1 = new PointF(end.X, start.Y);
             var p2 = new PointF(start.X, end.Y);
@@ -29,8 +29,27 @@ namespace FunctionalityLibrary.Calculation
                 end = p2;
         }
 
+        public static void CorrectSwitchCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor) //отдельно для коммутатора (у ком другой размер в отличии от других объектов)
+        {
+            var indent = Settings.Default.indentFrmoWallForSwitch * factor;
+            if (tfo.FirstLocationPoint.X < indent)
+                tfo.FirstLocationPoint.X = indent;
 
-        public static bool CorrectOfficeCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor, HistoryDrawing history)
+            if (tfo.FirstLocationPoint.Y < indent)
+                tfo.FirstLocationPoint.Y = indent;
+
+
+            if (tfo.SizeH + tfo.FirstLocationPoint.Y > bp.Height - indent)
+            {
+                tfo.FirstLocationPoint.Y = bp.Height - indent - tfo.SizeH;
+            }
+            if (tfo.SizeW + tfo.FirstLocationPoint.X > bp.Width - indent)
+            {
+                tfo.FirstLocationPoint.X = bp.Width - indent - tfo.SizeW;
+            }
+        }
+
+        public static bool CorrectOfficeCoordinate(ref OfficeFigure tfo, Bitmap bp, float factor, HistoryDrawing history) //отступы для фурнитуры
         {
             var indent = Settings.Default.indentFromWall * factor;
             if (tfo.FirstLocationPoint.X < indent)
@@ -53,7 +72,7 @@ namespace FunctionalityLibrary.Calculation
 
             foreach (var t in of)
             {
-                if (t.IsCrosses(tfo.FirstLocationPoint, tfo.SizeW, tfo.SizeH))
+                if (t.IsCrossesFigure(tfo.FirstLocationPoint, tfo.SizeW, tfo.SizeH))
                     return false;
             }
 

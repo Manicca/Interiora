@@ -113,7 +113,7 @@ namespace FunctionalityLibrary.Calculation
         }
 
         public static void CalculateBonders(ref PointF start, ref PointF end, PictureBox pictureBox1, float factor,
-            List<Figure> history = null)
+            List<Figure> history = null) //если бы было много комнат, мы б их склеили
         {
             if (end.X * factor > pictureBox1.Width)
                 end.X = pictureBox1.Width - 2;
@@ -131,7 +131,7 @@ namespace FunctionalityLibrary.Calculation
                 CalculateAheadPoints(r, ref start, ref end);
         }
 
-        public static PointF GetPointFromSize(PointF start, float sizeW, float sizeH)
+        public static PointF GetPointFromSize(PointF start, float sizeW, float sizeH) //получение конца прямоугольника
         {
             return new PointF(start.X + sizeW, start.Y + sizeH);
         }

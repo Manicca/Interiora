@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using FunctionalityLibrary.Calculation;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
-    class Switchboard : OfficeFigure
+    public class Switchboard : OfficeFigure
     {
         public WebEquipment Equipment { get; set; }
 
@@ -16,16 +17,23 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         public Switchboard(WebEquipment equipment)
         {
             Equipment = equipment;
+            SizeW = SizeH = 10;
         }
 
         public override void Draw(ref Bitmap bmp, PointF start, float factor)
         {
-            DrawingHelpers.RectangleHelper.DrawRectangle(start, 5, 10, ref bmp, factor);
+            Gr = Graphics.FromImage(bmp);
+            DrawingHelpers.RectangleHelper.DrawRectangle(start, SizeW, SizeH, ref bmp, factor);
         }
 
-        public override bool IsCrosses(PointF start, float sizeW, float sizeH)
+        public override bool IsCrossesFigure(PointF start, float sizeW, float sizeH)
         {
             return false;
+        }
+
+        public override string ToString()
+        {
+            return "Коммутатор";
         }
     }
 }
