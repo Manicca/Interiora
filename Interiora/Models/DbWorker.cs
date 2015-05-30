@@ -31,6 +31,22 @@ namespace Models
             return selectedDb != null ? selectedDb.Where(f).ToList() : null;
         }
 
+        public List<object> SelectFromBdByTableName(string tableName)
+        {
+            switch (tableName)
+            {
+                case "FurnitureDb":
+                    return SelectFromBd<Furniture>(f => true).ToList<object>();
+                case "SupplierDb":
+                    return SelectFromBd<Supplier>(f => true).ToList<object>();
+                case "WebEquipmentDb":
+                    return SelectFromBd<WebEquipment>(f => true).ToList<object>();
+                case "TypeOfWebEquipmentDb":
+                    return SelectFromBd<TypeOfWebEquipment>(f => true).ToList<object>();
+            }
+            return null;
+        }
+
         public void DeleteFromBd<TT>(Func<TT, bool> f) where TT : class
         {
             var selectedDb = GetDb<TT>();
@@ -43,6 +59,11 @@ namespace Models
         {
             var selectedDb = GetDb<TT>();
             return selectedDb.FirstOrDefault(f);
+        }
+
+        public List<string> getAllDbNames()
+        {
+            return _db.GetType().GetProperties().Where(f => f.ToString().EndsWith("Db")).Select(f=> f.ToString().Split(' ')[1]).ToList();
         }
 
         #region IDisposable Support
