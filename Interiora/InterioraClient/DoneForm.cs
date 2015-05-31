@@ -20,7 +20,8 @@ namespace InterioraClient
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk", new List<string> { "itextsharp.dll" });
+            EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk",
+                new List<string> { "Document2.pdf" });
         }
 
         private void DoneForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,7 +41,8 @@ namespace InterioraClient
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk");
+            EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk",
+                new List<string> { "Blank.odt" });
         }
 
         private void button1_Click(object sender, EventArgs e)

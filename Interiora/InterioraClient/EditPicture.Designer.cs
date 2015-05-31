@@ -183,22 +183,16 @@ namespace InterioraClient
             // 
             // panel1
             // 
-<<<<<<< HEAD
-=======
+
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.DimGray;
->>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 58);
             this.panel1.Name = "panel1";
             this.tableLayoutPanel1.SetRowSpan(this.panel1, 4);
-<<<<<<< HEAD
-            this.panel1.Size = new System.Drawing.Size(618, 295);
-=======
             this.panel1.Size = new System.Drawing.Size(618, 321);
->>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
             this.panel1.TabIndex = 21;
             // 
             // button8
@@ -216,16 +210,11 @@ namespace InterioraClient
             // 
             // trackBar1
             // 
-<<<<<<< HEAD
-            this.tableLayoutPanel1.SetColumnSpan(this.trackBar1, 3);
-            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBar1.Location = new System.Drawing.Point(3, 359);
-=======
+
             this.trackBar1.BackColor = System.Drawing.Color.Green;
             this.tableLayoutPanel1.SetColumnSpan(this.trackBar1, 3);
             this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackBar1.Location = new System.Drawing.Point(3, 385);
->>>>>>> 2d1e9c9b23bdd87c822b0367a61949f5327237fd
             this.trackBar1.Maximum = 27;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
