@@ -135,6 +135,7 @@ namespace InterioraClient
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Done";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DoneForm_FormClosing_1);
+            this.Load += new System.EventHandler(this.DoneForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

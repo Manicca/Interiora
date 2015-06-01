@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using FunctionalityLibrary;
+using FunctionalityLibrary.Drawing.History;
 using System.Collections.Generic;
 namespace InterioraClient
 {
@@ -13,7 +14,7 @@ namespace InterioraClient
         public CreateBlank crbl = new FunctionalityLibrary.CreateBlank();
         public CreateReports crrep = new FunctionalityLibrary.CreateReports();
         public InfoCustoms info = new FunctionalityLibrary.InfoCustoms();
-
+        public HistoryDrawing History;
         public void SetInfo(InfoCustoms inf)
         {
             info = inf;
@@ -53,7 +54,13 @@ namespace InterioraClient
         private void button4_Click(object sender, EventArgs e)
         {
             var aboutcustoms = new AboutCustoms();
+            aboutcustoms.History = History;
             aboutcustoms.ShowDialog(this);
+
+        }
+
+        private void DoneForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

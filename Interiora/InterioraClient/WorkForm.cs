@@ -72,6 +72,7 @@ namespace InterioraClient
         private void button3_Click(object sender, EventArgs e)
         {
             var doneform = new DoneForm();
+            doneform.History = History;
             doneform.Show(this);
             Hide();
         }

@@ -8,7 +8,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
     public class TableOfficeFigure : OfficeFigure
     {
-        private readonly Furniture _f;
+        public readonly Furniture _f;
 
         public TableOfficeFigure(Furniture f)
         {
