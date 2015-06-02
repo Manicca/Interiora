@@ -80,7 +80,7 @@ namespace InterioraClient
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = global::InterioraClient.Properties.Resources.sendblank;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Location = new System.Drawing.Point(620, 302);
+            this.button3.Location = new System.Drawing.Point(620, 309);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 50);
             this.button3.TabIndex = 3;

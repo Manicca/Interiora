@@ -3,6 +3,14 @@ using System.Windows.Forms;
 using FunctionalityLibrary;
 using FunctionalityLibrary.Drawing.History;
 using System.Collections.Generic;
+using System.Drawing;
+using FunctionalityLibrary.Calculation;
+using FunctionalityLibrary.Drawing.OfficeEquipment;
+using FunctionalityLibrary.Modes;
+using Models;
+using InterioraClient.Properties;
+using FunctionalityLibrary.Drawing.Figures;
+
 namespace InterioraClient
 {
     public partial class DoneForm : Form
@@ -14,7 +22,32 @@ namespace InterioraClient
         public CreateBlank crbl = new FunctionalityLibrary.CreateBlank();
         public CreateReports crrep = new FunctionalityLibrary.CreateReports();
         public InfoCustoms info = new FunctionalityLibrary.InfoCustoms();
-        public HistoryDrawing History;
+        private HistoryIterator _historyIterator = new HistoryIterator(0, 0);
+        private FormsHelper.ButtonClicker _buttonClicker = new FormsHelper.ButtonClicker();
+        private readonly StartPointFigure _stp = new StartPointFigure();
+       // public HistoryDrawing History;
+        public Bitmap InitialBmp;
+        private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
+        public HistoryDrawing History { get; set; }
+        private Bitmap _saveBmp;
+        
+       
+        private void RestoreBmp(ref Bitmap bmp)
+        {
+            bmp = (Bitmap)_saveBmp.Clone();
+        }
+        
+
+        private void SaveBmp(Bitmap bmp)
+        {
+            _saveBmp = (Bitmap)bmp.Clone();
+        }
+
+        public void SetMode(WorkMode newMode)
+        {
+            _mode = newMode;
+        }
+
         public void SetInfo(InfoCustoms inf)
         {
             info = inf;
@@ -43,7 +76,7 @@ namespace InterioraClient
         private void button3_Click(object sender, EventArgs e)
         {
             EMailSender.SendMessage("smtp.mail.ru", "isebd@mail.ru", "qwe123rty456", textBox1.Text, "expirience", "hjhkhjk",
-                new List<string> { "Blank.odt" });
+                new List<string> { "blank.odt" });
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,12 +89,14 @@ namespace InterioraClient
             var aboutcustoms = new AboutCustoms();
             aboutcustoms.History = History;
             aboutcustoms.ShowDialog(this);
+            crrep.blankPDF(info);
+            crbl.blank(info);
 
         }
 
         private void DoneForm_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.Image = InitialBmp;
         }
     }
 }

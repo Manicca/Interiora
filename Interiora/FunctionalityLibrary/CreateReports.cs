@@ -67,7 +67,7 @@ namespace FunctionalityLibrary
       public  void blankPDF(InfoCustoms info)
         {
             var doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(@"Document2.pdf", FileMode.Create));
+            PdfWriter.GetInstance(doc, new FileStream(@"Document.pdf", FileMode.Create));
             doc.Open();
             var baseFont = BaseFont.CreateFont("ARIAL.TTF", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
             var bc = BaseColor.BLACK;
