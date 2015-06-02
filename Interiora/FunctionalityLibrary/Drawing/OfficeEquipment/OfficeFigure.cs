@@ -58,5 +58,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
 
         public abstract Furniture getFurniture();
 
+        public abstract WebEquipment getWeb();
+
     }
 }

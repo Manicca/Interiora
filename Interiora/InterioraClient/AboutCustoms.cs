@@ -59,7 +59,7 @@ namespace InterioraClient
             }
             
 
-            CrRep.blankPDF(info);
+            //CrRep.blankPDF(info);
             this.Close();
         }
 

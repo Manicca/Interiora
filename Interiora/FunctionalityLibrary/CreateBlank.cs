@@ -113,18 +113,34 @@ namespace FunctionalityLibrary
                xText.insertString(xText.createTextCursor(), i.ToString(), false);
                xCell = xSheet.getCellByPosition(1, 2 + i);
                xText = (OOC.text.XText)xCell;
-               xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getFurniture().Type + " " +
-                   history.AllOfficeFiguresRecords()[i - 1].getFurniture().Article, false);
-               xCell = xSheet.getCellByPosition(2, 2 + i);
-               xText = (OOC.text.XText)xCell;
-               xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getFurniture().Supplier.Name, false);
-               xCell = xSheet.getCellByPosition(3, 2 + i);
-               xText = (OOC.text.XText)xCell;
-               xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getFurniture().Cost, false);
-               xPropSet = (OOC.beans.XPropertySet)xCell;
-               xPropSet.setPropertyValue("HoriJustify", new uno.Any((Int32)(3)));//выравнивание по право
+               if (history.AllOfficeFiguresRecords()[i - 1].getFurniture() != null)
+               {
+                   xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].ToString() + " " +
+                       history.AllOfficeFiguresRecords()[i - 1].getFurniture().Article, false);
+                   xCell = xSheet.getCellByPosition(2, 2 + i);
+                   xText = (OOC.text.XText)xCell;
+                   xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getFurniture().Supplier.Name, false);
+                   xCell = xSheet.getCellByPosition(3, 2 + i);
+                   xText = (OOC.text.XText)xCell;
+                   xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getFurniture().Cost, false);
+                   xPropSet = (OOC.beans.XPropertySet)xCell;
+                   xPropSet.setPropertyValue("HoriJustify", new uno.Any((Int32)(3)));//выравнивание по право
+                   sum += Convert.ToDouble(history.AllOfficeFiguresRecords()[i - 1].getFurniture().Cost);
+               }
+               else if (history.AllOfficeFiguresRecords()[i - 1].getWeb() != null)
+               {
+                   xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].ToString(), false);
+                   xCell = xSheet.getCellByPosition(2, 2 + i);
+                   xText = (OOC.text.XText)xCell;
+                   xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getWeb().Supplier.Name, false);
+                   xCell = xSheet.getCellByPosition(3, 2 + i);
+                   xText = (OOC.text.XText)xCell;
+                   xText.insertString(xText.createTextCursor(), history.AllOfficeFiguresRecords()[i - 1].getWeb().Cost, false);
+                   xPropSet = (OOC.beans.XPropertySet)xCell;
+                   xPropSet.setPropertyValue("HoriJustify", new uno.Any((Int32)(3)));//выравнивание по право
+                   sum += Convert.ToDouble(history.AllOfficeFiguresRecords()[i - 1].getWeb().Cost);
+               }
 
-               sum += Convert.ToDouble(history.AllOfficeFiguresRecords()[i - 1].getFurniture().Cost);
            }
 
 

@@ -43,5 +43,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         }
 
         public override Furniture getFurniture() { return _f; }
+
+        public override WebEquipment getWeb() { return null; }
     }
 }

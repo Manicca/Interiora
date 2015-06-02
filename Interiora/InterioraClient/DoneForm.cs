@@ -30,6 +30,7 @@ namespace InterioraClient
         private WorkMode _mode = new WorkMode(EnumOfModes.Manual);
         public HistoryDrawing History { get; set; }
         private Bitmap _saveBmp;
+        private float _factor = 1.0f;
         
        
         private void RestoreBmp(ref Bitmap bmp)
@@ -89,14 +90,16 @@ namespace InterioraClient
             var aboutcustoms = new AboutCustoms();
             aboutcustoms.History = History;
             aboutcustoms.ShowDialog(this);
-            crrep.blankPDF(info);
+            crrep.blankPDF(info,aboutcustoms.History);
             crbl.blank(info, aboutcustoms.History);
 
         }
 
         private void DoneForm_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = InitialBmp;
+            var historyLast = History.GetLastBitmapOrDefalutOfficeFigures(_factor);
+
+            pictureBox1.Image = historyLast;
         }
     }
 }
