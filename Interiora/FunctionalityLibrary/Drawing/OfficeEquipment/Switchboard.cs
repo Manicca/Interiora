@@ -35,5 +35,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         {
             return "Коммутатор";
         }
+
+        public override Furniture getFurniture() { return null; }
     }
 }

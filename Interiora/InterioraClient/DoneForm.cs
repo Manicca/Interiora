@@ -90,7 +90,7 @@ namespace InterioraClient
             aboutcustoms.History = History;
             aboutcustoms.ShowDialog(this);
             crrep.blankPDF(info);
-            crbl.blank(info);
+            crbl.blank(info, aboutcustoms.History);
 
         }
 

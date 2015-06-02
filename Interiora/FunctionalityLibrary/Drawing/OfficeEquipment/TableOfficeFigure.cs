@@ -44,5 +44,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
         {
             return "Размеры: " + _f.Params;
         }
+
+        public override Furniture getFurniture() { return _f; }
     }
 }

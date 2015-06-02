@@ -103,5 +103,7 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
             return;
         }
 
+        public override Furniture getFurniture() { return null; }
+
     }
 }

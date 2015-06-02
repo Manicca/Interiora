@@ -1,6 +1,7 @@
 ﻿using FunctionalityLibrary.Calculation;
 using System;
 using System.Drawing;
+using Models;
 
 namespace FunctionalityLibrary.Drawing.OfficeEquipment
 {
@@ -54,5 +55,8 @@ namespace FunctionalityLibrary.Drawing.OfficeEquipment
             Gr.Clip = new Region(new RectangleF(p1, new SizeF(SizeW + 2*offsetError, SizeH + 2*offsetError)));
             return Gr.IsVisible(start);
         }
+
+        public abstract Furniture getFurniture();
+
     }
 }
